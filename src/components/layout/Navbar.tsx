@@ -56,9 +56,11 @@ export function Navbar() {
           )}
         >
           <a href="#top" className="flex min-w-0 items-center gap-2.5">
-            <span className="gradient-brand font-display grid h-9 w-9 shrink-0 place-items-center rounded-xl text-sm font-extrabold text-white">
-              N
-            </span>
+            <img
+              src="/nisc-logo.png"
+              alt="NISC Logo"
+              className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
+            />
             <span className="font-display truncate text-base font-extrabold">NISC</span>
           </a>
 

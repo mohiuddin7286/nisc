@@ -15,9 +15,11 @@ export function Footer() {
           <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
             <div>
               <div className="flex items-center gap-3">
-                <span className="gradient-brand font-display grid h-11 w-11 place-items-center rounded-2xl text-lg font-extrabold text-white">
-                  N
-                </span>
+                <img
+                  src="/nisc-logo.png"
+                  alt="NISC Logo"
+                  className="h-11 w-11 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
+                />
                 <div className="min-w-0">
                   <p className="font-display text-lg font-extrabold">North India Student Cell</p>
                   <p className="text-muted-foreground text-sm">KL University Hyderabad</p>

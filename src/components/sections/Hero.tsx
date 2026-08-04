@@ -30,9 +30,22 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-5xl px-6 text-center">
         <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto mb-6 flex justify-center"
+        >
+          <img
+            src="/nisc-logo.png"
+            alt="NISC Logo"
+            className="size-24 rounded-full border-2 border-white/80 bg-white object-cover p-1 shadow-[var(--shadow-glow)] sm:size-28"
+          />
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="glass font-accent mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide"
         >
           <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />

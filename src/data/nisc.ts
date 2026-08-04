@@ -170,4 +170,4 @@ export const faqs = [
   { q: "How do I contact the council?", a: "Reach out on our Telegram group or DM the official Instagram page — both are linked in the Join section." },
 ];
 
-export const ELECTION_DATE = "2027-01-15T10:00:00+05:30";
+export const ELECTION_DATE = "2026-08-28T22:00:00+05:30";

@@ -1,4 +1,4 @@
-import { Send, FileText, Instagram } from "lucide-react";
+import { Send, FileText, MessageCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { MagneticButton } from "@/components/nisc/MagneticButton";
 import { FloatingShapes } from "@/components/nisc/FloatingShapes";
@@ -18,18 +18,32 @@ export function Join() {
               Become a member — <span className="gradient-text">join our community</span>
             </h2>
             <p className="text-muted-foreground mx-auto mt-5 max-w-xl text-base leading-relaxed">
-              Fill the form, hop into the Telegram group and say hi. You'll get event invites, a
-              mentor from your home state and a group of people who get it.
+              Fill the official membership form, join our Telegram & WhatsApp groups and say hi. You'll get event invites, a
+              mentor from your home state and a community that has your back.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <MagneticButton href="#">
-                Join Telegram <Send className="size-4" />
-              </MagneticButton>
-              <MagneticButton href="#" variant="ghost">
+              <MagneticButton
+                href="https://forms.gle/muurnrz133tkgLTq7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Google Form <FileText className="size-4" />
               </MagneticButton>
-              <MagneticButton href="#" variant="ghost">
-                Instagram <Instagram className="size-4" />
+              <MagneticButton
+                href="https://t.me/+DLsCLiYhBiBlMjM1"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost"
+              >
+                Join Telegram <Send className="size-4" />
+              </MagneticButton>
+              <MagneticButton
+                href="https://chat.whatsapp.com/CPPDb6EnXXzJgX3lWryWGh"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost"
+              >
+                WhatsApp Group <MessageCircle className="size-4 text-emerald-500" />
               </MagneticButton>
             </div>
           </div>
@@ -38,3 +52,4 @@ export function Join() {
     </section>
   );
 }
+

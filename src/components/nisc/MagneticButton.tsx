@@ -5,12 +5,16 @@ export function MagneticButton({
   children,
   href,
   onClick,
+  target,
+  rel,
   variant = "primary",
   className,
 }: {
   children: ReactNode;
   href?: string;
   onClick?: () => void;
+  target?: string;
+  rel?: string;
   variant?: "primary" | "ghost";
   className?: string;
 }) {
@@ -42,7 +46,8 @@ export function MagneticButton({
       <Tag
         href={href}
         onClick={onClick}
-        {...(href && href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+        target={target || (href && href.startsWith("http") ? "_blank" : undefined)}
+        rel={rel || (href && href.startsWith("http") ? "noopener noreferrer" : undefined)}
         className={cn(base, styles, className)}
       >
         {children}

@@ -6,7 +6,7 @@ import { MagneticButton } from "@/components/nisc/MagneticButton";
 const title = "North India Student Cell";
 
 const badges = [
-  { icon: Users, label: "28 Members" },
+  { icon: Users, label: "45+ Members" },
   { icon: Landmark, label: "12 Council" },
   { icon: GraduationCap, label: "4 Departments" },
   { icon: Sparkles, label: "2025–26 Council" },
@@ -49,7 +49,7 @@ export function Hero() {
           className="glass font-accent mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide"
         >
           <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />
-          KL University Hyderabad · Est. 2024
+          KL University Hyderabad · Est. August 2024
         </motion.div>
 
         <h1 className="font-display mt-8 text-[clamp(2.6rem,8vw,5.5rem)] leading-[0.98] font-extrabold">

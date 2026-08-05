@@ -1,9 +1,9 @@
-import { ArrowUp, Instagram, Github, Send } from "lucide-react";
+import { ArrowUp, MessageCircle, Send, FileText } from "lucide-react";
 
 const cols = [
   { title: "Explore", links: [["About", "#about"], ["Mission", "#mission"], ["Reach", "#map"], ["Gallery", "#gallery"]] },
   { title: "People", links: [["Council", "#council"], ["Members", "#members"], ["Activities", "#activities"]] },
-  { title: "Governance", links: [["Election 2026", "#election"], ["Rulebook", "#rulebook"], ["FAQ", "#faq"], ["Join", "#join"]] },
+  { title: "Governance", links: [["Election", "#election"], ["Rulebook", "#rulebook"], ["FAQ", "#faq"], ["Join", "#join"]] },
 ];
 
 export function Footer() {
@@ -26,19 +26,37 @@ export function Footer() {
                 </div>
               </div>
               <p className="text-muted-foreground mt-5 max-w-sm text-sm leading-relaxed">
-                A student-run community for north-Indian students at KLH — culture, mentorship and
+                A student-run community for North Indian students at KLH — culture, mentorship and
                 a home away from home.
               </p>
               <div className="mt-6 flex gap-2">
-                {[Instagram, Github, Send].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="glass hover:text-primary grid h-11 w-11 place-items-center rounded-full transition-colors"
-                  >
-                    <Icon className="size-[18px]" />
-                  </a>
-                ))}
+                <a
+                  href="https://chat.whatsapp.com/CPPDb6EnXXzJgX3lWryWGh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass hover:text-emerald-500 grid h-11 w-11 place-items-center rounded-full transition-colors"
+                  title="WhatsApp Group"
+                >
+                  <MessageCircle className="size-[18px]" />
+                </a>
+                <a
+                  href="https://t.me/+DLsCLiYhBiBlMjM1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass hover:text-sky-500 grid h-11 w-11 place-items-center rounded-full transition-colors"
+                  title="Telegram Group"
+                >
+                  <Send className="size-[18px]" />
+                </a>
+                <a
+                  href="https://forms.gle/muurnrz133tkgLTq7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass hover:text-primary grid h-11 w-11 place-items-center rounded-full transition-colors"
+                  title="Google Form (Join NISC)"
+                >
+                  <FileText className="size-[18px]" />
+                </a>
               </div>
             </div>
 
@@ -78,3 +96,4 @@ export function Footer() {
     </footer>
   );
 }
+

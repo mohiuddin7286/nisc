@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram, Github } from "lucide-react";
+import { Menu, X, MessageCircle, Send } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -89,7 +89,9 @@ export function Navbar() {
 
           <div className="ml-auto flex items-center gap-1 lg:ml-2">
             <a
-              href="#join"
+              href="https://forms.gle/muurnrz133tkgLTq7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white sm:inline-flex"
             >
               Join NISC
@@ -139,14 +141,28 @@ export function Navbar() {
               ))}
             </div>
             <div className="mt-auto flex items-center gap-3">
-              <a href="#" className="glass grid h-11 w-11 place-items-center rounded-full">
-                <Instagram className="size-5" />
-              </a>
-              <a href="#" className="glass grid h-11 w-11 place-items-center rounded-full">
-                <Github className="size-5" />
+              <a
+                href="https://chat.whatsapp.com/CPPDb6EnXXzJgX3lWryWGh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass hover:text-emerald-500 grid h-11 w-11 place-items-center rounded-full transition-colors"
+                title="WhatsApp Group"
+              >
+                <MessageCircle className="size-5" />
               </a>
               <a
-                href="#join"
+                href="https://t.me/+DLsCLiYhBiBlMjM1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass hover:text-sky-500 grid h-11 w-11 place-items-center rounded-full transition-colors"
+                title="Telegram Group"
+              >
+                <Send className="size-5" />
+              </a>
+              <a
+                href="https://forms.gle/muurnrz133tkgLTq7"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="gradient-brand font-accent ml-auto rounded-full px-6 py-3 text-sm font-semibold text-white"
               >
@@ -159,3 +175,4 @@ export function Navbar() {
     </>
   );
 }
+

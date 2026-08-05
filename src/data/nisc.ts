@@ -96,47 +96,257 @@ export const stateData = Object.entries(stateCities)
 export const departmentsCount = new Set(members.map((m) => m.department)).size;
 
 export type PastCouncil = {
-  term: string;
-  status: string;
-  note: string;
-  members: { name: string; position: string }[];
+  year: string;
+  title: string;
+  description: string;
+  members: Council[];
 };
 
 export const pastCouncils: PastCouncil[] = [
   {
-    term: "2024–25",
-    status: "Founding council",
-    note: "The first NISC core team — formed by the founding batch of Y23/Y24 students who set up the cell at KLH.",
-    members: [
-      { name: "Records being compiled", position: "Founding Core" },
-    ],
+    year: "2025–26",
+    title: "Founding Council",
+    description:
+      "The inaugural NISC council was formed through nomination and consensus among the founding members during the organization's establishment phase. This council laid the foundation for governance, activities, membership, and future democratic elections.",
+    members: council,
   },
 ];
 
-export type ElectionResult = {
-  year: string;
-  turnout: string;
-  note: string;
-  results: { position: string; winner: string; votes?: string }[];
+export type CandidateResult = {
+  name: string;
+  votes: number;
 };
 
-export const electionResults: ElectionResult[] = [
+export type ElectionData = {
+  year: string;
+  title: string;
+  subtitle: string;
+  stats: {
+    totalVotes: number;
+    highestPresidentialVote: number;
+    highestVicePresidentialVote: number;
+  };
+  presidential: {
+    winner: string;
+    votes: number;
+    otherCandidates: CandidateResult[];
+  };
+  vicePresidential: {
+    winner: string;
+    votes: number;
+    otherCandidates: CandidateResult[];
+  };
+  summary: string;
+  participationOverview: string;
+  studentFeedback: string;
+};
+
+export const election2025: ElectionData = {
+  year: "2025–26",
+  title: "2025–26 Presidential & Vice Presidential Election",
+  subtitle:
+    "The first democratic election of NISC established the leadership for the upcoming council through a transparent voting process.",
+  stats: {
+    totalVotes: 41,
+    highestPresidentialVote: 23,
+    highestVicePresidentialVote: 19,
+  },
+  presidential: {
+    winner: "Mohiuddin Ahmad",
+    votes: 23,
+    otherCandidates: [
+      { name: "Paridhi Gupta", votes: 13 },
+      { name: "Shreyansh Sharma", votes: 2 },
+      { name: "Ashfaq Ahmad", votes: 2 },
+      { name: "Kaushal", votes: 1 },
+    ],
+  },
+  vicePresidential: {
+    winner: "Shreyansh Sharma",
+    votes: 19,
+    otherCandidates: [
+      { name: "Paridhi Gupta", votes: 11 },
+      { name: "Yash Raj", votes: 3 },
+      { name: "Narayan", votes: 3 },
+      { name: "Mohiuddin Ahmad", votes: 3 },
+      { name: "Ashfaq Ahmad", votes: 1 },
+      { name: "Kaushal", votes: 1 },
+    ],
+  },
+  summary:
+    "The 2025–26 elections marked the beginning of NISC's democratic governance. Forty-one eligible members participated in the voting process to elect the President and Vice President. The election reflected strong student engagement and established the framework for future annual leadership transitions.",
+  participationOverview:
+    "Most participating voters belonged to the Y24 and Y25 batches across multiple departments, reflecting broad representation within the founding membership of NISC.",
+  studentFeedback:
+    "Members appreciated the transparent election process and encouraged continued fairness, inclusiveness, and active participation in future council elections. Suggestions received during voting will be considered while strengthening future governance and community activities.",
+};
+
+export type TimelineItem = {
+  title: string;
+  year: string;
+  tag?: string;
+  text: string;
+  images?: string[];
+  established?: string[];
+  goals?: string[];
+};
+
+export const timeline: TimelineItem[] = [
   {
+    title: "Founded",
+    year: "August 2024",
+    tag: "Officially Founded",
+    text: "North India Student Cell (NISC) was initiated by students of the Y24 and Y25 batches to create a support network for North Indian students at KL University Hyderabad.",
+  },
+  {
+    title: "Official Beginning",
+    year: "17 February 2025",
+    tag: "First Meeting",
+    text: "The first official meeting of NISC was conducted, laying the foundation for the organization, its vision, objectives, and future governance.",
+    images: ["/gallery/first-meeting-1.png", "/gallery/first-meeting-2.png"],
+  },
+  {
+    title: "Growth",
     year: "2025–26",
-    turnout: "Council formed by nomination",
-    note: "The 2025–26 council was constituted by nomination and consensus of the founding members. Full ballot elections begin with the 2026–27 term.",
-    results: [
-      { position: "President", winner: "Mohiuddin Ahmad" },
-      { position: "Vice President", winner: "Shreyansh Sharma" },
+    tag: "Structured Cell",
+    text: "Expanded into a structured student organization with representatives from multiple departments and North Indian states.",
+    established: [
+      "Council Structure",
+      "Department Representatives",
+      "Student Activities",
+      "Cultural Programs",
+      "Mentorship",
+      "Academic Support",
+    ],
+  },
+  {
+    title: "Future",
+    year: "Future Vision",
+    tag: "Next Horizon",
+    text: "Continue building a stronger North Indian student community through democratic processes, student development, and cross-departmental collaboration.",
+    goals: [
+      "democratic elections",
+      "leadership development",
+      "mentorship",
+      "cultural representation",
+      "inter-department collaboration",
     ],
   },
 ];
 
-export const timeline = [
-  { title: "Founded", year: "2024", text: "A handful of north-Indian students at KL University Hyderabad started meeting over chai and homesickness. NISC was born." },
-  { title: "Vision", year: "2025", text: "A cell where language, food and festivals are never a barrier — and where every junior finds a senior who has their back." },
-  { title: "Growth", year: "2025–26", text: "A full council across Y24 and Y25 batches, members from multiple states, and a calendar of cultural and academic events." },
-  { title: "Future", year: "2026–27", text: "Formal elections, a mentorship pipeline, inter-college collaborations and a scholarship support desk." },
+export type ElectionStep = {
+  step: number;
+  title: string;
+  text: string;
+};
+
+export const electionSteps: ElectionStep[] = [
+  {
+    step: 1,
+    title: "Nomination",
+    text: "Eligible members submit nominations according to the NISC Rulebook.",
+  },
+  {
+    step: 2,
+    title: "Verification",
+    text: "Applications are reviewed to ensure eligibility.",
+  },
+  {
+    step: 3,
+    title: "Campaign",
+    text: "Candidates present their vision, manifesto, and interact with members.",
+  },
+  {
+    step: 4,
+    title: "Voting",
+    text: "Secret ballot conducted among eligible members.",
+  },
+  {
+    step: 5,
+    title: "Results",
+    text: "Votes are counted transparently and winners are officially announced.",
+  },
+];
+
+export type GalleryCategory =
+  | "Official Meetings"
+  | "Council Formation"
+  | "Cultural Events"
+  | "Elections"
+  | "Community Activities";
+
+export type GalleryItem = {
+  id: number;
+  title: string;
+  category: GalleryCategory;
+  date: string;
+  image?: string; // Optional path for uploaded images
+  gradient: string;
+  span?: string;
+};
+
+export const galleryCategories: GalleryCategory[] = [
+  "Official Meetings",
+  "Council Formation",
+  "Cultural Events",
+  "Elections",
+  "Community Activities",
+];
+
+export const galleryItems: GalleryItem[] = [
+  {
+    id: 1,
+    title: "First Official Meeting — Opening Address",
+    category: "Official Meetings",
+    date: "17 Feb 2025",
+    image: "/gallery/first-meeting-1.png",
+    gradient: "linear-gradient(135deg, oklch(0.85 0.12 65), oklch(0.7 0.19 35))",
+    span: "sm:col-span-2 sm:row-span-2",
+  },
+  {
+    id: 2,
+    title: "First Official Meeting — Vision & Governance",
+    category: "Official Meetings",
+    date: "17 Feb 2025",
+    image: "/gallery/first-meeting-2.png",
+    gradient: "linear-gradient(135deg, oklch(0.8 0.12 258), oklch(0.66 0.16 275))",
+  },
+  {
+    id: 3,
+    title: "Inaugural Council Assembly",
+    category: "Council Formation",
+    date: "Feb 2025",
+    gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
+  },
+  {
+    id: 4,
+    title: "Hindi Diwas & Cultural Gathering",
+    category: "Cultural Events",
+    date: "14 Sep 2025",
+    gradient: "linear-gradient(135deg, oklch(0.84 0.11 150), oklch(0.68 0.15 190))",
+  },
+  {
+    id: 5,
+    title: "2025–26 Leadership Elections",
+    category: "Elections",
+    date: "2025–26",
+    gradient: "linear-gradient(135deg, oklch(0.86 0.1 90), oklch(0.72 0.16 55))",
+    span: "sm:col-span-2",
+  },
+  {
+    id: 6,
+    title: "Academic Mentorship Drive",
+    category: "Community Activities",
+    date: "18 Jan 2026",
+    gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
+  },
+  {
+    id: 7,
+    title: "North Meets South Festival",
+    category: "Cultural Events",
+    date: "12 Mar 2026",
+    gradient: "linear-gradient(135deg, oklch(0.83 0.1 200), oklch(0.66 0.15 240))",
+  },
 ];
 
 export const activities = [
@@ -156,7 +366,7 @@ export const rulebook = [
   { title: "Code of Conduct", text: "Members must uphold respect, inclusivity and zero tolerance for discrimination, ragging or harassment. Violations are reviewed by the council and may result in removal." },
   { title: "Meetings", text: "The council meets fortnightly; a general body meeting is held once per semester. Minutes are shared with all members within 48 hours." },
   { title: "Activities & Events", text: "The cell organises at least four cultural and four academic events per academic year, funded through membership drives and university grants." },
-  { title: "Communication", text: "Official announcements are made through the NISC Telegram group and Instagram page. Members are expected to keep their contact details current." },
+  { title: "Communication", text: "Official announcements are made through the NISC Telegram and WhatsApp groups. Members are expected to keep their contact details current." },
 ];
 
 export const faqs = [
@@ -167,7 +377,8 @@ export const faqs = [
   { q: "How do the elections work?", a: "Nomination, campaign, secret-ballot voting and result declaration — all detailed in the rulebook section above." },
   { q: "What kind of events do you run?", a: "Cultural nights, Hindi Diwas, debates, placement prep workshops, mentorship drives and inter-cell collaborations." },
   { q: "Do you help with academics?", a: "Yes. Our mentorship programme pairs juniors with seniors from the same department for notes, doubts and placement guidance." },
-  { q: "How do I contact the council?", a: "Reach out on our Telegram group or DM the official Instagram page — both are linked in the Join section." },
+  { q: "How do I contact the council?", a: "Reach out on our Telegram group or WhatsApp group — both are linked in the Join section." },
 ];
 
-export const ELECTION_DATE = "2026-08-28T22:00:00+05:30";
+export const ELECTION_DATE = "2026-09-15T09:00:00+05:30";
+

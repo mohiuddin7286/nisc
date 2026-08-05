@@ -315,46 +315,73 @@ export const galleryItems: GalleryItem[] = [
     id: 3,
     title: "Inaugural Council Assembly",
     category: "Council Formation",
-    date: "Feb 2025",
+    date: "17 Feb 2025",
     gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
   },
   {
     id: 4,
-    title: "Hindi Diwas & Cultural Gathering",
-    category: "Cultural Events",
-    date: "14 Sep 2025",
-    gradient: "linear-gradient(135deg, oklch(0.84 0.11 150), oklch(0.68 0.15 190))",
-  },
-  {
-    id: 5,
-    title: "2025–26 Leadership Elections",
+    title: "Upcoming 2026–27 Leadership Elections",
     category: "Elections",
-    date: "2025–26",
+    date: "15 Sep 2026",
     gradient: "linear-gradient(135deg, oklch(0.86 0.1 90), oklch(0.72 0.16 55))",
     span: "sm:col-span-2",
   },
   {
-    id: 6,
-    title: "Academic Mentorship Drive",
-    category: "Community Activities",
-    date: "18 Jan 2026",
-    gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
+    id: 5,
+    title: "Planned Cultural Celebrations",
+    category: "Cultural Events",
+    date: "Upcoming 2026",
+    gradient: "linear-gradient(135deg, oklch(0.84 0.11 150), oklch(0.68 0.15 190))",
   },
   {
-    id: 7,
-    title: "North Meets South Festival",
-    category: "Cultural Events",
-    date: "12 Mar 2026",
-    gradient: "linear-gradient(135deg, oklch(0.83 0.1 200), oklch(0.66 0.15 240))",
+    id: 6,
+    title: "Planned Academic Mentorship Drive",
+    category: "Community Activities",
+    date: "Upcoming 2026",
+    gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
   },
 ];
 
-export const activities = [
-  { title: "Hindi Diwas Celebration", date: "14 Sep 2025", text: "Poetry, kavi sammelan and a campus-wide celebration of the language that brings us together." },
-  { title: "The Great Debate", date: "22 Oct 2025", text: "A bilingual parliamentary debate with 40+ participants across departments." },
-  { title: "Placement Prep Workshop", date: "05 Dec 2025", text: "Seniors ran DSA and resume clinics for first and second-year members." },
-  { title: "Mentorship Drive", date: "18 Jan 2026", text: "Every junior matched with a senior from their home state for academic and personal guidance." },
-  { title: "North Meets South Night", date: "12 Mar 2026", text: "A cultural exchange evening with regional cells — food stalls, folk dance and music." },
+export type ActivityStatus = "Conducted" | "Scheduled" | "Upcoming";
+
+export type Activity = {
+  title: string;
+  date: string;
+  status: ActivityStatus;
+  text: string;
+};
+
+export const activities: Activity[] = [
+  {
+    title: "First Official NISC Meeting",
+    date: "17 Feb 2025",
+    status: "Conducted",
+    text: "The inaugural official meeting of North India Student Cell conducted at KL University Hyderabad, establishing NISC's vision, objectives, governance, and founding council.",
+  },
+  {
+    title: "NISC 2026–27 Leadership Elections",
+    date: "15 Sep 2026",
+    status: "Scheduled",
+    text: "Democratic election process to elect the President and Vice President for the upcoming council term.",
+  },
+  {
+    title: "Hindi Diwas Celebration",
+    date: "Upcoming (Sep 2026)",
+    status: "Upcoming",
+    text: "Planned poetry, kavi sammelan and campus-wide celebration of literature and culture.",
+  },
+  {
+    title: "Placement Prep & Mentorship Workshop",
+    date: "Upcoming (Oct 2026)",
+    status: "Upcoming",
+    text: "Planned DSA clinics, resume guidance, and senior-junior academic pairing.",
+  },
+  {
+    title: "North Meets South Cultural Night",
+    date: "Upcoming (Nov 2026)",
+    status: "Upcoming",
+    text: "Planned cultural exchange evening with regional student bodies, folk dance, and music.",
+  },
 ];
 
 export const rulebook = [

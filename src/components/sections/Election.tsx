@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BookOpen, FileSignature, CheckCircle2, Megaphone, Vote, Trophy, Calendar } from "lucide-react";
+import { BookOpen, FileSignature, CheckCircle2, Megaphone, Vote, Trophy, Calendar, ExternalLink } from "lucide-react";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { MagneticButton } from "@/components/nisc/MagneticButton";
 import { ELECTION_DATE } from "@/data/nisc";
@@ -105,15 +105,30 @@ export function Election() {
           <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {steps.map((s, i) => (
               <ScrollReveal key={s.title} variant="up" delay={i * 0.07}>
-                <div className="glass-strong h-full rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]">
-                  <span className="gradient-brand grid h-11 w-11 place-items-center rounded-2xl text-white">
-                    <s.icon className="size-5" />
-                  </span>
-                  <p className="text-muted-foreground font-accent mt-5 text-[11px] font-bold tracking-[0.18em] uppercase">
-                    Step {i + 1}
-                  </p>
-                  <h3 className="mt-1 text-lg font-bold">{s.title}</h3>
-                  <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{s.text}</p>
+                <div className="glass-strong h-full flex flex-col justify-between rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]">
+                  <div>
+                    <span className="gradient-brand grid h-11 w-11 place-items-center rounded-2xl text-white">
+                      <s.icon className="size-5" />
+                    </span>
+                    <p className="text-muted-foreground font-accent mt-5 text-[11px] font-bold tracking-[0.18em] uppercase">
+                      Step {i + 1}
+                    </p>
+                    <h3 className="mt-1 text-lg font-bold">{s.title}</h3>
+                    <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{s.text}</p>
+                  </div>
+
+                  {s.title === "Nomination" && (
+                    <div className="mt-4 pt-3 border-t border-white/20">
+                      <a
+                        href="https://forms.gle/ENKxsp7CDhXr4Thq6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="gradient-brand font-accent inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)]"
+                      >
+                        Nomination Form <ExternalLink className="size-3" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </ScrollReveal>
             ))}

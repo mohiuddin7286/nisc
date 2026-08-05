@@ -3,7 +3,7 @@ import { ArrowUp, MessageCircle, Send, FileText } from "lucide-react";
 const cols = [
   { title: "Explore", links: [["About", "#about"], ["Mission", "#mission"], ["Reach", "#map"], ["Gallery", "#gallery"]] },
   { title: "People", links: [["Council", "#council"], ["Members", "#members"], ["Activities", "#activities"]] },
-  { title: "Governance", links: [["Election", "#election"], ["Rulebook", "#rulebook"], ["FAQ", "#faq"], ["Join", "#join"]] },
+  { title: "Governance", links: [["Election", "#election"], ["Rulebook", "/rulebook"], ["FAQ", "#faq"], ["Join", "#join"]] },
 ];
 
 export function Footer() {

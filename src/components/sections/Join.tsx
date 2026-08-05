@@ -1,4 +1,5 @@
-import { Send, FileText, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Send, BookOpen, MessageCircle, FileText } from "lucide-react";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { MagneticButton } from "@/components/nisc/MagneticButton";
 import { FloatingShapes } from "@/components/nisc/FloatingShapes";
@@ -21,7 +22,23 @@ export function Join() {
               Fill the official membership form, join our Telegram & WhatsApp groups and say hi. You'll get event invites, a
               mentor from your home state and a community that has your back.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+            {/* Rulebook Notice & View Rulebook Button */}
+            <div className="mt-8 mx-auto max-w-md glass-strong rounded-2xl p-4 border border-white/20 shadow-md">
+              <p className="text-xs text-muted-foreground font-accent font-semibold">
+                Read the NISC Constitution & Rulebook before applying for membership.
+              </p>
+              <div className="mt-3 flex justify-center">
+                <Link
+                  to="/rulebook"
+                  className="gradient-brand font-accent inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)]"
+                >
+                  View Rulebook <BookOpen className="size-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <MagneticButton
                 href="https://forms.gle/muurnrz133tkgLTq7"
                 target="_blank"

@@ -384,17 +384,231 @@ export const activities: Activity[] = [
   },
 ];
 
-export const rulebook = [
-  { title: "Introduction", text: "The North India Student Cell (NISC) is a student-run body at KL University Hyderabad formed to represent, support and celebrate students from northern states of India." },
-  { title: "Objectives", text: "To build community, provide academic and personal mentorship, preserve and share culture, and act as a bridge between students and the university administration." },
-  { title: "Membership", text: "Membership is open to any enrolled student of KL University Hyderabad who identifies with or wishes to support the north-Indian student community. Membership is free and renewed each academic year." },
-  { title: "Council Structure", text: "The council consists of a President, Vice President, year admins for each batch, department admins for CSE, AI & DS, ECE and BCA, and the Mahila Department." },
-  { title: "Election Procedure", text: "Elections are held annually. Nominations open for two weeks, followed by a campaign period, a secret-ballot vote by all registered members, and same-day result declaration." },
-  { title: "Code of Conduct", text: "Members must uphold respect, inclusivity and zero tolerance for discrimination, ragging or harassment. Violations are reviewed by the council and may result in removal." },
-  { title: "Meetings", text: "The council meets fortnightly; a general body meeting is held once per semester. Minutes are shared with all members within 48 hours." },
-  { title: "Activities & Events", text: "The cell organises at least four cultural and four academic events per academic year, funded through membership drives and university grants." },
-  { title: "Communication", text: "Official announcements are made through the NISC Telegram and WhatsApp groups. Members are expected to keep their contact details current." },
+export type RulebookSubSection = {
+  title: string;
+  text: string;
+  points?: string[];
+};
+
+export type RulebookSection = {
+  id: string;
+  sectionNumber: number;
+  title: string;
+  subtitle?: string;
+  summary: string;
+  points?: string[];
+  subsections?: RulebookSubSection[];
+};
+
+export const rulebookSections: RulebookSection[] = [
+  {
+    id: "introduction",
+    sectionNumber: 1,
+    title: "Introduction",
+    summary:
+      "North India Student Cell (NISC) is a student-led organization established by the founding students of the Y24 and Y25 batches at KL University Hyderabad. The initiative began in August 2024 and the first official meeting was conducted on 17 February 2025. NISC works towards creating an inclusive platform for North Indian students by promoting leadership, academic collaboration, mentorship, cultural engagement and community development.",
+  },
+  {
+    id: "objectives",
+    sectionNumber: 2,
+    title: "Objectives",
+    summary: "The primary objectives of North India Student Cell (NISC) are as follows:",
+    points: [
+      "To create a vibrant community for North Indian students to connect, collaborate, and share knowledge and culture.",
+      "To organize academic, literary, and cultural events that highlight the rich heritage, language, and traditions of North India.",
+      "To provide structured mentorship and peer-learning opportunities among students.",
+      "To complement the university's mission of holistic development by integrating linguistic and technical growth.",
+      "To collaborate with other student associations, regional bodies, and university councils for cross-cultural understanding and cooperation.",
+      "Leadership Development: Fostering administrative capabilities, governance skills, and student initiative.",
+      "Student Representation: Serving as an official voice for student welfare and academic concerns before the university administration.",
+      "Career Guidance: Conducting placement prep workshops, resume reviews, DSA sprints, and industry guidance sessions.",
+      "Mentorship: Pairing junior members with experienced seniors from their respective academic branches and home states.",
+      "Community Welfare: Providing personal guidance, logistical support, and a welcoming environment for all enrolled members.",
+      "Cultural Exchange: Celebrating major festivals, folk evenings, and inter-state cultural exchange events.",
+      "Academic Collaboration: Facilitating study circles, shared notes repositories, and peer-to-peer tutoring.",
+    ],
+  },
+  {
+    id: "membership",
+    sectionNumber: 3,
+    title: "Membership Eligibility",
+    summary:
+      "Membership is primarily intended for students belonging to North Indian states or students having ancestral roots in North India. Associate membership may be granted by the Executive Council to students who actively support the objectives of NISC. Members must exhibit interest in promoting the objectives of NISC and uphold its code of conduct.",
+    points: [
+      "Primary Membership: Open to students belonging to North Indian states or students having ancestral roots in North India.",
+      "Associate Membership: May be granted by the Executive Council to students who actively support the objectives of NISC, regardless of regional background.",
+      "Code of Conduct Compliance: Members must exhibit interest in promoting the cell's objectives and strictly uphold its code of conduct.",
+    ],
+  },
+  {
+    id: "structure",
+    sectionNumber: 4,
+    title: "Organizational Structure",
+    summary: "North India Student Cell (NISC) operates through an expanded, structured hierarchy to ensure democratic representation and operational efficiency:",
+    subsections: [
+      {
+        title: "1. President",
+        text: "Head of the organization and primary representative before the university administration. Responsible for overall governance, strategic vision, coordinating all activities, and chairing council meetings.",
+      },
+      {
+        title: "2. Vice President",
+        text: "Assists the President and assumes full responsibilities in their absence. Oversees the execution of events, campaign logistics, and internal operations.",
+      },
+      {
+        title: "3. General Secretary",
+        text: "Manages administrative records, official documentation, meeting minutes, official correspondence, and university compliance.",
+      },
+      {
+        title: "4. Joint Secretary",
+        text: "Assists the General Secretary in operational workflows, inter-departmental communication, and venue/resource arrangements.",
+      },
+      {
+        title: "5. Treasurer",
+        text: "Oversees financial budgeting, expense accounting, membership drive allocations, and financial transparency.",
+      },
+      {
+        title: "6. Department Representatives",
+        text: "Represent specific academic departments (AI & DS, CSE, ECE, BCA, etc.) and coordinate department-level mentorship and student welfare.",
+      },
+      {
+        title: "7. Year Representatives",
+        text: "Represent students of their respective academic batches (1st year to 4th year) and facilitate peer communication.",
+      },
+      {
+        title: "8. Women's Department Representatives",
+        text: "Focus on women student engagement, specialized mentorship, representation, and female student welfare initiatives.",
+      },
+      {
+        title: "9. Executive Council",
+        text: "The core administrative body comprising elected office bearers, department admins, and year admins responsible for executive decision-making.",
+      },
+      {
+        title: "10. General Members",
+        text: "Registered students who actively participate in general body meetings, cultural events, democratic votes, and volunteer activities.",
+      },
+    ],
+  },
+  {
+    id: "elections",
+    sectionNumber: 5,
+    title: "Election Procedure",
+    summary: "The election process shall be conducted in a transparent, fair, and democratic manner through seven defined stages:",
+    points: [
+      "1. Nomination Phase: Eligible members submit nominations according to the NISC Rulebook via the official nomination portal.",
+      "2. Verification Phase: Applications are thoroughly reviewed by the Election Committee to ensure candidate eligibility.",
+      "3. Campaign Phase: Candidates present their vision, manifesto, and interact respectfully with members during a designated campaign period.",
+      "4. Voting Phase: Secret ballot conducted among all registered, eligible members.",
+      "5. Counting Phase: Votes are transparently counted under supervision of designated election observers.",
+      "6. Result Declaration: Official election winners are declared within 24 hours of poll closure.",
+      "7. Handover Ceremony: Formal handover ceremony and transition of executive responsibilities to the newly elected council.",
+      "Independent Elections Principle: President and Vice President shall be elected independently unless otherwise decided by the Election Committee.",
+      "Term Duration: The elected body serves for one academic term/year.",
+    ],
+  },
+  {
+    id: "conduct",
+    sectionNumber: 6,
+    title: "Code of Conduct",
+    summary: "All members and office bearers are required to maintain decorum and uphold the dignity of NISC at all times:",
+    points: [
+      "Mutual respect and inclusivity shall be maintained in all interactions.",
+      "Discrimination based on region, language, gender, or religion is strictly prohibited.",
+      "Respect all cultures and languages across the university campus.",
+      "Zero tolerance for hate speech, personal attacks, or inflammatory statements.",
+      "Zero tolerance for bullying, ragging, or harassment in any form.",
+      "Responsible social media usage on official channels and community chat groups.",
+      "Maintain the dignity, honor, and administrative standing of NISC.",
+      "Official communication must reflect professionalism, courtesy, and truthfulness.",
+      "Any misconduct, abuse, or violation of rules may result in formal suspension or removal from NISC by the Executive Council.",
+    ],
+  },
+  {
+    id: "activities",
+    sectionNumber: 7,
+    title: "Activities and Events",
+    summary: "North India Student Cell (NISC) engages in a comprehensive calendar of student-centered activities:",
+    points: [
+      "Orientation Programs: Welcoming new batches and guiding them through campus transition.",
+      "Mentorship Sessions: Pairing juniors with senior mentors from their home states and academic departments.",
+      "Placement Guidance: Resume clinics, mock interviews, and DSA sprint workshops.",
+      "Technical Workshops: Peer-led coding sessions, technical talks, and hackathon prep.",
+      "Sports & Wellness: Inter-batch sports tournaments, recreational meets, and wellness events.",
+      "Community Service: Outreach drives, campus volunteering, and social welfare initiatives.",
+      "Alumni Interaction: Sessions with graduated seniors for career path insights and professional networking.",
+      "Cultural Festivals: Hindi Diwas celebrations, poetry recitals, debates, and regional cultural nights.",
+    ],
+  },
+  {
+    id: "meetings",
+    sectionNumber: 8,
+    title: "Meetings & Governance",
+    summary: "Standard operating procedures for general and council meetings:",
+    points: [
+      "General Body Meetings shall be held periodically (physically or virtually).",
+      "The President may call special emergency meetings when necessary.",
+      "Minutes of every meeting shall be recorded and maintained by the General Secretary within 48 hours of adjournment.",
+    ],
+  },
+  {
+    id: "communication",
+    sectionNumber: 9,
+    title: "Group & Communication Policy",
+    summary: "Official communication channels and group decorum policy:",
+    points: [
+      "Telegram: Primary community channel for member discussions, announcements, and peer support.",
+      "Website: Official digital platform for rulebook documentation, election updates, and member resources.",
+      "Instagram: Public media outreach, photo highlights, and event announcements.",
+      "Official Email & Google Workspace: Formal administrative correspondence, digital forms, and official documents.",
+      "Policy: Sharing of irrelevant, offensive, commercial, or promotional content is strictly prohibited on all official groups.",
+    ],
+  },
+  {
+    id: "amendments",
+    sectionNumber: 10,
+    title: "Amendments & Revisions",
+    summary: "Procedure for constitutional updates and rulebook revisions:",
+    points: [
+      "Any proposed amendment to the rulebook must be submitted to the President in writing.",
+      "Amendments shall be discussed during a formal Executive Council meeting.",
+      "Amendments shall require approval by at least two-thirds of the Executive Council or General Body Meeting, as applicable.",
+      "Once approved, the updated constitution shall be published on the official website.",
+    ],
+  },
+  {
+    id: "dissolution",
+    sectionNumber: 11,
+    title: "Dissolution",
+    summary: "Procedures governing potential organization dissolution:",
+    points: [
+      "NISC may be dissolved only by a two-thirds majority vote of its active membership.",
+      "Upon dissolution, all official records, documents, and digital assets shall be handed over to the Student Activity Centre (S.A.C.) or university administration.",
+    ],
+  },
+  {
+    id: "declaration",
+    sectionNumber: 12,
+    title: "Declaration",
+    summary:
+      "This rulebook serves as the guiding constitutional framework for the functioning of the North India Student Cell (NISC) at KL University Hyderabad. All members, upon joining, agree to abide by these rules and work collectively toward achieving the organization's objectives in harmony and mutual respect.",
+  },
+  {
+    id: "appendix-a",
+    sectionNumber: 13,
+    title: "Appendix A — Official Timeline",
+    summary: "Chronological milestones in NISC's organizational history:",
+    points: [
+      "August 2024 — Initiative started by Y24 and Y25 students at KL University Hyderabad.",
+      "17 February 2025 — First official meeting conducted, establishing NISC's vision, objectives, and governance.",
+      "2025–26 — First Founding Council constituted through nomination and consensus.",
+      "2026 onwards — Democratic elections introduced for annual leadership transitions.",
+    ],
+  },
 ];
+
+export const rulebook = rulebookSections.map((s) => ({
+  title: `${s.sectionNumber}. ${s.title}`,
+  text: s.summary,
+}));
 
 export const faqs = [
   { q: "Who can join NISC?", a: "Any student enrolled at KL University Hyderabad. You do not need to be from North India — allies and enthusiasts are welcome." },

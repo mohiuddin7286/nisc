@@ -74,6 +74,8 @@ function Social({ href, Icon }: { href: string; Icon: typeof Instagram }) {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="glass hover:text-primary grid h-9 w-9 place-items-center rounded-full transition-colors"
     >
       <Icon className="size-4" />

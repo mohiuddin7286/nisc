@@ -2,17 +2,19 @@ import { ArrowDown, Sparkles, Users, Landmark, GraduationCap } from "lucide-reac
 import { motion } from "motion/react";
 import { FloatingShapes } from "@/components/nisc/FloatingShapes";
 import { MagneticButton } from "@/components/nisc/MagneticButton";
+import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
+import { members, council, departmentsCount } from "@/data/nisc";
 
 const title = "North India Student Cell";
 
-const badges = [
-  { icon: Users, label: "45+ Members" },
-  { icon: Landmark, label: "12 Council" },
-  { icon: GraduationCap, label: "4 Departments" },
-  { icon: Sparkles, label: "2025–26 Council" },
-];
-
 export function Hero() {
+  const badges = [
+    { icon: Users, isLive: true, value: members.length, label: "Active Members" },
+    { icon: Landmark, isLive: false, value: council.length, label: "Council Members" },
+    { icon: GraduationCap, isLive: false, value: departmentsCount, label: "Departments" },
+    { icon: Sparkles, isLive: false, text: "2025–26 Council", label: "2025–26 Council" },
+  ];
+
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20">
       <div className="aurora-bg absolute inset-0 -z-10" aria-hidden />
@@ -107,8 +109,22 @@ export function Hero() {
               transition={{ delay: 1.3 + i * 0.1, duration: 0.6 }}
               className="glass font-accent flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold"
             >
+              {b.isLive && (
+                <span className="relative flex size-2 mr-0.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+                </span>
+              )}
               <b.icon className="text-primary size-4 shrink-0" />
-              <span className="truncate">{b.label}</span>
+              <span className="truncate">
+                {b.value !== undefined ? (
+                  <>
+                    <AnimatedCounter to={b.value} /> {b.label}
+                  </>
+                ) : (
+                  b.text
+                )}
+              </span>
             </motion.div>
           ))}
         </div>

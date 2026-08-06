@@ -1,9 +1,10 @@
 import { useMemo, useState } from "react";
-import { Search, Instagram, Github, X, ArrowUpDown, Users, ChevronDown } from "lucide-react";
+import { Search, Instagram, Github, Linkedin, X, ArrowUpDown, Users, ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { TiltCard } from "@/components/nisc/TiltCard";
 import { Avatar } from "@/components/nisc/GlassCard";
+import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
 import { members, type Member } from "@/data/nisc";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +30,6 @@ const matchesQuery = (m: Member, q: string) =>
   !q ||
   m.name.toLowerCase().includes(q) ||
   m.rollNo.includes(q) ||
-  m.city.toLowerCase().includes(q) ||
   m.state.toLowerCase().includes(q) ||
   m.department.toLowerCase().includes(q) ||
   m.year.toLowerCase().includes(q);
@@ -77,11 +77,22 @@ export function Members() {
       <SectionHeading
         eyebrow="Members"
         title={<>Meet the <span className="gradient-text">cell</span></>}
-        subtitle="Search by name, roll number, city or state — or use the minimal filters below."
+        subtitle="Search by name, roll number, department or state — or use the filters below."
       />
 
       <ScrollReveal>
         <div className="glass rounded-2xl p-4 sm:p-5">
+          {/* Live Member Counter Badge */}
+          <div className="mb-4 flex items-center justify-between">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <span>Live Count: <span className="font-bold"><AnimatedCounter to={members.length} /></span> Active Members</span>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
             {/* Search Input */}
             <div className="relative flex-1">
@@ -89,7 +100,7 @@ export function Members() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search name, roll no, city, state…"
+                placeholder="Search name, roll no, department, state…"
                 aria-label="Search members"
                 className="focus:ring-primary/40 h-10 w-full rounded-xl border border-white/60 bg-white/70 pr-9 pl-10 text-sm outline-none transition-all focus:ring-2"
               />
@@ -209,8 +220,8 @@ export function Members() {
           <div className="mt-3 flex items-center justify-between border-t border-white/40 pt-3 text-xs text-muted-foreground">
             <p className="inline-flex items-center gap-1.5">
               <Users className="size-3.5" />
-              Showing <span className="font-semibold text-foreground">{filtered.length}</span> of{" "}
-              {members.length} members
+              Showing <span className="font-semibold text-foreground"><AnimatedCounter to={filtered.length} /></span> of{" "}
+              <span className="font-semibold text-foreground"><AnimatedCounter to={members.length} /></span> members
             </p>
           </div>
         </div>
@@ -220,35 +231,66 @@ export function Members() {
         {filtered.map((m, i) => (
           <ScrollReveal key={m.id} variant="up" delay={Math.min(i, 8) * 0.04}>
             <TiltCard className="h-full">
-              <div className="glass flex h-full flex-col rounded-3xl p-5">
-                <div className="flex min-w-0 items-center gap-3">
-                  <Avatar name={m.name} />
-                  <div className="min-w-0">
-                    <h3 className="truncate text-base font-bold">{m.name}</h3>
-                    <p className="text-muted-foreground truncate text-xs">
-                      {m.rollNo} · {m.department}
-                    </p>
+              <div className="glass flex h-full flex-col justify-between rounded-3xl p-5">
+                <div>
+                  <div className="flex min-w-0 items-center gap-3">
+                    <Avatar name={m.name} />
+                    <div className="min-w-0">
+                      <h3 className="truncate text-base font-bold">{m.name}</h3>
+                      <p className="text-muted-foreground truncate text-xs">
+                        {m.rollNo}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mt-3 text-xs">
+                    {m.state !== "—" ? m.state : "North India"}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
+                      {m.department}
+                    </span>
+                    <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
+                      {m.year}
+                    </span>
                   </div>
                 </div>
-                <p className="text-muted-foreground mt-4 text-xs">
-                  {m.city}, {m.state} · {m.year}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
-                    {m.department}
-                  </span>
-                  <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
-                    {m.year}
-                  </span>
-                </div>
-                <div className="mt-5 flex gap-2 pt-1">
-                  <a href="#" className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors">
-                    <Instagram className="size-[14px]" />
-                  </a>
-                  <a href="#" className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors">
-                    <Github className="size-[14px]" />
-                  </a>
-                </div>
+                {(m.instagram || m.github || m.linkedin) && (
+                  <div className="mt-5 flex gap-2 pt-1">
+                    {m.instagram && (
+                      <a
+                        href={m.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
+                        aria-label={`${m.name}'s Instagram`}
+                      >
+                        <Instagram className="size-[14px]" />
+                      </a>
+                    )}
+                    {m.github && (
+                      <a
+                        href={m.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
+                        aria-label={`${m.name}'s GitHub`}
+                      >
+                        <Github className="size-[14px]" />
+                      </a>
+                    )}
+                    {m.linkedin && (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
+                        aria-label={`${m.name}'s LinkedIn`}
+                      >
+                        <Linkedin className="size-[14px]" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </TiltCard>
           </ScrollReveal>

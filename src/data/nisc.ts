@@ -13,15 +13,15 @@ export type Council = {
 export const council: Council[] = [
   { id: 1, name: "Mohiuddin Ahmad", position: "President", batch: "Y24", department: "AI & DS", state: "Uttar Pradesh" },
   { id: 2, name: "Shreyansh Sharma", position: "Vice President", batch: "Y24", department: "AI & DS", state: "Rajasthan" },
-  { id: 3, name: "Mohammad Ammar Ali", position: "Y24 Year Admin", batch: "Y24", department: "—", state: "—" },
-  { id: 4, name: "Dwarkesh", position: "CSE Admin", batch: "Y24", department: "CSE", state: "Uttar Pradesh" },
+  { id: 3, name: "Mohd. Ammar Ali", position: "Y24 Year Admin", batch: "Y24", department: "CSE", state: "Delhi" },
+  { id: 4, name: "Dwarkesh", position: "CSE Admin", batch: "Y24", department: "CSE", state: "Uttar Pradesh", linkedin: "https://www.linkedin.com/in/dwarkesh-dubey-a34287367" },
   { id: 5, name: "Yash Raj", position: "CSE Admin", batch: "Y24", department: "CSE", state: "Jharkhand" },
-  { id: 6, name: "Arnav Mishra", position: "AI & DS Admin", batch: "Y24", department: "AI & DS", state: "Madhya Pradesh" },
-  { id: 7, name: "Amitesh Pandit", position: "ECE Admin", batch: "Y24", department: "ECE", state: "—" },
+  { id: 6, name: "Arnav Mishra", position: "AI & DS Admin", batch: "Y24", department: "AI & DS", state: "Madhya Pradesh", linkedin: "https://www.linkedin.com/in/arnav-mishra-4966b224b/" },
+  { id: 7, name: "Amitesh Pandit", position: "ECE Admin", batch: "Y24", department: "ECE", state: "Rajasthan" },
   { id: 8, name: "Rishi Burman", position: "BCA Admin", batch: "Y25", department: "BCA", state: "Chhattisgarh" },
-  { id: 9, name: "Lekha", position: "Mahila Department", batch: "Y24", department: "—", state: "—" },
-  { id: 10, name: "Avika", position: "Mahila Department", batch: "Y24", department: "—", state: "—" },
-  { id: 11, name: "Paridhi Gupta", position: "Y25 Year Admin", batch: "Y25", department: "ECE", state: "Rajasthan" },
+  { id: 9, name: "Lekha", position: "Women's Wing", batch: "Y24", department: "AI & DS", state: "Andaman & Nicobar" },
+  { id: 10, name: "Avika", position: "Women's Wing", batch: "Y24", department: "CSE", state: "Chhattisgarh" },
+  { id: 11, name: "Paridhi Gupta", position: "Y25 Year Admin", batch: "Y25", department: "ECE", state: "Rajasthan", linkedin: "https://www.linkedin.com/in/paridhi-gupta-8922382a4/" },
   { id: 12, name: "NV Mohd. Fazal", position: "Y25 Year Admin", batch: "Y25", department: "CSE", state: "Andaman & Nicobar" },
 ];
 
@@ -32,64 +32,96 @@ export type Member = {
   department: string;
   year: string;
   state: string;
-  city: string;
+  instagram?: string;
+  github?: string;
+  linkedin?: string;
 };
 
-type Raw = [name: string, year: string, roll: string, dept: string, city: string, state: string];
-
-const raw: Raw[] = [
-  ["Arnav Mishra", "Y24", "2410080008", "AI & DS", "Bhopal", "Madhya Pradesh"],
-  ["Ayush Singh", "Y24", "2410080023", "AI & DS", "Prayagraj", "Uttar Pradesh"],
-  ["Mohiuddin Ahmed", "Y24", "2410080026", "AI & DS", "Prayagraj", "Uttar Pradesh"],
-  ["Shreyansh Sharma", "Y24", "2410080017", "AI & DS", "Jaipur", "Rajasthan"],
-  ["Rishab", "Y24", "2410080042", "AI & DS", "Hyderabad", "Andaman & Nicobar"],
-  ["Sourav Kumar", "Y24", "2410030075", "CSE", "Patna", "Bihar"],
-  ["K Keran Kumar", "Y24", "2410030472", "CSE", "Hyderabad", "Andaman & Nicobar"],
-  ["Suyash Ram", "Y24", "2410030302", "CSE", "Hyderabad", "Andaman & Nicobar"],
-  ["Nicky Kumar", "Y24", "2410030111", "CSE", "Nalanda", "Bihar"],
-  ["Chella Suganesh", "Y24", "2410030096", "CSE", "Raipur", "Chhattisgarh"],
-  ["Yash Raj", "Y24", "2410030316", "CSE", "Ranchi", "Jharkhand"],
-  ["Narayan Kumar", "Y24", "2410030510", "CSE", "Patna", "Bihar"],
-  ["Satyam Kumar", "Y24", "2410030469", "CSE", "Patna", "Bihar"],
-  ["Kaushal Kumar", "Y24", "2410030456", "CSE", "Gaya", "Bihar"],
-  ["Krishna Mishra", "Y24", "2410030285", "CSE", "Kanpur", "Uttar Pradesh"],
-  ["Dwarkesh Dubey", "Y24", "2410030021", "CSE", "—", "Uttar Pradesh"],
-  ["Yashovardhan Mishra", "Y24", "2410030515", "CSE", "Varanasi", "Uttar Pradesh"],
-  ["Ashfaq Sayeed", "Y24", "2410030109", "CSE", "Nellore", "Delhi"],
-  ["Silkcon Padhy", "Y24", "2410030404", "CSE", "Ganjam", "Odisha"],
-  ["B Shiva Sai Patro", "Y24", "2410030023", "CSE", "—", "Odisha"],
-  ["Rishi Burman", "Y25", "2510520036", "BCA", "Jagdalpur, Bastar", "Chhattisgarh"],
-  ["Anshul Raj", "Y25", "2510030203", "CSE", "Sri Vijaya Puram", "Andaman & Nicobar"],
-  ["Shriyan Bohra", "Y25", "2510030057", "CSE", "Jaipur", "Rajasthan"],
-  ["Sameer Sahu", "Y25", "2510030059", "CSE", "—", "Odisha"],
-  ["Baibhaba Choudhury", "Y25", "2510030152", "CSE", "Sundargarh", "Odisha"],
-  ["NV Mohammed Fazal", "Y25", "2510030062", "CSE", "Andaman", "Andaman & Nicobar"],
-  ["Abhishek", "Y25", "2510030088", "CSE", "Port Blair", "Andaman & Nicobar"],
-  ["Paridhi Gupta", "Y25", "2510040024", "ECE", "Jaipur", "Rajasthan"],
-  ["Aryan Yadav", "Y26", "2610030348", "CSE", "Gorakhpur", "Uttar Pradesh"],
-  ["Ayush Gupta", "Y26", "2610030343", "CSE", "Maihar", "Madhya Pradesh"],
+type Raw = [
+  name: string,
+  year: string,
+  roll: string,
+  dept: string,
+  state: string,
+  linkedin?: string,
+  github?: string,
+  instagram?: string,
 ];
 
-export const members: Member[] = raw.map(([name, year, rollNo, department, city, state], i) => ({
-  id: i + 1,
-  name,
-  rollNo,
-  department,
-  year,
-  city,
-  state,
-}));
+const raw: Raw[] = [
+  ["Arnav Mishra", "Y24", "2410080008", "AI & DS", "Madhya Pradesh", "https://www.linkedin.com/in/arnav-mishra-4966b224b/"],
+  ["Ayush Singh", "Y24", "2410080023", "AI & DS", "Uttar Pradesh"],
+  ["Mohiuddin Ahmed", "Y24", "2410080026", "AI & DS", "Uttar Pradesh"],
+  ["Shreyansh Sharma", "Y24", "2410080017", "AI & DS", "Rajasthan"],
+  ["Sourav Kumar", "Y24", "2410030075", "CSE", "Bihar"],
+  ["K Keran Kumar", "Y24", "2410030472", "CSE", "Andaman & Nicobar"],
+  ["Suyash Ram", "Y24", "2410030302", "CSE", "Andaman & Nicobar"],
+  ["Nicky Kumar", "Y24", "2410030111", "CSE", "Bihar"],
+  ["Chella Suganesh", "Y24", "2410030096", "CSE", "Chhattisgarh"],
+  ["Yash Raj", "Y24", "2410030316", "CSE", "Jharkhand"],
+  ["Narayan Kumar", "Y24", "2410030510", "CSE", "Bihar"],
+  ["Satyam Kumar", "Y24", "2410030469", "CSE", "Bihar"],
+  ["Kaushal Kumar", "Y24", "2410030456", "CSE", "Bihar"],
+  ["Krishna Mishra", "Y24", "2410030285", "CSE", "Uttar Pradesh"],
+  ["Dwarkesh Dubey", "Y24", "2410030021", "CSE", "Uttar Pradesh", "https://www.linkedin.com/in/dwarkesh-dubey-a34287367"],
+  ["Yashovardhan Mishra", "Y24", "2410030515", "CSE", "Uttar Pradesh"],
+  ["Ashfaq Sayeed", "Y24", "2410030109", "CSE", "Delhi"],
+  ["Silkcon Padhy", "Y24", "2410030404", "CSE", "Odisha"],
+  ["B Shiva Sai Patro", "Y24", "2410030023", "CSE", "Odisha"],
+  ["A. Jayanth", "Y24", "2410080075", "AI & DS", "Telangana", "https://www.linkedin.com/in/jayanth-adavi-952a492ab/"],
+  ["Rishi Burman", "Y25", "2510520036", "BCA", "Chhattisgarh"],
+  ["Anshul Raj", "Y25", "2510030203", "CSE", "Andaman & Nicobar"],
+  ["Shriyan Bohra", "Y25", "2510030057", "CSE", "Rajasthan"],
+  ["Sameer Sahu", "Y25", "2510030059", "CSE", "Odisha"],
+  ["Baibhaba Choudhury", "Y25", "2510030152", "CSE", "Odisha", "https://www.linkedin.com/in/baibhaba-choudhury/"],
+  ["NV Mohammed Fazal", "Y25", "2510030062", "CSE", "Andaman & Nicobar"],
+  ["Abhishek", "Y25", "2510030088", "CSE", "Andaman & Nicobar"],
+  ["Paridhi Gupta", "Y25", "2510040024", "ECE", "Rajasthan", "https://www.linkedin.com/in/paridhi-gupta-8922382a4/"],
+  ["Veeresh Yadav", "Y25", "2510040039", "ECE", "Maharashtra", "https://www.linkedin.com/in/veeresh-yadav-a469a0374/"],
+  ["Aryan Yadav", "Y26", "2610030348", "CSE", "Uttar Pradesh"],
+  ["Ayush Gupta", "Y26", "2610030343", "CSE", "Madhya Pradesh"],
+  ["Somyansu Panda", "Y26", "2610030395", "CSE", "Odisha"],
+  ["Avika Kashyap", "Y24", "2410030520", "CSE", "Chhattisgarh"],
+  ["Sriya Gayatri", "Y24", "2410030521", "CSE", "Odisha"],
+  ["Mohd. Ammar Ali", "Y24", "2410030026", "CSE", "Delhi"],
+  ["D.Rishab", "Y24", "2410080042", "AI & DS", "Andaman & Nicobar"],
+  ["B.Dhruv", "Y24", "2410080043", "AI & DS", "Andaman & Nicobar"],
+  ["Lekha Sai Naidu", "Y24", "2410080035", "AI & DS", "Andaman & Nicobar"],
+  ["Smruti Ranjan Parhi", "Y24", "2410030110", "CSE", "Odisha"],
+  ["Subramanyam", "Y24", "2410030196", "CSE", "Maharashtra"],
+  ["Niranjan Kumar Singh", "Y24", "2410030346", "CSE", "Bihar"],
+  ["Vanshika", "Y25", "2510040034", "ECE", "Rajasthan"],
+  ["Abhinash Kumar Jha", "Y24", "2410030530", "CSE", "Nepal"],
+  ["Armaan Reza", "Y25", "2510030299", "CSE", "Uttar Pradesh"],
+  ["Tanish Oberoi", "Y24", "2410030170", "CSE", "Punjab"],
+  ["Manash Poddar", "Y25", "2510040121", "ECE", "Bihar"],
+  ["Bhavesh Kumar", "Y25", "2510030077", "CSE", "Bihar"],
+];
 
-const stateCities = members.reduce<Record<string, Set<string>>>((acc, m) => {
-  (acc[m.state] ??= new Set()).add(m.city);
-  return acc;
-}, {});
+export const members: Member[] = raw.map(
+  ([name, year, rollNo, department, state, linkedin, github, instagram], i) => {
+    const dept = !department || department.trim() === "" || department === "—" ? "CSE" : department;
+    const m: Member = {
+      id: i + 1,
+      name,
+      rollNo,
+      department: dept,
+      year,
+      state,
+    };
+    if (linkedin) m.linkedin = linkedin;
+    if (github) m.github = github;
+    if (instagram) m.instagram = instagram;
+    return m;
+  },
+);
 
-export const stateData = Object.entries(stateCities)
-  .map(([state, cities]) => ({
+const statesList = Array.from(new Set(members.map((m) => m.state)));
+
+export const stateData = statesList
+  .map((state) => ({
     state,
     members: members.filter((m) => m.state === state).length,
-    cities: Array.from(cities).filter((c) => c !== "—").join(", ") || "—",
   }))
   .sort((a, b) => b.members - a.members);
 

@@ -660,3 +660,93 @@ export const faqs = [
 
 export const ELECTION_DATE = "2026-09-15T09:00:00+05:30";
 
+export type PlacedSenior = {
+  id: number;
+  name: string;
+  batch: string;
+  department: string;
+  company: string;
+  role: string;
+  package?: string;
+  location?: string;
+  state?: string;
+  linkedin?: string;
+  github?: string;
+  avatar?: string;
+};
+
+export const placedSeniors: PlacedSenior[] = [
+  {
+    id: 1,
+    name: "Aman Sharma",
+    batch: "Y21",
+    department: "CSE",
+    company: "Amazon",
+    role: "Software Development Engineer (SDE-1)",
+    package: "28 LPA",
+    location: "Bengaluru",
+    state: "Uttar Pradesh",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 2,
+    name: "Priya Singh",
+    batch: "Y21",
+    department: "AI & DS",
+    company: "Microsoft",
+    role: "Software Engineer",
+    package: "43 LPA",
+    location: "Hyderabad",
+    state: "Bihar",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 3,
+    name: "Rohan Verma",
+    batch: "Y21",
+    department: "CSE",
+    company: "Goldman Sachs",
+    role: "Financial Technology Analyst",
+    package: "24 LPA",
+    location: "Bengaluru",
+    state: "Delhi",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 4,
+    name: "Sneha Kapoor",
+    batch: "Y22",
+    department: "ECE",
+    company: "Qualcomm",
+    role: "Hardware Engineer",
+    package: "18 LPA",
+    location: "Hyderabad",
+    state: "Punjab",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 5,
+    name: "Vikramaditya Roy",
+    batch: "Y21",
+    department: "CSE",
+    company: "Oracle",
+    role: "Server Technology Member",
+    package: "16.5 LPA",
+    location: "Bengaluru",
+    state: "West Bengal",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 6,
+    name: "Ananya Mishra",
+    batch: "Y22",
+    department: "AI & DS",
+    company: "Deloitte USI",
+    role: "Data & AI Consultant",
+    package: "11.5 LPA",
+    location: "Gurugram",
+    state: "Madhya Pradesh",
+    linkedin: "https://linkedin.com",
+  },
+];
+

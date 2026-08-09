@@ -1,21 +1,36 @@
 import { useEffect, useState } from "react";
-import { Menu, X, MessageCircle, Send } from "lucide-react";
+import {
+  Menu,
+  X,
+  MessageCircle,
+  Send,
+  Info,
+  Target,
+  MapPin,
+  Shield,
+  Users,
+  Briefcase,
+  Sparkles,
+  Archive,
+  BookOpen,
+  Vote,
+  HelpCircle,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-import { Link, useLocation } from "@tanstack/react-router";
-
 const links = [
-  { id: "about", label: "About" },
-  { id: "mission", label: "Mission" },
-  { id: "map", label: "Reach" },
-  { id: "council", label: "Council" },
-  { id: "members", label: "Members" },
-  { id: "activities", label: "Activities" },
-  { id: "archive", label: "Archive" },
-  { id: "rulebook", label: "Rulebook", href: "/rulebook" },
-  { id: "election", label: "Election" },
-  { id: "faq", label: "FAQ" },
+  { id: "about", label: "About", icon: Info },
+  { id: "mission", label: "Mission", icon: Target },
+  { id: "map", label: "Reach", icon: MapPin },
+  { id: "council", label: "Council", icon: Shield },
+  { id: "members", label: "Members", icon: Users },
+  { id: "placements", label: "Placements", icon: Briefcase },
+  { id: "activities", label: "Activities", icon: Sparkles },
+  { id: "archive", label: "Archive", icon: Archive },
+  { id: "rulebook", label: "Rulebook", href: "/rulebook", icon: BookOpen },
+  { id: "election", label: "Election", icon: Vote },
+  { id: "faq", label: "FAQ", icon: HelpCircle },
 ];
 
 export function Navbar() {
@@ -62,32 +77,46 @@ export function Navbar() {
             <img
               src="/nisc-logo.png"
               alt="NISC Logo"
-              className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
+              className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-xs p-0.5"
             />
-            <span className="font-display truncate text-base font-extrabold">NISC</span>
+            <span className="font-display truncate text-base font-extrabold tracking-tight">NISC</span>
           </a>
 
-          <div className="ml-auto hidden items-center gap-1 lg:flex">
+          {/* Desktop Icon Navigation Bar */}
+          <div className="ml-auto hidden items-center gap-1.5 lg:flex">
             {links.map((l) => {
               const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
+              const Icon = l.icon;
+              const isActive = active === l.id || (l.href && location.pathname === l.href);
+
               return (
                 <a
                   key={l.id}
                   href={linkTarget}
+                  aria-label={l.label}
                   className={cn(
-                    "font-accent relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
-                    active === l.id || (l.href && location.pathname === l.href)
-                      ? "text-primary font-bold"
-                      : "text-muted-foreground hover:text-foreground",
+                    "group relative flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium transition-all duration-200",
+                    isActive
+                      ? "text-primary font-bold bg-primary/10 shadow-xs"
+                      : "text-muted-foreground hover:bg-secondary/80 hover:text-foreground",
                   )}
                 >
-                  {l.label}
-                  {(active === l.id || (l.href && location.pathname === l.href)) && (
+                  <Icon className="size-4.5 transition-transform duration-200 group-hover:scale-110" />
+
+                  {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="bg-primary/10 absolute inset-0 -z-10 rounded-full"
+                      className="bg-primary/15 border-primary/25 absolute inset-0 -z-10 rounded-full border"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
+
+                  {/* Sleek Hover Tooltip */}
+                  <span className="pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 z-50">
+                    <span className="glass-strong border-border/80 text-foreground relative block rounded-xl border px-2.5 py-1 text-[11px] font-semibold tracking-wide shadow-lg whitespace-nowrap">
+                      {l.label}
+                    </span>
+                  </span>
                 </a>
               );
             })}
@@ -98,7 +127,7 @@ export function Navbar() {
               href="https://forms.gle/muurnrz133tkgLTq7"
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white sm:inline-flex"
+              className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white shadow-xs transition-transform hover:scale-105 sm:inline-flex"
             >
               Join NISC
             </a>
@@ -119,10 +148,17 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="glass-strong fixed inset-0 z-[60] flex flex-col p-6 lg:hidden"
+            className="glass-strong fixed inset-0 z-[60] flex flex-col p-6 lg:hidden overflow-y-auto"
           >
             <div className="flex items-center justify-between">
-              <span className="font-display text-lg font-extrabold">Menu</span>
+              <div className="flex items-center gap-2">
+                <img
+                  src="/nisc-logo.png"
+                  alt="NISC Logo"
+                  className="h-8 w-8 rounded-full border border-white/60 bg-white object-cover"
+                />
+                <span className="font-display text-lg font-extrabold">Navigation</span>
+              </div>
               <button
                 className="glass grid h-10 w-10 place-items-center rounded-full"
                 onClick={() => setOpen(false)}
@@ -131,9 +167,10 @@ export function Navbar() {
                 <X className="size-5" />
               </button>
             </div>
-            <div className="mt-10 flex flex-col gap-1">
+            <div className="mt-8 flex flex-col gap-1">
               {links.map((l, i) => {
                 const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
+                const Icon = l.icon;
                 return (
                   <motion.a
                     key={l.id}
@@ -141,15 +178,18 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     initial={{ opacity: 0, x: 24 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.04 * i }}
-                    className="font-display border-border/60 border-b py-4 text-2xl font-bold"
+                    transition={{ delay: 0.03 * i }}
+                    className="font-display border-border/40 hover:bg-secondary/40 flex items-center gap-3.5 border-b py-3 px-2 text-xl font-semibold transition-colors rounded-xl"
                   >
-                    {l.label}
+                    <div className="glass text-primary grid h-9 w-9 shrink-0 place-items-center rounded-lg">
+                      <Icon className="size-5" />
+                    </div>
+                    <span>{l.label}</span>
                   </motion.a>
                 );
               })}
             </div>
-            <div className="mt-auto flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-3 pt-4">
               <a
                 href="https://chat.whatsapp.com/CPPDb6EnXXzJgX3lWryWGh"
                 target="_blank"

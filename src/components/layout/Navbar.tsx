@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import {
-  Menu,
-  X,
-  MessageCircle,
-  Send,
   Info,
   Target,
-  MapPin,
-  Shield,
+  Globe,
+  Award,
   Users,
   Briefcase,
   Sparkles,
@@ -15,20 +11,30 @@ import {
   BookOpen,
   Vote,
   HelpCircle,
+  Menu,
+  X,
+  MessageCircle,
+  Send,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const links = [
   { id: "about", label: "About", icon: Info },
   { id: "mission", label: "Mission", icon: Target },
-  { id: "map", label: "Reach", icon: MapPin },
-  { id: "council", label: "Council", icon: Shield },
+  { id: "map", label: "Reach", icon: Globe },
+  { id: "council", label: "Council", icon: Award },
   { id: "members", label: "Members", icon: Users },
   { id: "placements", label: "Placements", icon: Briefcase },
   { id: "activities", label: "Activities", icon: Sparkles },
   { id: "archive", label: "Archive", icon: Archive },
-  { id: "rulebook", label: "Rulebook", href: "/rulebook", icon: BookOpen },
+  { id: "rulebook", label: "Rulebook", icon: BookOpen, href: "/rulebook" },
   { id: "election", label: "Election", icon: Vote },
   { id: "faq", label: "FAQ", icon: HelpCircle },
 ];
@@ -36,7 +42,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("mission");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -60,7 +66,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <>
+    <TooltipProvider delayDuration={100}>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
@@ -69,70 +75,70 @@ export function Navbar() {
       >
         <nav
           className={cn(
-            "mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 transition-all duration-300 sm:px-6",
-            scrolled ? "glass-strong h-14 w-[94%]" : "h-16 w-[96%] bg-transparent",
+            "mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 transition-all duration-300 sm:px-6",
+            scrolled
+              ? "backdrop-blur-xl bg-white/20 dark:bg-black/30 border border-white/30 dark:border-white/10 shadow-xl h-14 w-[94%]"
+              : "backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 shadow-lg h-16 w-[96%]",
           )}
         >
-          <a href="#top" className="flex min-w-0 items-center gap-2.5">
+          {/* Left Column: Brand Logo */}
+          <a href="#top" className="flex min-w-0 items-center gap-2.5 group">
             <img
               src="/nisc-logo.png"
               alt="NISC Logo"
-              className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-xs p-0.5"
+              className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5 transition-transform group-hover:scale-105"
             />
             <span className="font-display truncate text-base font-extrabold tracking-tight">NISC</span>
           </a>
 
-          {/* Desktop Icon Navigation Bar */}
-          <div className="ml-auto hidden items-center gap-1.5 lg:flex">
+          {/* Center Column: Icon Navigation Grid */}
+          <div className="hidden lg:grid grid-flow-col auto-cols-max items-center gap-1.5 p-1 rounded-full bg-white/10 dark:bg-white/5 border border-white/15 dark:border-white/10 backdrop-blur-md shadow-inner">
             {links.map((l) => {
-              const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
               const Icon = l.icon;
-              const isActive = active === l.id || (l.href && location.pathname === l.href);
+              const isCurrent = active === l.id || (l.href && location.pathname === l.href);
+              const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
 
               return (
-                <a
-                  key={l.id}
-                  href={linkTarget}
-                  aria-label={l.label}
-                  className={cn(
-                    "group relative flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium transition-all duration-200",
-                    isActive
-                      ? "text-primary font-bold bg-primary/10 shadow-xs"
-                      : "text-muted-foreground hover:bg-secondary/80 hover:text-foreground",
-                  )}
-                >
-                  <Icon className="size-4.5 transition-transform duration-200 group-hover:scale-110" />
-
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="bg-primary/15 border-primary/25 absolute inset-0 -z-10 rounded-full border"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-
-                  {/* Sleek Hover Tooltip */}
-                  <span className="pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 z-50">
-                    <span className="glass-strong border-border/80 text-foreground relative block rounded-xl border px-2.5 py-1 text-[11px] font-semibold tracking-wide shadow-lg whitespace-nowrap">
-                      {l.label}
-                    </span>
-                  </span>
-                </a>
+                <Tooltip key={l.id}>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={linkTarget}
+                      aria-label={l.label}
+                      className={cn(
+                        "relative grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-all duration-200 hover:bg-white/20 dark:hover:bg-white/10 hover:text-foreground",
+                        isCurrent && "text-primary font-bold",
+                      )}
+                    >
+                      <Icon className="size-5" strokeWidth={1.75} />
+                      {isCurrent && (
+                        <motion.span
+                          layoutId="nav-icon-pill"
+                          className="absolute inset-0 -z-10 rounded-full bg-primary/15 dark:bg-primary/25 border border-primary/30 shadow-[0_0_12px_rgba(var(--primary-rgb),0.3)]"
+                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                        />
+                      )}
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={8} className="font-accent glass-strong border border-white/20 px-3 py-1 text-xs font-semibold text-foreground shadow-md">
+                    {l.label}
+                  </TooltipContent>
+                </Tooltip>
               );
             })}
           </div>
 
-          <div className="ml-auto flex items-center gap-1 lg:ml-2">
+          {/* Right Column: CTA & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2">
             <a
               href="https://forms.gle/muurnrz133tkgLTq7"
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white shadow-xs transition-transform hover:scale-105 sm:inline-flex"
+              className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all sm:inline-flex"
             >
               Join NISC
             </a>
             <button
-              className="glass grid h-10 w-10 place-items-center rounded-full lg:hidden"
+              className="glass grid h-10 w-10 place-items-center rounded-full lg:hidden hover:bg-white/20 transition-colors"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
             >
@@ -142,20 +148,21 @@ export function Navbar() {
         </nav>
       </header>
 
+      {/* Mobile Drawer Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="glass-strong fixed inset-0 z-[60] flex flex-col p-6 lg:hidden overflow-y-auto"
+            className="glass-strong fixed inset-0 z-[60] flex flex-col p-6 lg:hidden backdrop-blur-2xl"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between border-b border-border/40 pb-4">
+              <div className="flex items-center gap-2.5">
                 <img
                   src="/nisc-logo.png"
                   alt="NISC Logo"
-                  className="h-8 w-8 rounded-full border border-white/60 bg-white object-cover"
+                  className="h-8 w-8 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
                 />
                 <span className="font-display text-lg font-extrabold">Navigation</span>
               </div>
@@ -167,29 +174,43 @@ export function Navbar() {
                 <X className="size-5" />
               </button>
             </div>
-            <div className="mt-8 flex flex-col gap-1">
-              {links.map((l, i) => {
-                const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
-                const Icon = l.icon;
-                return (
-                  <motion.a
-                    key={l.id}
-                    href={linkTarget}
-                    onClick={() => setOpen(false)}
-                    initial={{ opacity: 0, x: 24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.03 * i }}
-                    className="font-display border-border/40 hover:bg-secondary/40 flex items-center gap-3.5 border-b py-3 px-2 text-xl font-semibold transition-colors rounded-xl"
-                  >
-                    <div className="glass text-primary grid h-9 w-9 shrink-0 place-items-center rounded-lg">
-                      <Icon className="size-5" />
-                    </div>
-                    <span>{l.label}</span>
-                  </motion.a>
-                );
-              })}
+
+            <div className="mt-6 flex flex-1 flex-col overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 gap-1.5">
+                {links.map((l, i) => {
+                  const Icon = l.icon;
+                  const isCurrent = active === l.id || (l.href && location.pathname === l.href);
+                  const linkTarget = l.href || (location.pathname === "/" ? `#${l.id}` : `/#${l.id}`);
+
+                  return (
+                    <motion.a
+                      key={l.id}
+                      href={linkTarget}
+                      onClick={() => setOpen(false)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.03 * i }}
+                      className={cn(
+                        "flex items-center gap-3.5 rounded-2xl px-4 py-3.5 text-base font-semibold transition-all",
+                        isCurrent
+                          ? "bg-primary/15 text-primary border border-primary/20 font-bold"
+                          : "text-muted-foreground hover:bg-white/10 hover:text-foreground",
+                      )}
+                    >
+                      <div className={cn(
+                        "grid h-9 w-9 place-items-center rounded-xl transition-colors",
+                        isCurrent ? "bg-primary/20 text-primary" : "bg-secondary/60 text-muted-foreground"
+                      )}>
+                        <Icon className="size-5" strokeWidth={1.75} />
+                      </div>
+                      <span>{l.label}</span>
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
-            <div className="mt-8 flex items-center gap-3 pt-4">
+
+            <div className="mt-auto flex items-center gap-3 border-t border-border/40 pt-4">
               <a
                 href="https://chat.whatsapp.com/CPPDb6EnXXzJgX3lWryWGh"
                 target="_blank"
@@ -213,7 +234,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="gradient-brand font-accent ml-auto rounded-full px-6 py-3 text-sm font-semibold text-white"
+                className="gradient-brand font-accent ml-auto rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md"
               >
                 Join NISC
               </a>
@@ -221,7 +242,7 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </TooltipProvider>
   );
 }
 

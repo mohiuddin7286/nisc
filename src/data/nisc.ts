@@ -99,6 +99,8 @@ const raw: Raw[] = [
   ["M.Ruchee", "Y25", "2510030087", "CSE", "Andaman & Nicobar"],
   ["Granth", "Y25", "25100300181", "CSE", "Gujarat"],
   ["Alpansh", "Y25", "2510030356", "CSE", "Rajasthan"],
+  ["Dhananjay Sharma", "Y25", "2510030080", "CSE", "Rajasthan"],
+  ["Piyush Kumar", "Y26", "2610030324", "CSE", "Bihar"],
 ];
 
 export const members: Member[] = raw.map(

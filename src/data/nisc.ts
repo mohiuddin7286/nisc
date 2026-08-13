@@ -101,6 +101,21 @@ const raw: Raw[] = [
   ["Alpansh", "Y25", "2510030356", "CSE", "Rajasthan"],
   ["Dhananjay Sharma", "Y25", "2510030080", "CSE", "Rajasthan"],
   ["Piyush Kumar", "Y26", "2610030324", "CSE", "Bihar"],
+  ["Abhijith Jayan", "Y25", "2510030390", "CSE", "Kerela"],
+  ["Amr Kalam Mansoori", "Y25", "2510030436", "CSE", "Maharashtra"],
+  ["Rajveer Jain", "Y25", "2510030235", "CSE", "Rajasthan"],
+  ["Ravi Yadav", "Y26", "2610030388", "CSE", "Uttar Pradesh"],
+  ["Lucky Ali", "Y26", "2610030377", "CSE", "Jharkhand"],
+  ["Ravi Yadav", "Y26", "2610030388", "CSE", "Uttar Pradesh"],
+  ["Utkalika Priyadarshinee Champati", "Y25", "2510080004", "AI & DS", "Odhisha"],
+  ["Vedant Sahu", "Y26", "2610030362", "CSE", "Odisha"],
+  ["Krishna Biradar", "Y25", "2510030053", "CSE", "Maharashtra"],
+  ["Binamra Maity", "Y25", "2510030028", "CSE", "West Bengal"],
+  ["Anshul", "Y25", "2510030352", "CSE", "Rajasthan"],
+  ["Sayak Dara", "Y25", "2510040014", "ECE", "West Bengal"],
+  ["Vanshika Agarwal", "Y25", "2510040034", "ECE", "Rajasthan"],
+  ["Soham Bhoumik", "Y24", "2410040023", "ECE", "West Bengal"],
+  
 ];
 
 export const members: Member[] = raw.map(

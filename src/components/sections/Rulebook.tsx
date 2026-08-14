@@ -11,7 +11,7 @@ export function Rulebook() {
       <SectionHeading
         eyebrow="Rulebook & Constitution"
         title={<>How the cell <span className="gradient-text">works</span></>}
-        subtitle="12 constitutional clauses and Appendix A covering history, membership, hierarchy, elections, and conduct."
+        subtitle="Official constitutional clauses and Appendix A covering membership rights, hierarchy, 7-stage elections, conduct, and amendments."
       />
       <ScrollReveal>
         <NiscAccordion

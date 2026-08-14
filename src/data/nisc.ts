@@ -48,71 +48,116 @@ type Raw = [
   instagram?: string,
 ];
 
+const normalizeStateName = (s: string): string => {
+  const trimmed = s.trim();
+  if (trimmed === "Chattisgarh") return "Chhattisgarh";
+  if (trimmed === "Kerela") return "Kerala";
+  if (trimmed === "Odhisha") return "Odisha";
+  return trimmed;
+};
+
 const raw: Raw[] = [
-  ["Arnav Mishra", "Y24", "2410080008", "AI & DS", "Madhya Pradesh", "https://www.linkedin.com/in/arnav-mishra-4966b224b/"],
-  ["Ayush Singh", "Y24", "2410080023", "AI & DS", "Uttar Pradesh"],
-  ["Mohiuddin Ahmed", "Y24", "2410080026", "AI & DS", "Uttar Pradesh"],
-  ["Shreyansh Sharma", "Y24", "2410080017", "AI & DS", "Rajasthan"],
-  ["Sourav Kumar", "Y24", "2410030075", "CSE", "Bihar"],
+  // Y24 Members
+  ["Rishab", "Y24", "2410080042", "AI & DS", "Andaman & Nicobar"],
   ["K Keran Kumar", "Y24", "2410030472", "CSE", "Andaman & Nicobar"],
   ["Suyash Ram", "Y24", "2410030302", "CSE", "Andaman & Nicobar"],
+  ["B.Dhruv", "Y24", "2410080043", "AI & DS", "Andaman & Nicobar"],
+  ["Lekha Sai Naidu", "Y24", "2410080035", "AI & DS", "Andaman & Nicobar"],
+  ["Sourav Kumar", "Y24", "2410030075", "CSE", "Bihar"],
   ["Nicky Kumar", "Y24", "2410030111", "CSE", "Bihar"],
-  ["Chella Suganesh", "Y24", "2410030096", "CSE", "Chhattisgarh"],
-  ["Yash Raj", "Y24", "2410030316", "CSE", "Jharkhand"],
   ["Narayan Kumar", "Y24", "2410030510", "CSE", "Bihar"],
   ["Satyam Kumar", "Y24", "2410030469", "CSE", "Bihar"],
   ["Kaushal Kumar", "Y24", "2410030456", "CSE", "Bihar"],
+  ["Niranjan Kumar Singh", "Y24", "2410030346", "CSE", "Bihar"],
+  ["Chella Suganesh", "Y24", "2410030096", "CSE", "Chhattisgarh"],
+  ["Avika Kashyap", "Y24", "2410030520", "CSE", "Chhattisgarh"],
+  ["Ashfaq Sayeed", "Y24", "2410030109", "CSE", "Delhi"],
+  ["Shreyansh Sharma", "Y24", "2410080017", "AI & DS", "Uttar Pradesh"],
+  ["Mohd. Ammar Ali", "Y24", "2410030026", "CSE", "Delhi"],
+  ["Yash Raj", "Y24", "2410030316", "CSE", "Jharkhand"],
+  ["Arnav Mishra", "Y24", "2410080008", "AI & DS", "Madhya Pradesh", "https://www.linkedin.com/in/arnav-mishra-4966b224b/"],
+  ["Subramanyam", "Y24", "2410030196", "CSE", "Maharashtra"],
+  ["Abhinash Kumar Jha", "Y24", "2410030530", "CSE", "Nepal"],
+  ["Silkcon Padhy", "Y24", "2410030404", "CSE", "Odisha"],
+  ["B Shiva Sai Patro", "Y24", "2410030023", "CSE", "Odisha"],
+  ["Sriya Gayatri", "Y24", "2410030521", "CSE", "Odisha"],
+  ["Smruti Ranjan Parhi", "Y24", "2410030110", "CSE", "Odisha"],
+  ["Tanish Oberoi", "Y24", "2410030170", "CSE", "Punjab"],
+  ["A. Jayanth", "Y24", "2410080075", "AI & DS", "Telangana", "https://www.linkedin.com/in/jayanth-adavi-952a492ab/"],
+  ["Ayush Singh", "Y24", "2410080023", "AI & DS", "Uttar Pradesh"],
+  ["Mohiuddin Ahmed", "Y24", "2410080026", "AI & DS", "Uttar Pradesh"],
   ["Krishna Mishra", "Y24", "2410030285", "CSE", "Uttar Pradesh"],
   ["Dwarkesh Dubey", "Y24", "2410030021", "CSE", "Uttar Pradesh", "https://www.linkedin.com/in/dwarkesh-dubey-a34287367"],
   ["Yashovardhan Mishra", "Y24", "2410030515", "CSE", "Uttar Pradesh"],
-  ["Ashfaq Sayeed", "Y24", "2410030109", "CSE", "Delhi"],
-  ["Silkcon Padhy", "Y24", "2410030404", "CSE", "Odisha"],
-  ["B Shiva Sai Patro", "Y24", "2410030023", "CSE", "Odisha"],
-  ["A. Jayanth", "Y24", "2410080075", "AI & DS", "Telangana", "https://www.linkedin.com/in/jayanth-adavi-952a492ab/"],
-  ["Rishi Burman", "Y25", "2510520036", "BCA", "Chhattisgarh"],
+  ["Soham Bhoumik", "Y24", "2410040023", "ECE", "West Bengal"],
+
+  // Y25 Members
   ["Anshul Raj", "Y25", "2510030203", "CSE", "Andaman & Nicobar"],
-  ["Shriyan Bohra", "Y25", "2510030057", "CSE", "Rajasthan"],
-  ["Sameer Sahu", "Y25", "2510030059", "CSE", "Odisha"],
-  ["Baibhaba Choudhury", "Y25", "2510030152", "CSE", "Odisha", "https://www.linkedin.com/in/baibhaba-choudhury/"],
   ["NV Mohammed Fazal", "Y25", "2510030062", "CSE", "Andaman & Nicobar"],
   ["Abhishek", "Y25", "2510030088", "CSE", "Andaman & Nicobar"],
-  ["Paridhi Gupta", "Y25", "2510040024", "ECE", "Rajasthan", "https://www.linkedin.com/in/paridhi-gupta-8922382a4/"],
+  ["M.Ruchee", "Y25", "2510030087", "CSE", "Andaman & Nicobar"],
+  ["Bhavesh Kumar", "Y25", "2510030077", "CSE", "Bihar"],
+  ["Manash Poddar", "Y25", "2510040121", "ECE", "Bihar"],
+  ["Rishi Burman", "Y25", "2510520036", "BCA", "Chhattisgarh"],
+  ["Granth Jigneshbhai Mangukiya", "Y25", "2510030181", "CSE", "Gujarat"],
+  ["Abhijith Jayan", "Y25", "2510030390", "CSE", "Kerala"],
+  ["Amr Kalam Mansoori", "Y25", "2510030436", "CSE", "Maharashtra"],
+  ["Krishna Biradar", "Y25", "2510030053", "CSE", "Maharashtra"],
   ["Veeresh Yadav", "Y25", "2510040039", "ECE", "Maharashtra", "https://www.linkedin.com/in/veeresh-yadav-a469a0374/"],
-  ["Aryan Yadav", "Y26", "2610030348", "CSE", "Uttar Pradesh"],
+  ["Utkalika Priyadarshinee Champati", "Y25", "2510080004", "AI & DS", "Odisha"],
+  ["Sameer Sahu", "Y25", "2510030059", "CSE", "Odisha"],
+  ["Baibhaba Choudhury", "Y25", "2510030152", "CSE", "Odisha", "https://www.linkedin.com/in/baibhaba-choudhury/"],
+  ["Shriyan Bohra", "Y25", "2510030057", "CSE", "Rajasthan"],
+  ["Paridhi Gupta", "Y25", "2510040024", "ECE", "Rajasthan", "https://www.linkedin.com/in/paridhi-gupta-8922382a4/"],
+  ["Vanshika Agarwal", "Y25", "2510040034", "ECE", "Rajasthan"],
+  ["Alpansh Sharma", "Y25", "2510030356", "CSE", "Rajasthan"],
+  ["Dhananjay Sharma", "Y25", "2510030080", "CSE", "Rajasthan"],
+  ["Sejal", "Y25", "2510030350", "CSE", "Rajasthan"],
+  ["Ridhi", "Y25", "2510040078", "ECE", "Rajasthan"],
+  ["Rajveer Jain", "Y25", "2510030235", "CSE", "Rajasthan"],
+  ["Anshul", "Y25", "2510030352", "CSE", "Rajasthan"],
+  ["Armaan Reza", "Y25", "2510030299", "CSE", "Uttar Pradesh"],
+  ["Sayak Dara", "Y25", "2510040014", "ECE", "West Bengal"],
+  ["Binamra Maity", "Y25", "2510030328", "CSE", "West Bengal"],
+
+  // Y26 Members
+  ["Piyush Kumar", "Y26", "2610030324", "CSE", "Bihar"],
+  ["Lucky Ali", "Y26", "2610030377", "CSE", "Jharkhand"],
   ["Ayush Gupta", "Y26", "2610030343", "CSE", "Madhya Pradesh"],
   ["Somyansu Panda", "Y26", "2610030395", "CSE", "Odisha"],
-  ["Avika Kashyap", "Y24", "2410030520", "CSE", "Chhattisgarh"],
-  ["Sriya Gayatri", "Y24", "2410030521", "CSE", "Odisha"],
-  ["Mohd. Ammar Ali", "Y24", "2410030026", "CSE", "Delhi"],
-  ["D.Rishab", "Y24", "2410080042", "AI & DS", "Andaman & Nicobar"],
-  ["B.Dhruv", "Y24", "2410080043", "AI & DS", "Andaman & Nicobar"],
-  ["Lekha Sai Naidu", "Y24", "2410080035", "AI & DS", "Andaman & Nicobar"],
-  ["Smruti Ranjan Parhi", "Y24", "2410030110", "CSE", "Odisha"],
-  ["Subramanyam", "Y24", "2410030196", "CSE", "Maharashtra"],
-  ["Niranjan Kumar Singh", "Y24", "2410030346", "CSE", "Bihar"],
-  ["Vanshika", "Y25", "2510040034", "ECE", "Rajasthan"],
-  ["Abhinash Kumar Jha", "Y24", "2410030530", "CSE", "Nepal"],
-  ["Armaan Reza", "Y25", "2510030299", "CSE", "Uttar Pradesh"],
-  ["Tanish Oberoi", "Y24", "2410030170", "CSE", "Punjab"],
-  ["Manash Poddar", "Y25", "2510040121", "ECE", "Bihar"],
-  ["Bhavesh Kumar", "Y25", "2510030077", "CSE", "Bihar"],
-  ["M.Ruchee", "Y25", "2510030087", "CSE", "Andaman & Nicobar"],
-  ["Granth", "Y25", "25100300181", "CSE", "Gujarat"],
-  ["Alpansh", "Y25", "2510030356", "CSE", "Rajasthan"],
-  ["Dhananjay Sharma", "Y25", "2510030080", "CSE", "Rajasthan"],
-  ["Piyush Kumar", "Y26", "2610030324", "CSE", "Bihar"],
+  ["Vedant Sahu", "Y26", "2610030362", "CSE", "Odisha"],
+  ["Aryan Yadav", "Y26", "2610030348", "CSE", "Uttar Pradesh"],
+  ["Ravi Yadav", "Y26", "2610030388", "CSE", "Uttar Pradesh"],
 ];
 
-export const members: Member[] = raw.map(
+// Deduplicate members primarily by Roll Number, while preserving state normalization and social links
+const deduplicatedRaw = Array.from(
+  raw.reduce((map, item) => {
+    const roll = item[2].trim();
+    if (!map.has(roll)) {
+      map.set(roll, item);
+    } else {
+      // Merge social links if existing record lacks them
+      const existing = map.get(roll)!;
+      if (!existing[5] && item[5]) existing[5] = item[5];
+      if (!existing[6] && item[6]) existing[6] = item[6];
+      if (!existing[7] && item[7]) existing[7] = item[7];
+    }
+    return map;
+  }, new Map<string, Raw>()).values()
+);
+
+export const members: Member[] = deduplicatedRaw.map(
   ([name, year, rollNo, department, state, linkedin, github, instagram], i) => {
-    const dept = !department || department.trim() === "" || department === "—" ? "CSE" : department;
+    const dept = !department || department.trim() === "" || department === "—" ? "CSE" : department.trim();
+    const normalizedState = normalizeStateName(state);
     const m: Member = {
       id: i + 1,
-      name,
-      rollNo,
+      name: name.trim(),
+      rollNo: rollNo.trim(),
       department: dept,
-      year,
-      state,
+      year: year.trim(),
+      state: normalizedState,
     };
     if (linkedin) m.linkedin = linkedin;
     if (github) m.github = github;
@@ -271,37 +316,103 @@ export const timeline: TimelineItem[] = [
   },
 ];
 
+export type Candidate2026 = {
+  name: string;
+  batch: string;
+  department: string;
+  electionName: string;
+  contestingFor: string;
+  state: string;
+};
+
+export const candidates2026: Candidate2026[] = [
+  {
+    name: "Anshul Raj",
+    batch: "Y25",
+    department: "CSE",
+    electionName: "Zeus",
+    contestingFor: "President & Vice President",
+    state: "Andaman & Nicobar",
+  },
+  {
+    name: "Paridhi Gupta",
+    batch: "Y25",
+    department: "ECE",
+    electionName: "Athena",
+    contestingFor: "President & Vice President",
+    state: "Rajasthan",
+  },
+  {
+    name: "Granth Jigneshbhai Mangukiya",
+    batch: "Y25",
+    department: "CSE",
+    electionName: "Poseidon",
+    contestingFor: "President & Vice President",
+    state: "Gujarat",
+  },
+];
+
+export const election2026Status = {
+  nominationStatus: "CLOSED",
+  nominationNote: "Two nominations were cancelled because they did not satisfy NISC eligibility requirements.",
+  campaignDeadline: "20 August 2026, 4:00 PM",
+  votingRulesAnnouncement: "20 August 2026, 9:00 PM",
+  electionInCharges: "To Be Appointed",
+  inChargesDescription: "Two members will serve as neutral observers throughout the election process to maintain transparency and fairness in the conduct and activities of candidates.",
+  contestNote: "All three candidates are contesting for both President and Vice President.",
+  manifestoRequirements: [
+    "Must follow the NISC Rulebook",
+    "Must focus on building a strong and inclusive student community",
+    "Must promote academic assistance, guidance, teamwork and mutual support",
+    "Must focus on the overall development of NISC and its members",
+    "Must NOT simply promote Hindi culture",
+  ],
+  confidentialityNotice: {
+    title: "Election Confidentiality",
+    text: "Candidates and members are strictly requested not to discuss or share internal election matters with outsiders or faculty. Any attempt to involve outsiders or faculty in the election process may result in strict action under applicable NISC rules.",
+    footer: "Keep it democratic. Keep it fair. Let the members choose their leaders.",
+  },
+};
+
+export type ElectionStepStatus = "Closed" | "Completed" | "Active" | "Upcoming";
+
 export type ElectionStep = {
   step: number;
   title: string;
   text: string;
+  status: ElectionStepStatus;
 };
 
 export const electionSteps: ElectionStep[] = [
   {
     step: 1,
     title: "Nomination",
-    text: "Eligible members submit nominations according to the NISC Rulebook.",
+    text: "Eligible members submit nominations. Nomination process is now CLOSED.",
+    status: "Closed",
   },
   {
     step: 2,
     title: "Verification",
-    text: "Applications are reviewed to ensure eligibility.",
+    text: "Applications reviewed by Election Committee. 2 non-eligible nominations were cancelled.",
+    status: "Completed",
   },
   {
     step: 3,
     title: "Campaign",
-    text: "Candidates present their vision, manifesto, and interact with members.",
+    text: "Candidates present vision & manifesto until 20 August 2026, 4:00 PM.",
+    status: "Active",
   },
   {
     step: 4,
     title: "Voting",
-    text: "Secret ballot conducted among eligible members.",
+    text: "Procedure & rules announced on 20 August 2026, 9:00 PM. Secret ballot conducted.",
+    status: "Upcoming",
   },
   {
     step: 5,
     title: "Results",
-    text: "Votes are counted transparently and winners are officially announced.",
+    text: "Votes counted transparently and official winners declared.",
+    status: "Upcoming",
   },
 ];
 
@@ -357,9 +468,9 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 4,
-    title: "Upcoming 2026–27 Leadership Elections",
+    title: "2026–27 Leadership Elections",
     category: "Elections",
-    date: "15 Sep 2026",
+    date: "20 Aug 2026",
     gradient: "linear-gradient(135deg, oklch(0.86 0.1 90), oklch(0.72 0.16 55))",
     span: "sm:col-span-2",
   },
@@ -397,9 +508,9 @@ export const activities: Activity[] = [
   },
   {
     title: "NISC 2026–27 Leadership Elections",
-    date: "15 Sep 2026",
+    date: "20 Aug 2026",
     status: "Scheduled",
-    text: "Democratic election process to elect the President and Vice President for the upcoming council term.",
+    text: "Active democratic election process to elect the President and Vice President for the 2026–27 council term.",
   },
   {
     title: "Hindi Diwas Celebration",
@@ -441,203 +552,219 @@ export const rulebookSections: RulebookSection[] = [
   {
     id: "introduction",
     sectionNumber: 1,
-    title: "Introduction",
+    title: "Introduction & Constitutional Framework",
     summary:
-      "North India Student Cell (NISC) is a student-led organization established by the founding students of the Y24 and Y25 batches at KL University Hyderabad. The initiative began in August 2024 and the first official meeting was conducted on 17 February 2025. NISC works towards creating an inclusive platform for North Indian students by promoting leadership, academic collaboration, mentorship, cultural engagement and community development.",
+      "The North India Student Cell (NISC) at KL University Hyderabad is an autonomous, student-led organization established to foster unity, academic mentorship, leadership development, student representation, and cultural engagement. Initiated in August 2024 by founding students of the Y24 and Y25 academic batches and formally convened on 17 February 2025, NISC operates under this ratified Constitution & Rulebook as its supreme governing document.",
+    points: [
+      "Jurisdiction: Governs all official operations, democratic elections, council administration, member conduct, and activities of NISC at KL University Hyderabad.",
+      "Ratification: Formally ratified by the founding General Body during the 2025–26 academic term.",
+      "Core Ethos: Committed to democratic fairness, academic growth, student welfare, inclusivity, and cross-cultural respect across the university campus.",
+    ],
   },
   {
     id: "objectives",
     sectionNumber: 2,
-    title: "Objectives",
-    summary: "The primary objectives of North India Student Cell (NISC) are as follows:",
+    title: "Objectives & Mission",
+    summary: "The constitutional objectives and operational mission of North India Student Cell (NISC) are defined as follows:",
     points: [
-      "To create a vibrant community for North Indian students to connect, collaborate, and share knowledge and culture.",
-      "To organize academic, literary, and cultural events that highlight the rich heritage, language, and traditions of North India.",
-      "To provide structured mentorship and peer-learning opportunities among students.",
-      "To complement the university's mission of holistic development by integrating linguistic and technical growth.",
-      "To collaborate with other student associations, regional bodies, and university councils for cross-cultural understanding and cooperation.",
-      "Leadership Development: Fostering administrative capabilities, governance skills, and student initiative.",
-      "Student Representation: Serving as an official voice for student welfare and academic concerns before the university administration.",
-      "Career Guidance: Conducting placement prep workshops, resume reviews, DSA sprints, and industry guidance sessions.",
-      "Mentorship: Pairing junior members with experienced seniors from their respective academic branches and home states.",
-      "Community Welfare: Providing personal guidance, logistical support, and a welcoming environment for all enrolled members.",
-      "Cultural Exchange: Celebrating major festivals, folk evenings, and inter-state cultural exchange events.",
-      "Academic Collaboration: Facilitating study circles, shared notes repositories, and peer-to-peer tutoring.",
+      "Community & Inclusion: Creating a vibrant, supportive platform for North Indian students and allies to connect, collaborate, and thrive.",
+      "Academic Support & Mentorship: Providing structured peer tutoring, DSA sprints, shared study repositories, resume clinics, and senior-junior academic pairing.",
+      "Leadership Development: Cultivating administrative capabilities, public governance skills, and student-led institutional initiatives.",
+      "Student Representation: Serving as an official, unified voice for student welfare and academic concerns before university administration.",
+      "Holistic Community Growth: Organizing cultural exchange nights, literary events, sports meets, and community outreach that enrich overall campus life beyond regional boundaries.",
     ],
   },
   {
     id: "membership",
     sectionNumber: 3,
-    title: "Membership Eligibility",
+    title: "Membership Framework & Rights Matrix",
     summary:
-      "Membership is primarily intended for students belonging to North Indian states or students having ancestral roots in North India. Associate membership may be granted by the Executive Council to students who actively support the objectives of NISC. Members must exhibit interest in promoting the objectives of NISC and uphold its code of conduct.",
-    points: [
-      "Primary Membership: Open to students belonging to North Indian states or students having ancestral roots in North India.",
-      "Associate Membership: May be granted by the Executive Council to students who actively support the objectives of NISC, regardless of regional background.",
-      "Code of Conduct Compliance: Members must exhibit interest in promoting the cell's objectives and strictly uphold its code of conduct.",
+      "Membership in NISC is categorized to ensure broad participation while preserving democratic integrity. All members must be enrolled students at KL University Hyderabad in good standing.",
+    subsections: [
+      {
+        title: "1. Primary Membership",
+        text: "Open to enrolled students belonging to North Indian states or having ancestral roots in North India. Primary Members possess full democratic rights including voting in general body meetings, voting in annual elections, contesting for elected executive offices (President and Vice President), and holding appointed council positions.",
+      },
+      {
+        title: "2. Associate Membership",
+        text: "Open to enrolled students from other regional backgrounds who demonstrate active support for NISC objectives, granted upon review by the Executive Council. Associate Members possess full rights to participate in all activities, hold appointed department or associate roles, and vote in General Body referendums, but may not contest for elected executive offices (President and Vice President).",
+      },
+      {
+        title: "3. Active Member Status",
+        text: "Defined as any registered Primary or Associate member currently enrolled in good standing who strictly abides by the Code of Conduct and actively engages in cell activities. Only verified Active Members hold voting and election rights.",
+      },
+      {
+        title: "4. General Body",
+        text: "The supreme democratic assembly comprising all verified Active Members (Primary and Associate). Holds exclusive constitutional authority for constitutional amendments and cell dissolution.",
+      },
+      {
+        title: "5. Executive Council & Office Bearers",
+        text: "The governing administrative body comprising elected executive officers (President, Vice President) and appointed administrative admins (General Secretary, Joint Secretary, Treasurer, Department Admins, Year Admins, and Women's Representatives).",
+      },
     ],
   },
   {
     id: "structure",
     sectionNumber: 4,
-    title: "Organizational Structure",
-    summary: "North India Student Cell (NISC) operates through an expanded, structured hierarchy to ensure democratic representation and operational efficiency:",
+    title: "Organizational Hierarchy & Structure",
+    summary: "NISC operates through a structured operational hierarchy to ensure transparent leadership and administrative efficiency:",
     subsections: [
       {
-        title: "1. President",
-        text: "Head of the organization and primary representative before the university administration. Responsible for overall governance, strategic vision, coordinating all activities, and chairing council meetings.",
+        title: "Tier A: Elected Executive Leadership (Annual Mandate)",
+        text: "Comprises the President and Vice President, who are elected annually by secret ballot among the General Body. The President serves as Chief Executive Officer, chairing council meetings and representing NISC before university authorities. The Vice President assists the President, oversees event execution, and assumes executive duties in the President's absence. These two positions constitute the mandatory elected core.",
       },
       {
-        title: "2. Vice President",
-        text: "Assists the President and assumes full responsibilities in their absence. Oversees the execution of events, campaign logistics, and internal operations.",
+        title: "Tier B: Appointed Administrative & Representative Roles",
+        text: "Comprises functional and departmental officers appointed or approved by the Executive Council based on term needs: General Secretary (records, minutes within 48h, compliance), Joint Secretary (operations & venue logistics), Treasurer (budgeting & finance), Department Admins (CSE, AI & DS, ECE, BCA, etc.), Year Admins (Y24, Y25, Y26), and Women's Department Representatives. The exact composition of administrative roles may vary per annual term based on cell requirements.",
       },
       {
-        title: "3. General Secretary",
-        text: "Manages administrative records, official documentation, meeting minutes, official correspondence, and university compliance.",
-      },
-      {
-        title: "4. Joint Secretary",
-        text: "Assists the General Secretary in operational workflows, inter-departmental communication, and venue/resource arrangements.",
-      },
-      {
-        title: "5. Treasurer",
-        text: "Oversees financial budgeting, expense accounting, membership drive allocations, and financial transparency.",
-      },
-      {
-        title: "6. Department Representatives",
-        text: "Represent specific academic departments (AI & DS, CSE, ECE, BCA, etc.) and coordinate department-level mentorship and student welfare.",
-      },
-      {
-        title: "7. Year Representatives",
-        text: "Represent students of their respective academic batches (1st year to 4th year) and facilitate peer communication.",
-      },
-      {
-        title: "8. Women's Department Representatives",
-        text: "Focus on women student engagement, specialized mentorship, representation, and female student welfare initiatives.",
-      },
-      {
-        title: "9. Executive Council",
-        text: "The core administrative body comprising elected office bearers, department admins, and year admins responsible for executive decision-making.",
-      },
-      {
-        title: "10. General Members",
-        text: "Registered students who actively participate in general body meetings, cultural events, democratic votes, and volunteer activities.",
+        title: "Tier C: General Body Members",
+        text: "Registered Active Members who participate in general body meetings, cultural drives, democratic votes, and volunteer committees.",
       },
     ],
   },
   {
     id: "elections",
     sectionNumber: 5,
-    title: "Election Procedure",
-    summary: "The election process shall be conducted in a transparent, fair, and democratic manner through seven defined stages:",
-    points: [
-      "1. Nomination Phase: Eligible members submit nominations according to the NISC Rulebook via the official nomination portal.",
-      "2. Verification Phase: Applications are thoroughly reviewed by the Election Committee to ensure candidate eligibility.",
-      "3. Campaign Phase: Candidates present their vision, manifesto, and interact respectfully with members during a designated campaign period.",
-      "4. Voting Phase: Secret ballot conducted among all registered, eligible members.",
-      "5. Counting Phase: Votes are transparently counted under supervision of designated election observers.",
-      "6. Result Declaration: Official election winners are declared within 24 hours of poll closure.",
-      "7. Handover Ceremony: Formal handover ceremony and transition of executive responsibilities to the newly elected council.",
-      "Independent Elections Principle: President and Vice President shall be elected independently unless otherwise decided by the Election Committee.",
-      "Term Duration: The elected body serves for one academic term/year.",
+    title: "Democratic Election Framework (7 Stages)",
+    summary: "Annual elections for President and Vice President are conducted in a transparent, democratic manner through seven constitutional stages:",
+    subsections: [
+      {
+        title: "Stage 1 — Nomination",
+        text: "Eligible members submit formal nominations via the official portal within the designated window.",
+      },
+      {
+        title: "Stage 2 — Verification & Scrutiny",
+        text: "The Election Committee conducts thorough scrutiny of all applications. Nominations failing constitutional eligibility requirements are formally cancelled.",
+      },
+      {
+        title: "Stage 3 — Campaign & Manifesto Presentation",
+        text: "Verified candidates present their vision and manifesto during the designated campaign window. Manifestos must adhere to NISC rules, focus on inclusive community building, academic support, and overall NISC development.",
+      },
+      {
+        title: "Stage 4 — Polling & Secret Ballot",
+        text: "Voting is conducted among verified Active Members via secret ballot during an announced polling window.",
+      },
+      {
+        title: "Stage 5 — Vote Counting",
+        text: "Votes are counted transparently under the direct supervision of designated neutral Election In-Charges.",
+      },
+      {
+        title: "Stage 6 — Result Declaration",
+        text: "Plurality winners receiving the highest valid vote count are officially declared within 24 hours of poll closure.",
+      },
+      {
+        title: "Stage 7 — Handover & Transition",
+        text: "Formal transfer of executive duties, records, official communication channels, and digital assets occurs within 7 days of result declaration.",
+      },
+      {
+        title: "Election Authority & Neutrality",
+        text: "Elections are administered by an independent Election Committee. Two neutral members serve as Election In-Charges / Observers to maintain transparency and fairness. Election officials must remain strictly neutral and cannot campaign for any candidate.",
+      },
+      {
+        title: "Candidate Eligibility Criteria",
+        text: "Candidates contesting for President or Vice President must be verified Active Primary Members in good standing, enrolled in designated academic batches (Y24, Y25 or eligible upper batch), with zero record of disciplinary suspension or rulebook violation.",
+      },
+      {
+        title: "Dual-Contest & Independent Voting Rule",
+        text: "Eligible candidates are constitutionally permitted to contest for BOTH President and Vice President simultaneously. Voters cast separate, independent ballots for President and Vice President. In the event that the same candidate receives the highest vote count for both offices, that candidate shall assume the office of President, and the Vice Presidential post shall automatically pass to the candidate receiving the next highest vote total for Vice President.",
+      },
+      {
+        title: "Voter Eligibility",
+        text: "All verified Active Members (both Primary and Associate) enrolled at KL University Hyderabad are entitled to vote. Each voter receives exactly one secret ballot per office.",
+      },
     ],
   },
   {
     id: "conduct",
     sectionNumber: 6,
-    title: "Code of Conduct",
-    summary: "All members and office bearers are required to maintain decorum and uphold the dignity of NISC at all times:",
+    title: "Election Integrity & Code of Conduct",
+    summary: "Strict ethical standards and disciplinary rules apply to all candidates, members, and office bearers:",
     points: [
-      "Mutual respect and inclusivity shall be maintained in all interactions.",
-      "Discrimination based on region, language, gender, or religion is strictly prohibited.",
-      "Respect all cultures and languages across the university campus.",
-      "Zero tolerance for hate speech, personal attacks, or inflammatory statements.",
-      "Zero tolerance for bullying, ragging, or harassment in any form.",
-      "Responsible social media usage on official channels and community chat groups.",
-      "Maintain the dignity, honor, and administrative standing of NISC.",
-      "Official communication must reflect professionalism, courtesy, and truthfulness.",
-      "Any misconduct, abuse, or violation of rules may result in formal suspension or removal from NISC by the Executive Council.",
+      "Neutral Observer Standard: Election In-Charges must remain strictly impartial and observe candidate conduct throughout the election.",
+      "Prohibited Election Practices: Misinformation, personal attacks, character assassination, harassment, bribery, voter impersonation, duplicate voting, threats, or coercion are strictly prohibited.",
+      "Election Confidentiality Clause: Candidates and members are strictly requested not to discuss or share internal election matters with outsiders or faculty. Any attempt to involve outsiders or faculty to influence election outcomes is a major violation.",
+      "Platform Decorum: Misuse of official NISC Telegram, WhatsApp, Instagram, or digital portals for unauthorized campaign spam is forbidden.",
+      "Disciplinary Process: Violations reported to the Election Committee shall result in formal investigation and penalties ranging from official warnings and campaign restrictions to immediate candidate disqualification or membership suspension.",
     ],
   },
   {
-    id: "activities",
+    id: "vacancies",
     sectionNumber: 7,
-    title: "Activities and Events",
-    summary: "North India Student Cell (NISC) engages in a comprehensive calendar of student-centered activities:",
+    title: "Ties, Uncontested Elections & Vacancies",
+    summary: "Constitutional mechanisms governing electoral ties, single-candidate contests, and mid-term executive vacancies:",
     points: [
-      "Orientation Programs: Welcoming new batches and guiding them through campus transition.",
-      "Mentorship Sessions: Pairing juniors with senior mentors from their home states and academic departments.",
-      "Placement Guidance: Resume clinics, mock interviews, and DSA sprint workshops.",
-      "Technical Workshops: Peer-led coding sessions, technical talks, and hackathon prep.",
-      "Sports & Wellness: Inter-batch sports tournaments, recreational meets, and wellness events.",
-      "Community Service: Outreach drives, campus volunteering, and social welfare initiatives.",
-      "Alumni Interaction: Sessions with graduated seniors for career path insights and professional networking.",
-      "Cultural Festivals: Hindi Diwas celebrations, poetry recitals, debates, and regional cultural nights.",
+      "Electoral Ties: In the event of a tie for highest votes, a 24-hour runoff election between tied candidates shall be conducted. If a tie persists, a secret vote by the Executive Council breaks the tie.",
+      "Uncontested Elections: If only one eligible candidate qualifies for an office, a vote of confidence (Yes/No) is conducted requiring a simple majority (>50%) approval of voting members.",
+      "Presidential Vacancy: If the office of President becomes vacant due to resignation, removal, or incapacity, the Vice President automatically succeeds as Acting President for the remainder of the term.",
+      "Vice Presidential Vacancy: If the office of Vice President becomes vacant, the Executive Council shall appoint an interim Vice President from among active council members by simple majority vote within 14 days.",
     ],
   },
   {
     id: "meetings",
     sectionNumber: 8,
-    title: "Meetings & Governance",
-    summary: "Standard operating procedures for general and council meetings:",
+    title: "Meetings & Governance Procedures",
+    summary: "Operating procedures governing organizational assemblies, executive meetings, and administrative records:",
     points: [
-      "General Body Meetings shall be held periodically (physically or virtually).",
-      "The President may call special emergency meetings when necessary.",
-      "Minutes of every meeting shall be recorded and maintained by the General Secretary within 48 hours of adjournment.",
+      "General Body Meetings (GBM): Held at least twice per academic term for general announcements, referendums, and major cell decisions.",
+      "Executive Council Meetings (ECM): Convened periodically by the President or General Secretary to manage routine operations, event planning, and budget reviews.",
+      "Quorum Requirements: General Body referendums require participation of at least 30% of Active Members. Executive Council meetings require a simple majority (>50%) of active council members.",
+      "Record Keeping & Minutes: Minutes of every formal meeting must be recorded by the General Secretary and published/archived within 48 hours of adjournment.",
     ],
   },
   {
     id: "communication",
     sectionNumber: 9,
-    title: "Group & Communication Policy",
-    summary: "Official communication channels and group decorum policy:",
+    title: "Digital Platforms & Communication Policy",
+    summary: "Regulations governing official communication channels and group decorum:",
     points: [
-      "Telegram: Primary community channel for member discussions, announcements, and peer support.",
-      "Website: Official digital platform for rulebook documentation, election updates, and member resources.",
-      "Instagram: Public media outreach, photo highlights, and event announcements.",
-      "Official Email & Google Workspace: Formal administrative correspondence, digital forms, and official documents.",
-      "Policy: Sharing of irrelevant, offensive, commercial, or promotional content is strictly prohibited on all official groups.",
+      "Official Digital Platforms: Telegram (community chat & peer support), Website (rulebook, election portal, directory), Instagram (public media & updates), Email/Workspace (official administrative notices).",
+      "Decorum Policy: Sharing offensive, discriminatory, commercial, political, or irrelevant spam content is strictly prohibited on all official NISC channels.",
+      "Authorized Releases: Official administrative statements must be approved by the President or General Secretary prior to publication.",
     ],
   },
   {
     id: "amendments",
     sectionNumber: 10,
-    title: "Amendments & Revisions",
-    summary: "Procedure for constitutional updates and rulebook revisions:",
+    title: "Constitutional Amendments Framework",
+    summary: "The precise step-by-step mechanism for amending or revising the NISC Rulebook:",
     points: [
-      "Any proposed amendment to the rulebook must be submitted to the President in writing.",
-      "Amendments shall be discussed during a formal Executive Council meeting.",
-      "Amendments shall require approval by at least two-thirds of the Executive Council or General Body Meeting, as applicable.",
-      "Once approved, the updated constitution shall be published on the official website.",
+      "1. Proposal Submission: Any Active Primary Member may submit a written amendment proposal signed by at least 5 Active Members to the General Secretary.",
+      "2. Council Evaluation: The General Secretary tables the proposal before the Executive Council for formal review within 14 days.",
+      "3. General Body Notification: Upon council review, the proposed amendment is published to the General Body at least 7 days prior to voting.",
+      "4. Ratification Vote: Voting is conducted among Active Members via General Body meeting or official digital referendum.",
+      "5. Required Approval Threshold: A minimum two-thirds (2/3) majority vote of Active Members participating in the vote is required for constitutional adoption.",
+      "6. Immediate Enactment: Approved amendments take effect immediately upon declaration of results.",
+      "7. Publication: The updated Constitution & Rulebook must be published on the official website within 5 business days of enactment.",
     ],
   },
   {
     id: "dissolution",
     sectionNumber: 11,
-    title: "Dissolution",
+    title: "Dissolution Protocol",
     summary: "Procedures governing potential organization dissolution:",
     points: [
-      "NISC may be dissolved only by a two-thirds majority vote of its active membership.",
-      "Upon dissolution, all official records, documents, and digital assets shall be handed over to the Student Activity Centre (S.A.C.) or university administration.",
+      "NISC may be dissolved only through a formal referendum requiring a minimum two-thirds (2/3) majority vote of all registered Active Members.",
+      "Upon dissolution, all physical records, digital assets, official accounts, and residual resources shall be handed over to the Student Activity Centre (S.A.C.) or university administration.",
     ],
   },
   {
     id: "declaration",
     sectionNumber: 12,
-    title: "Declaration",
+    title: "Constitutional Declaration",
     summary:
-      "This rulebook serves as the guiding constitutional framework for the functioning of the North India Student Cell (NISC) at KL University Hyderabad. All members, upon joining, agree to abide by these rules and work collectively toward achieving the organization's objectives in harmony and mutual respect.",
+      "This Constitution and Rulebook serves as the supreme guiding constitutional framework for the functioning of North India Student Cell (NISC) at KL University Hyderabad. All members, upon joining, agree to abide by these rules and work collectively toward achieving the cell's objectives in harmony, democratic integrity, and mutual respect.",
   },
   {
     id: "appendix-a",
     sectionNumber: 13,
-    title: "Appendix A — Official Timeline",
+    title: "Appendix A — Official Historical Timeline",
     summary: "Chronological milestones in NISC's organizational history:",
     points: [
-      "August 2024 — Initiative started by Y24 and Y25 students at KL University Hyderabad.",
-      "17 February 2025 — First official meeting conducted, establishing NISC's vision, objectives, and governance.",
+      "August 2024 — Initiative started by Y24 and Y25 batch students at KL University Hyderabad.",
+      "17 February 2025 — First official meeting conducted, establishing vision, governance, and founding council.",
       "2025–26 — First Founding Council constituted through nomination and consensus.",
-      "2026 onwards — Democratic elections introduced for annual leadership transitions.",
+      "2026 onwards — Annual democratic elections established under the 7-stage constitutional framework.",
     ],
   },
 ];

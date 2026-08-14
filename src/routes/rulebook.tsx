@@ -160,7 +160,7 @@ function RulebookPage() {
               </div>
               <div>
                 <span className="text-muted-foreground block font-accent uppercase text-[10px] tracking-wider">Sections</span>
-                <span className="font-semibold text-foreground">12 Clauses + Appendix A</span>
+                <span className="font-semibold text-foreground">{rulebookSections.length - 1} Clauses + Appendix A</span>
               </div>
               <div>
                 <span className="text-muted-foreground block font-accent uppercase text-[10px] tracking-wider">Governance</span>

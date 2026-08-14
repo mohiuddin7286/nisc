@@ -31,7 +31,6 @@ const links = [
   { id: "map", label: "Reach", icon: Globe },
   { id: "council", label: "Council", icon: Award },
   { id: "members", label: "Members", icon: Users },
-  { id: "placements", label: "Placements", icon: Briefcase },
   { id: "activities", label: "Activities", icon: Sparkles },
   { id: "archive", label: "Archive", icon: Archive },
   { id: "rulebook", label: "Rulebook", icon: BookOpen, href: "/rulebook" },

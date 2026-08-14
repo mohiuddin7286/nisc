@@ -11,7 +11,6 @@ import { IndiaMap } from "@/components/sections/IndiaMap";
 import { Stats } from "@/components/sections/Stats";
 import { Council } from "@/components/sections/Council";
 import { Members } from "@/components/sections/Members";
-import { Placements } from "@/components/sections/Placements";
 import { Activities } from "@/components/sections/Activities";
 import { Election } from "@/components/sections/Election";
 import { Archive } from "@/components/sections/Archive";
@@ -96,7 +95,6 @@ function Index() {
         <Stats />
         <Council />
         <Members />
-        <Placements />
         <Activities />
         <Archive />
         <Election />

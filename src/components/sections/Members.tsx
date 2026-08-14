@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Search, Instagram, Github, Linkedin, X, ArrowUpDown, Users, ChevronDown } from "lucide-react";
+import { Search, Instagram, Github, Linkedin, X, ArrowUpDown, Users, ChevronDown, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { TiltCard } from "@/components/nisc/TiltCard";
@@ -227,72 +227,80 @@ export function Members() {
         </div>
       </ScrollReveal>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2">
         {filtered.map((m, i) => (
-          <ScrollReveal key={m.id} variant="up" delay={Math.min(i, 8) * 0.04}>
-            <TiltCard className="h-full">
-              <div className="glass flex h-full flex-col justify-between rounded-3xl p-5">
-                <div>
-                  <div className="flex min-w-0 items-center gap-3">
-                    <Avatar name={m.name} />
-                    <div className="min-w-0">
-                      <h3 className="truncate text-base font-bold">{m.name}</h3>
-                      <p className="text-muted-foreground truncate text-xs">
-                        {m.rollNo}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground mt-3 text-xs">
-                    {m.state !== "—" ? m.state : "North India"}
+          <ScrollReveal key={m.id} variant="up" delay={Math.min(i, 8) * 0.03}>
+            <div className="glass-strong group relative flex items-center justify-between gap-4 rounded-2xl border border-white/60 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/40">
+              {/* Left: Avatar with initials & subtle gradient background */}
+              <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                <Avatar name={m.name} />
+                <div className="min-w-0 flex-1">
+                  <h3 className="truncate text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                    {m.name}
+                  </h3>
+                  <p className="text-muted-foreground font-mono text-xs tracking-wide">
+                    {m.rollNo}
                   </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
-                      {m.department}
-                    </span>
-                    <span className="bg-accent text-accent-foreground font-accent rounded-full px-2.5 py-1 text-[11px] font-medium">
-                      {m.year}
-                    </span>
-                  </div>
+                  <p className="text-muted-foreground/80 mt-0.5 text-[11px] font-medium">
+                    Student Member
+                  </p>
                 </div>
-                {(m.instagram || m.github || m.linkedin) && (
-                  <div className="mt-5 flex gap-2 pt-1">
-                    {m.instagram && (
-                      <a
-                        href={m.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
-                        aria-label={`${m.name}'s Instagram`}
-                      >
-                        <Instagram className="size-[14px]" />
-                      </a>
-                    )}
-                    {m.github && (
-                      <a
-                        href={m.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
-                        aria-label={`${m.name}'s GitHub`}
-                      >
-                        <Github className="size-[14px]" />
-                      </a>
-                    )}
-                    {m.linkedin && (
-                      <a
-                        href={m.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="glass hover:text-primary grid h-8 w-8 place-items-center rounded-full transition-colors"
-                        aria-label={`${m.name}'s LinkedIn`}
-                      >
-                        <Linkedin className="size-[14px]" />
-                      </a>
-                    )}
-                  </div>
-                )}
               </div>
-            </TiltCard>
+
+              {/* Right: Badges, State & Social Links / Action Icon */}
+              <div className="flex flex-col items-end gap-1.5 flex-shrink-0 text-right">
+                <div className="flex items-center justify-end gap-1">
+                  <span className="gradient-brand-subtle text-primary border border-primary/20 font-accent rounded-full px-2.5 py-0.5 text-[11px] font-bold">
+                    {m.department} • {m.year}
+                  </span>
+                </div>
+
+                <span className="text-muted-foreground text-xs font-semibold">
+                  {m.state !== "—" ? m.state : "North India"}
+                </span>
+
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors p-1"
+                      aria-label={`${m.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="size-3.5" />
+                    </a>
+                  )}
+                  {m.github && (
+                    <a
+                      href={m.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors p-1"
+                      aria-label={`${m.name}'s GitHub`}
+                    >
+                      <Github className="size-3.5" />
+                    </a>
+                  )}
+                  {m.instagram && (
+                    <a
+                      href={m.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors p-1"
+                      aria-label={`${m.name}'s Instagram`}
+                    >
+                      <Instagram className="size-3.5" />
+                    </a>
+                  )}
+                  {!m.linkedin && !m.github && !m.instagram && (
+                    <span className="text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
+                      <ArrowUpRight className="size-4" />
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         ))}
       </div>

@@ -172,12 +172,6 @@ export function Footer() {
                     >
                       <ChevronRight className="size-3 text-primary/40 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
                       <span>{item.label}</span>
-                      {item.badge && (
-                        <span className="ml-1 inline-flex items-center gap-0.5 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-extrabold text-primary">
-                          <Sparkles className="size-2.5" />
-                          {item.badge}
-                        </span>
-                      )}
                     </a>
                   </li>
                 ))}

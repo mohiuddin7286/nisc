@@ -9,7 +9,7 @@ import { council, pastCouncils } from "@/data/nisc";
 export function Council() {
   const [selectedYear, setSelectedYear] = useState<"2026–27" | "2025–26">("2026–27");
   const isCurrentCouncil = selectedYear === "2026–27";
-  const displayedCouncil = isCurrentCouncil ? council : pastCouncils[0].members;
+  const displayedCouncil = isCurrentCouncil ? council : (pastCouncils[0]?.members ?? []);
 
   return (
     <section id="council" className="relative mx-auto max-w-6xl px-6 py-24">
@@ -52,7 +52,7 @@ export function Council() {
               key={c.id}
               variant="scale"
               delay={Math.min(i, 6) * 0.05}
-              className={featured ? "sm:col-span-2" : undefined}
+              className={featured ? "sm:col-span-2" : ""}
             >
               <TiltCard className="h-full" max={featured ? 6 : 8}>
                 <article className="glass relative flex h-full flex-col rounded-3xl p-5 transition-all duration-300 hover:shadow-[var(--shadow-glow)]">

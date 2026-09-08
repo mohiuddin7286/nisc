@@ -26,14 +26,14 @@ export function Activities() {
                     </div>
                     <span
                       className={`font-accent inline-flex items-center gap-1 rounded-full px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider ${
-                        a.status === "Conducted"
+                        a.status === "Conducted" || a.status === "Completed"
                           ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
                           : a.status === "Scheduled"
                           ? "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30"
                           : "glass-strong text-muted-foreground"
                       }`}
                     >
-                      {a.status === "Conducted" ? (
+                      {a.status === "Conducted" || a.status === "Completed" ? (
                         <CheckCircle2 className="size-3 text-emerald-500" />
                       ) : (
                         <Clock className="size-3" />

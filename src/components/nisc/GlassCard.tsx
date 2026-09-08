@@ -42,7 +42,7 @@ export function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg"
   return (
     <div
       className={cn(
-        "font-display grid shrink-0 place-items-center rounded-2xl font-extrabold text-white",
+        "font-display grid shrink-0 place-items-center rounded-full font-extrabold text-white",
         size === "lg" ? "h-24 w-24 text-3xl" : "h-14 w-14 text-lg",
       )}
       style={{ background: bg }}

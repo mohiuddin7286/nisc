@@ -9,7 +9,7 @@ import {
   Sparkles,
   Archive,
   BookOpen,
-  Vote,
+  Images,
   HelpCircle,
   Menu,
   X,
@@ -34,7 +34,7 @@ const links = [
   { id: "activities", label: "Activities", icon: Sparkles },
   { id: "archive", label: "Archive", icon: Archive },
   { id: "rulebook", label: "Rulebook", icon: BookOpen, href: "/rulebook" },
-  { id: "election", label: "Election", icon: Vote },
+  { id: "gallery", label: "Gallery", icon: Images },
   { id: "faq", label: "FAQ", icon: HelpCircle },
 ];
 

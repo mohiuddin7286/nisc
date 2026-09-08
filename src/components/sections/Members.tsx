@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { Search, Instagram, Github, Linkedin, X, ArrowUpDown, Users, ChevronDown, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { TiltCard } from "@/components/nisc/TiltCard";
 import { Avatar } from "@/components/nisc/GlassCard";
 import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
 import { members, type Member } from "@/data/nisc";
@@ -82,7 +81,6 @@ export function Members() {
 
       <ScrollReveal>
         <div className="glass rounded-2xl p-4 sm:p-5">
-          {/* Live Member Counter Badge */}
           <div className="mb-4 flex items-center justify-between">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
               <span className="relative flex size-2">
@@ -94,7 +92,6 @@ export function Members() {
           </div>
 
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-            {/* Search Input */}
             <div className="relative flex-1">
               <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2" />
               <input
@@ -105,88 +102,16 @@ export function Members() {
                 className="focus:ring-primary/40 h-10 w-full rounded-xl border border-white/60 bg-white/70 pr-9 pl-10 text-sm outline-none transition-all focus:ring-2"
               />
               {query && (
-                <button
-                  onClick={() => setQuery("")}
-                  aria-label="Clear search"
-                  className="text-muted-foreground hover:text-foreground absolute top-1/2 right-3 -translate-y-1/2"
-                >
+                <button onClick={() => setQuery("")} aria-label="Clear search" className="text-muted-foreground hover:text-foreground absolute top-1/2 right-3 -translate-y-1/2">
                   <X className="size-3.5" />
                 </button>
               )}
             </div>
 
-            {/* Minimal Filter & Sort Dropdowns */}
             <div className="flex flex-wrap items-center gap-2">
-              {/* Department */}
-              <div className="relative">
-                <select
-                  value={department}
-                  onChange={(e) => setDepartment(e.target.value)}
-                  aria-label="Filter by department"
-                  className={cn(
-                    "font-accent h-10 cursor-pointer appearance-none rounded-xl border px-3 pr-8 text-xs font-semibold outline-none transition-all",
-                    department
-                      ? "border-primary/50 bg-primary/10 text-primary"
-                      : "border-white/60 bg-white/70 text-foreground hover:bg-white",
-                  )}
-                >
-                  <option value="">Dept: All</option>
-                  {options.department.map((d) => (
-                    <option key={d} value={d}>
-                      Dept: {d}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="text-muted-foreground pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2" />
-              </div>
-
-              {/* Year */}
-              <div className="relative">
-                <select
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                  aria-label="Filter by year"
-                  className={cn(
-                    "font-accent h-10 cursor-pointer appearance-none rounded-xl border px-3 pr-8 text-xs font-semibold outline-none transition-all",
-                    year
-                      ? "border-primary/50 bg-primary/10 text-primary"
-                      : "border-white/60 bg-white/70 text-foreground hover:bg-white",
-                  )}
-                >
-                  <option value="">Year: All</option>
-                  {options.year.map((y) => (
-                    <option key={y} value={y}>
-                      Year: {y}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="text-muted-foreground pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2" />
-              </div>
-
-              {/* State */}
-              <div className="relative">
-                <select
-                  value={stateFilter}
-                  onChange={(e) => setStateFilter(e.target.value)}
-                  aria-label="Filter by state"
-                  className={cn(
-                    "font-accent h-10 cursor-pointer appearance-none rounded-xl border px-3 pr-8 text-xs font-semibold outline-none transition-all",
-                    stateFilter
-                      ? "border-primary/50 bg-primary/10 text-primary"
-                      : "border-white/60 bg-white/70 text-foreground hover:bg-white",
-                  )}
-                >
-                  <option value="">State: All</option>
-                  {options.state.map((s) => (
-                    <option key={s} value={s}>
-                      State: {s}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="text-muted-foreground pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2" />
-              </div>
-
-              {/* Sort */}
+              <FilterSelect label="Dept" value={department} onChange={setDepartment} options={options.department} />
+              <FilterSelect label="Year" value={year} onChange={setYear} options={options.year} />
+              <FilterSelect label="State" value={stateFilter} onChange={setStateFilter} options={options.state} />
               <div className="relative">
                 <select
                   value={sort}
@@ -194,110 +119,50 @@ export function Members() {
                   aria-label="Sort members"
                   className="font-accent h-10 cursor-pointer appearance-none rounded-xl border border-white/60 bg-white/70 px-3 pr-8 text-xs font-semibold text-foreground outline-none transition-all hover:bg-white"
                 >
-                  {Object.entries(SORTS).map(([k, s]) => (
-                    <option key={k} value={k}>
-                      {s.label}
-                    </option>
+                  {Object.entries(SORTS).map(([key, sortOption]) => (
+                    <option key={key} value={key}>{sortOption.label}</option>
                   ))}
                 </select>
                 <ArrowUpDown className="text-muted-foreground pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2" />
               </div>
-
-              {/* Clear All */}
               {hasActiveFilter && (
-                <button
-                  onClick={clearAll}
-                  aria-label="Clear all filters"
-                  className="font-accent hover:bg-destructive/10 text-destructive inline-flex h-10 items-center gap-1 rounded-xl px-3 text-xs font-semibold transition-colors"
-                >
+                <button onClick={clearAll} aria-label="Clear all filters" className="font-accent hover:bg-destructive/10 text-destructive inline-flex h-10 items-center gap-1 rounded-xl px-3 text-xs font-semibold transition-colors">
                   <X className="size-3.5" /> Clear
                 </button>
               )}
             </div>
           </div>
 
-          {/* Minimal Stats Row */}
           <div className="mt-3 flex items-center justify-between border-t border-white/40 pt-3 text-xs text-muted-foreground">
             <p className="inline-flex items-center gap-1.5">
               <Users className="size-3.5" />
-              Showing <span className="font-semibold text-foreground"><AnimatedCounter to={filtered.length} /></span> of{" "}
-              <span className="font-semibold text-foreground"><AnimatedCounter to={members.length} /></span> members
+              Showing <span className="font-semibold text-foreground"><AnimatedCounter to={filtered.length} /></span> of <span className="font-semibold text-foreground"><AnimatedCounter to={members.length} /></span> members
             </p>
           </div>
         </div>
       </ScrollReveal>
 
-      <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
         {filtered.map((m, i) => (
           <ScrollReveal key={m.id} variant="up" delay={Math.min(i, 8) * 0.03}>
-            <div className="glass-strong group relative flex items-center justify-between gap-4 rounded-2xl border border-white/60 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/40">
-              {/* Left: Avatar with initials & subtle gradient background */}
-              <div className="flex items-center gap-3.5 min-w-0 flex-1">
+            <div className="glass-strong group relative flex items-center justify-between gap-4 rounded-2xl border border-white/60 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+              <div className="flex min-w-0 flex-1 items-center gap-3.5">
                 <Avatar name={m.name} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="truncate text-base font-bold text-foreground group-hover:text-primary transition-colors">
-                    {m.name}
-                  </h3>
-                  <p className="text-muted-foreground font-mono text-xs tracking-wide">
-                    {m.rollNo}
-                  </p>
-                  <p className="text-muted-foreground/80 mt-0.5 text-[11px] font-medium">
-                    Student Member
-                  </p>
+                  <h3 className="truncate text-base font-bold text-foreground transition-colors group-hover:text-primary">{m.name}</h3>
+                  <p className="font-mono text-xs tracking-wide text-muted-foreground">{m.rollNo}</p>
+                  <p className="mt-0.5 text-[11px] font-medium text-muted-foreground/80">Student Member</p>
                 </div>
               </div>
 
-              {/* Right: Badges, State & Social Links / Action Icon */}
-              <div className="flex flex-col items-end gap-1.5 flex-shrink-0 text-right">
-                <div className="flex items-center justify-end gap-1">
-                  <span className="gradient-brand-subtle text-primary border border-primary/20 font-accent rounded-full px-2.5 py-0.5 text-[11px] font-bold">
-                    {m.department} • {m.year}
-                  </span>
-                </div>
-
-                <span className="text-muted-foreground text-xs font-semibold">
-                  {m.state !== "—" ? m.state : "North India"}
-                </span>
-
-                <div className="flex items-center gap-1.5 mt-0.5">
-                  {m.linkedin && (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors p-1"
-                      aria-label={`${m.name}'s LinkedIn`}
-                    >
-                      <Linkedin className="size-3.5" />
-                    </a>
-                  )}
-                  {m.github && (
-                    <a
-                      href={m.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors p-1"
-                      aria-label={`${m.name}'s GitHub`}
-                    >
-                      <Github className="size-3.5" />
-                    </a>
-                  )}
-                  {m.instagram && (
-                    <a
-                      href={m.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors p-1"
-                      aria-label={`${m.name}'s Instagram`}
-                    >
-                      <Instagram className="size-3.5" />
-                    </a>
-                  )}
-                  {!m.linkedin && !m.github && !m.instagram && (
-                    <span className="text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
-                      <ArrowUpRight className="size-4" />
-                    </span>
-                  )}
+              <div className="flex shrink-0 flex-col items-end gap-1.5 text-right">
+                <span className="gradient-brand-subtle text-primary font-accent rounded-full border border-primary/20 px-2.5 py-0.5 text-[11px] font-bold">{m.department} • {m.year}</span>
+                <span className="text-xs font-semibold text-muted-foreground">{m.state !== "—" ? m.state : "North India"}</span>
+                <div className="mt-0.5 flex items-center gap-1.5">
+                  {m.linkedin && <Social href={m.linkedin} label={`${m.name}'s LinkedIn`}><Linkedin className="size-3.5" /></Social>}
+                  {m.github && <Social href={m.github} label={`${m.name}'s GitHub`}><Github className="size-3.5" /></Social>}
+                  {m.instagram && <Social href={m.instagram} label={`${m.name}'s Instagram`}><Instagram className="size-3.5" /></Social>}
+                  {!m.linkedin && !m.github && !m.instagram && <ArrowUpRight className="size-4 text-muted-foreground/40 transition-colors group-hover:text-primary/70" />}
                 </div>
               </div>
             </div>
@@ -307,16 +172,38 @@ export function Members() {
 
       {filtered.length === 0 && (
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground text-sm">No members match those filters yet.</p>
-          <button
-            onClick={clearAll}
-            className="font-accent text-primary mt-3 text-sm font-semibold hover:underline"
-          >
-            Reset filters
-          </button>
+          <p className="text-sm text-muted-foreground">No members match those filters yet.</p>
+          <button onClick={clearAll} className="font-accent mt-3 text-sm font-semibold text-primary hover:underline">Reset filters</button>
         </div>
       )}
     </section>
   );
 }
 
+function FilterSelect({ label, value, onChange, options }: { label: string; value: string; onChange: (value: string) => void; options: string[] }) {
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        aria-label={`Filter by ${label.toLowerCase()}`}
+        className={cn(
+          "font-accent h-10 cursor-pointer appearance-none rounded-xl border px-3 pr-8 text-xs font-semibold outline-none transition-all",
+          value ? "border-primary/50 bg-primary/10 text-primary" : "border-white/60 bg-white/70 text-foreground hover:bg-white",
+        )}
+      >
+        <option value="">{label}: All</option>
+        {options.map((option) => <option key={option} value={option}>{label}: {option}</option>)}
+      </select>
+      <ChevronDown className="text-muted-foreground pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2" />
+    </div>
+  );
+}
+
+function Social({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="p-1 text-muted-foreground transition-colors hover:text-primary" aria-label={label}>
+      {children}
+    </a>
+  );
+}

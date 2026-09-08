@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { X, Image as ImageIcon, Sparkles, Calendar, Tag } from "lucide-react";
 import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { galleryCategories, galleryItems, GalleryCategory, GalleryItem } from "@/data/nisc";
-import { cn } from "@/lib/utils";
+import { galleryItems, GalleryItem } from "@/data/nisc";
 
 export function Gallery() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   // Close lightbox on Escape key
@@ -18,11 +16,6 @@ export function Gallery() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const filteredItems =
-    activeCategory === "All"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeCategory);
-
   return (
     <section id="gallery" className="relative mx-auto max-w-6xl px-6 py-24">
       <SectionHeading
@@ -31,29 +24,9 @@ export function Gallery() {
         subtitle="Visual highlights from official meetings, council formation, cultural events, elections, and community drives."
       />
 
-      {/* Filter Tabs */}
-      <ScrollReveal variant="blur">
-        <div className="mb-10 flex flex-wrap justify-center gap-2">
-          {["All", ...galleryCategories].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={cn(
-                "font-accent rounded-full px-4 py-2 text-xs font-bold tracking-wide transition-all duration-300",
-                activeCategory === cat
-                  ? "gradient-brand text-white shadow-[var(--shadow-glow)] scale-105"
-                  : "glass hover:bg-white/60 text-muted-foreground",
-              )}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </ScrollReveal>
-
       {/* Masonry / Responsive Grid */}
       <div className="grid auto-rows-[220px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredItems.map((item, i) => (
+        {galleryItems.map((item, i) => (
           <ScrollReveal key={item.id} variant="scale" delay={i * 0.05} className={item.span || ""}>
             <div
               onClick={() => setSelectedItem(item)}

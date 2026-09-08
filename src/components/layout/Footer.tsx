@@ -11,11 +11,11 @@ const footerNavigation = {
   ],
   community: [
     { label: "Executive Council", href: "#council" },
+    { label: "Election Results", href: "#archive" },
     { label: "Members Directory", href: "#members" },
     { label: "Activities & Events", href: "#activities" },
   ],
   governance: [
-    { label: "Annual Election", href: "#election" },
     { label: "Official Rulebook", href: "/rulebook" },
     { label: "FAQ & Support", href: "#faq" },
     { label: "Join NISC", href: "https://forms.gle/muurnrz133tkgLTq7", external: true, badge: "Open" },
@@ -79,7 +79,7 @@ export function Footer() {
                   />
                   <div className="min-w-0">
                     <h2 className="font-display text-xl font-black tracking-tight group-hover:text-primary transition-colors">
-                      North India Student Cell
+                      North India Student's Club
                     </h2>
                     <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                       KL University Hyderabad
@@ -98,7 +98,7 @@ export function Footer() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
                   </span>
-                  <span>Active Student Cell • 2025–26</span>
+                  <span>Active Student Club • 2026–27</span>
                 </div>
               </div>
 
@@ -201,7 +201,12 @@ export function Footer() {
                       <ChevronRight className="size-3 text-primary/40 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
                       <span>{item.label}</span>
                       {item.badge && (
-                        <span className="ml-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400">
+                          <span className={cn(
+                            "ml-1 rounded-full px-2 py-0.5 text-[10px] font-extrabold",
+                            item.badge === "Closed"
+                              ? "border border-slate-300 bg-slate-100 text-slate-600"
+                              : "border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+                          )}>
                           {item.badge}
                         </span>
                       )}
@@ -216,7 +221,7 @@ export function Footer() {
           <div className="mt-14 border-t border-border/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright & Tech Team Attribution */}
             <p className="text-xs font-medium text-muted-foreground text-center md:text-left leading-relaxed">
-              © {currentYear} North India Student Cell, KL University Hyderabad. Built with{" "}
+              © {currentYear} North India Student's Club, KL University Hyderabad. Built with{" "}
               <Heart className="inline-block size-3.5 text-rose-500 fill-rose-500 animate-pulse mx-0.5" /> by the{" "}
               <span className="font-semibold text-foreground">NISC Tech Team</span>.
             </p>

@@ -4,13 +4,15 @@ import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { Avatar } from "@/components/nisc/GlassCard";
 import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { pastCouncils, election2025 } from "@/data/nisc";
+import { pastCouncils, election2025, election2026 } from "@/data/nisc";
 import { cn } from "@/lib/utils";
 
 type Tab = "councils" | "results";
 
 export function Archive() {
   const [tab, setTab] = useState<Tab>("councils");
+  const [selectedElectionYear, setSelectedElectionYear] = useState("2026–27");
+  const election = selectedElectionYear === election2026.year ? election2026 : election2025;
 
   return (
     <section id="archive" className="relative mx-auto max-w-6xl px-6 py-24">
@@ -95,18 +97,37 @@ export function Archive() {
         </div>
       ) : (
         <div className="space-y-10">
+          <ScrollReveal>
+            <div className="glass mx-auto flex w-fit gap-1 rounded-full p-1">
+              {[election2026, election2025].map((result) => (
+                <button
+                  key={result.year}
+                  onClick={() => setSelectedElectionYear(result.year)}
+                  className={cn(
+                    "font-accent rounded-full px-4 py-2 text-xs font-semibold transition-all sm:px-5 sm:text-sm",
+                    election.year === result.year
+                      ? "gradient-brand text-white shadow-[var(--shadow-glow)]"
+                      : "hover:bg-white/60",
+                  )}
+                >
+                  {result.year} Election
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+
           {/* Header section */}
           <ScrollReveal variant="up">
             <div className="glass relative overflow-hidden rounded-3xl p-8 sm:p-10 text-center">
               <div className="gradient-brand absolute inset-x-0 top-0 h-1.5 opacity-80" />
               <span className="glass-strong font-accent text-primary inline-flex rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.18em] uppercase mb-3">
-                {election2025.year} Term
+                {election.year} Term
               </span>
               <h3 className="font-display text-3xl font-extrabold sm:text-4xl">
-                {election2025.title}
+                {election.title}
               </h3>
               <p className="text-muted-foreground mx-auto mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
-                {election2025.subtitle}
+                {election.subtitle}
               </p>
 
               {/* Stat Cards */}
@@ -114,7 +135,7 @@ export function Archive() {
                 <div className="glass-strong rounded-2xl p-5 text-center">
                   <Users className="text-primary mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
-                    <AnimatedCounter to={election2025.stats.totalVotes} />
+                    <AnimatedCounter to={election.stats.totalVotes} />
                   </p>
                   <p className="text-muted-foreground font-accent mt-1 text-xs font-semibold uppercase tracking-wider">
                     Total Votes Cast
@@ -123,7 +144,7 @@ export function Archive() {
                 <div className="glass-strong rounded-2xl p-5 text-center">
                   <Trophy className="text-amber-500 mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
-                    <AnimatedCounter to={election2025.stats.highestPresidentialVote} />
+                    <AnimatedCounter to={election.stats.highestPresidentialVote} />
                   </p>
                   <p className="text-muted-foreground font-accent mt-1 text-xs font-semibold uppercase tracking-wider">
                     Highest Presidential Vote
@@ -132,7 +153,7 @@ export function Archive() {
                 <div className="glass-strong rounded-2xl p-5 text-center">
                   <Award className="text-indigo-500 mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
-                    <AnimatedCounter to={election2025.stats.highestVicePresidentialVote} />
+                    <AnimatedCounter to={election.stats.highestVicePresidentialVote} />
                   </p>
                   <p className="text-muted-foreground font-accent mt-1 text-xs font-semibold uppercase tracking-wider">
                     Highest Vice Presidential Vote
@@ -158,17 +179,17 @@ export function Archive() {
                 {/* Winner Highlight */}
                 <div className="mt-5 glass-strong rounded-2xl p-4 flex items-center justify-between border border-emerald-500/30">
                   <div className="flex items-center gap-3">
-                    <Avatar name={election2025.presidential.winner} size="md" />
+                    <Avatar name={election.presidential.winner} size="md" />
                     <div>
                       <span className="font-accent text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
                         Elected President
                       </span>
-                      <p className="text-lg font-extrabold">{election2025.presidential.winner}</p>
+                      <p className="text-lg font-extrabold">{election.presidential.winner}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-display text-2xl font-black text-primary">
-                      {election2025.presidential.votes}
+                      {election.presidential.votes}
                     </p>
                     <p className="text-[10px] text-muted-foreground font-accent uppercase">Votes</p>
                   </div>
@@ -180,7 +201,7 @@ export function Archive() {
                     Other Candidates
                   </h5>
                   <div className="space-y-2.5">
-                    {election2025.presidential.otherCandidates.map((c) => (
+                    {election.presidential.otherCandidates.map((c) => (
                       <div
                         key={c.name}
                         className="glass-strong rounded-xl px-4 py-2.5 flex items-center justify-between"
@@ -210,17 +231,17 @@ export function Archive() {
                 {/* Winner Highlight */}
                 <div className="mt-5 glass-strong rounded-2xl p-4 flex items-center justify-between border border-emerald-500/30">
                   <div className="flex items-center gap-3">
-                    <Avatar name={election2025.vicePresidential.winner} size="md" />
+                    <Avatar name={election.vicePresidential.winner} size="md" />
                     <div>
                       <span className="font-accent text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
                         Elected Vice President
                       </span>
-                      <p className="text-lg font-extrabold">{election2025.vicePresidential.winner}</p>
+                      <p className="text-lg font-extrabold">{election.vicePresidential.winner}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-display text-2xl font-black text-primary">
-                      {election2025.vicePresidential.votes}
+                      {election.vicePresidential.votes}
                     </p>
                     <p className="text-[10px] text-muted-foreground font-accent uppercase">Votes</p>
                   </div>
@@ -232,7 +253,7 @@ export function Archive() {
                     Other Candidates
                   </h5>
                   <div className="space-y-2.5">
-                    {election2025.vicePresidential.otherCandidates.map((c) => (
+                    {election.vicePresidential.otherCandidates.map((c) => (
                       <div
                         key={c.name}
                         className="glass-strong rounded-xl px-4 py-2.5 flex items-center justify-between"
@@ -257,7 +278,7 @@ export function Archive() {
                   Election Summary
                 </h4>
                 <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {election2025.summary}
+                  {election.summary}
                 </p>
               </div>
             </ScrollReveal>
@@ -271,7 +292,7 @@ export function Archive() {
                   </h4>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {election2025.participationOverview}
+                  {election.participationOverview}
                 </p>
               </div>
             </ScrollReveal>
@@ -285,7 +306,7 @@ export function Archive() {
                   </h4>
                 </div>
                 <p className="text-xs leading-relaxed text-muted-foreground">
-                  {election2025.studentFeedback}
+                  {election.studentFeedback}
                 </p>
               </div>
             </ScrollReveal>

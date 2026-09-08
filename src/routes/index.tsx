@@ -12,7 +12,6 @@ import { Stats } from "@/components/sections/Stats";
 import { Council } from "@/components/sections/Council";
 import { Members } from "@/components/sections/Members";
 import { Activities } from "@/components/sections/Activities";
-import { Election } from "@/components/sections/Election";
 import { Archive } from "@/components/sections/Archive";
 import { Rulebook } from "@/components/sections/Rulebook";
 import { Gallery } from "@/components/sections/Gallery";
@@ -97,7 +96,6 @@ function Index() {
         <Members />
         <Activities />
         <Archive />
-        <Election />
         <Rulebook />
         <Gallery />
         <Join />

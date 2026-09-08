@@ -2,6 +2,7 @@ export type Council = {
   id: number;
   name: string;
   position: string;
+  rollNo: string;
   batch: string;
   department: string;
   state: string;
@@ -11,18 +12,40 @@ export type Council = {
 };
 
 export const council: Council[] = [
-  { id: 1, name: "Mohiuddin Ahmad", position: "President", batch: "Y24", department: "AI & DS", state: "Uttar Pradesh" },
-  { id: 2, name: "Shreyansh Sharma", position: "Vice President", batch: "Y24", department: "AI & DS", state: "Rajasthan" },
-  { id: 3, name: "Mohd. Ammar Ali", position: "Y24 Year Admin", batch: "Y24", department: "CSE", state: "Delhi" },
-  { id: 4, name: "Dwarkesh", position: "CSE Admin", batch: "Y24", department: "CSE", state: "Uttar Pradesh", linkedin: "https://www.linkedin.com/in/dwarkesh-dubey-a34287367" },
-  { id: 5, name: "Yash Raj", position: "CSE Admin", batch: "Y24", department: "CSE", state: "Jharkhand" },
-  { id: 6, name: "Arnav Mishra", position: "AI & DS Admin", batch: "Y24", department: "AI & DS", state: "Madhya Pradesh", linkedin: "https://www.linkedin.com/in/arnav-mishra-4966b224b/" },
-  { id: 7, name: "Amitesh Pandit", position: "ECE Admin", batch: "Y24", department: "ECE", state: "Rajasthan" },
-  { id: 8, name: "Rishi Burman", position: "BCA Admin", batch: "Y25", department: "BCA", state: "Chhattisgarh" },
-  { id: 9, name: "Lekha", position: "Women's Wing", batch: "Y24", department: "AI & DS", state: "Andaman & Nicobar" },
-  { id: 10, name: "Avika", position: "Women's Wing", batch: "Y24", department: "CSE", state: "Chhattisgarh" },
-  { id: 11, name: "Paridhi Gupta", position: "Y25 Year Admin", batch: "Y25", department: "ECE", state: "Rajasthan", linkedin: "https://www.linkedin.com/in/paridhi-gupta-8922382a4/" },
-  { id: 12, name: "NV Mohd. Fazal", position: "Y25 Year Admin", batch: "Y25", department: "CSE", state: "Andaman & Nicobar" },
+  { id: 1, name: "Shreyansh Sharma", position: "Club Head (Head of Council)", rollNo: "2410080017", batch: "Y24", department: "AI & DS", state: "Uttar Pradesh" },
+  { id: 2, name: "NV Mohammed Fazal", position: "Speaker", rollNo: "2510030062", batch: "Y25", department: "CSE", state: "Andaman & Nicobar" },
+  { id: 3, name: "Mohiuddin Ahmad", position: "Speaker", rollNo: "2410080026", batch: "Y24", department: "AI & DS", state: "Uttar Pradesh" },
+  { id: 4, name: "Paridhi Gupta", position: "President & Women's Wing (Y25)", rollNo: "2510040024", batch: "Y25", department: "ECE", state: "Rajasthan", linkedin: "https://www.linkedin.com/in/paridhi-gupta-8922382a4/" },
+  { id: 5, name: "Anshul Raj", position: "Vice President", rollNo: "2510030203", batch: "Y25", department: "CSE", state: "Andaman & Nicobar" },
+  { id: 6, name: "Dwarkesh Dubey", position: "General Secretary", rollNo: "2410030021", batch: "Y24", department: "CSE", state: "Uttar Pradesh", linkedin: "https://www.linkedin.com/in/dwarkesh-dubey-a34287367" },
+  { id: 7, name: "Rishi Burman", position: "Media Cell Head", rollNo: "2510520036", batch: "Y25", department: "BCA", state: "Chhattisgarh" },
+  { id: 8, name: "Yash Raj", position: "Year Administrator (Y24)", rollNo: "2410030316", batch: "Y24", department: "CSE", state: "Jharkhand" },
+  { id: 9, name: "Smruti Ranjan Parhi", position: "Year Administrator (Y24)", rollNo: "2410030110", batch: "Y24", department: "CSE", state: "Odisha" },
+  { id: 10, name: "Baibhaba Choudhury", position: "Year Administrator (Y25)", rollNo: "2510030152", batch: "Y25", department: "CSE", state: "Odisha", linkedin: "https://www.linkedin.com/in/baibhaba-choudhury/" },
+  { id: 11, name: "Vanshika Agarwal", position: "Year Administrator (Y25)", rollNo: "2510040034", batch: "Y25", department: "ECE", state: "Rajasthan" },
+  { id: 12, name: "Aryan Yadav", position: "Year Administrator (Y26)", rollNo: "2610030348", batch: "Y26", department: "CSE", state: "Uttar Pradesh" },
+  { id: 13, name: "Juthika Kar", position: "Year Administrator (Y26)", rollNo: "2610030015", batch: "Y26", department: "CSE", state: "Odisha" },
+  { id: 14, name: "Lekha Sai Naidu", position: "Women's Wing (Y24)", rollNo: "2410080035", batch: "Y24", department: "AI & DS", state: "Andaman & Nicobar" },
+  { id: 15, name: "Manasvi Chaurasia", position: "Women's Wing (Y26)", rollNo: "2610030123", batch: "Y26", department: "CSE", state: "Madhya Pradesh" },
+  { id: 16, name: "Mohd. Ammar Ali", position: "CSE Administrator", rollNo: "2410030026", batch: "Y24", department: "CSE", state: "Delhi" },
+  { id: 17, name: "Arnav Mishra", position: "AI & DS Administrator", rollNo: "2410080008", batch: "Y24", department: "AI & DS", state: "Madhya Pradesh", linkedin: "https://www.linkedin.com/in/arnav-mishra-4966b224b/" },
+  { id: 18, name: "Soham Bhoumik", position: "ECE Administrator", rollNo: "2410040023", batch: "Y24", department: "ECE", state: "West Bengal" },
+  { id: 19, name: "Samrith Jain", position: "BCA Administrator", rollNo: "2510520035", batch: "Y25", department: "BCA", state: "Rajasthan" },
+];
+
+const foundingCouncil: Council[] = [
+  { id: 1, name: "Mohiuddin Ahmad", position: "President", rollNo: "2410080026", batch: "Y24", department: "AI & DS", state: "Uttar Pradesh" },
+  { id: 2, name: "Shreyansh Sharma", position: "Vice President", rollNo: "2410080017", batch: "Y24", department: "AI & DS", state: "Rajasthan" },
+  { id: 3, name: "Mohd. Ammar Ali", position: "Y24 Year Admin", rollNo: "2410030026", batch: "Y24", department: "CSE", state: "Delhi" },
+  { id: 4, name: "Dwarkesh Dubey", position: "CSE Admin", rollNo: "2410030021", batch: "Y24", department: "CSE", state: "Uttar Pradesh", linkedin: "https://www.linkedin.com/in/dwarkesh-dubey-a34287367" },
+  { id: 5, name: "Yash Raj", position: "CSE Admin", rollNo: "2410030316", batch: "Y24", department: "CSE", state: "Jharkhand" },
+  { id: 6, name: "Arnav Mishra", position: "AI & DS Admin", rollNo: "2410080008", batch: "Y24", department: "AI & DS", state: "Madhya Pradesh", linkedin: "https://www.linkedin.com/in/arnav-mishra-4966b224b/" },
+  { id: 7, name: "Amitesh Pandit", position: "ECE Admin", rollNo: "", batch: "Y24", department: "ECE", state: "Rajasthan" },
+  { id: 8, name: "Rishi Burman", position: "BCA Admin", rollNo: "2510520036", batch: "Y25", department: "BCA", state: "Chhattisgarh" },
+  { id: 9, name: "Lekha Sai Naidu", position: "Women's Wing", rollNo: "2410080035", batch: "Y24", department: "AI & DS", state: "Andaman & Nicobar" },
+  { id: 10, name: "Avika Kashyap", position: "Women's Wing", rollNo: "2410030520", batch: "Y24", department: "CSE", state: "Chhattisgarh" },
+  { id: 11, name: "Paridhi Gupta", position: "Y25 Year Admin", rollNo: "2510040024", batch: "Y25", department: "ECE", state: "Rajasthan", linkedin: "https://www.linkedin.com/in/paridhi-gupta-8922382a4/" },
+  { id: 12, name: "NV Mohd. Fazal", position: "Y25 Year Admin", rollNo: "2510030062", batch: "Y25", department: "CSE", state: "Andaman & Nicobar" },
 ];
 
 export type Member = {
@@ -58,7 +81,7 @@ const normalizeStateName = (s: string): string => {
 
 const raw: Raw[] = [
   // Y24 Members
-  ["Rishab", "Y24", "2410080042", "AI & DS", "Andaman & Nicobar"],
+  ["D Rishab", "Y24", "2410080042", "AI & DS", "Andaman & Nicobar"],
   ["K Keran Kumar", "Y24", "2410030472", "CSE", "Andaman & Nicobar"],
   ["Suyash Ram", "Y24", "2410030302", "CSE", "Andaman & Nicobar"],
   ["B.Dhruv", "Y24", "2410080043", "AI & DS", "Andaman & Nicobar"],
@@ -103,7 +126,9 @@ const raw: Raw[] = [
   ["Abhijith Jayan", "Y25", "2510030390", "CSE", "Kerala"],
   ["Amr Kalam Mansoori", "Y25", "2510030436", "CSE", "Maharashtra"],
   ["Krishna Biradar", "Y25", "2510030053", "CSE", "Maharashtra"],
-  ["Veeresh Yadav", "Y25", "2510040039", "ECE", "Maharashtra", "https://www.linkedin.com/in/veeresh-yadav-a469a0374/"],
+  ["A. Veeresh", "Y25", "2510040039", "ECE", "Maharashtra", "https://www.linkedin.com/in/veeresh-yadav-a469a0374/"],
+  ["Priyanka Rupnar", "Y25", "2520030540", "CSE", "Maharashtra"],
+  ["Samrith Jain", "Y25", "2510520035", "BCA", "Rajasthan"],
   ["Utkalika Priyadarshinee Champati", "Y25", "2510080004", "AI & DS", "Odisha"],
   ["Sameer Sahu", "Y25", "2510030059", "CSE", "Odisha"],
   ["Baibhaba Choudhury", "Y25", "2510030152", "CSE", "Odisha", "https://www.linkedin.com/in/baibhaba-choudhury/"],
@@ -112,10 +137,10 @@ const raw: Raw[] = [
   ["Vanshika Agarwal", "Y25", "2510040034", "ECE", "Rajasthan"],
   ["Alpansh Sharma", "Y25", "2510030356", "CSE", "Rajasthan"],
   ["Dhananjay Sharma", "Y25", "2510030080", "CSE", "Rajasthan"],
-  ["Sejal", "Y25", "2510030350", "CSE", "Rajasthan"],
-  ["Ridhi", "Y25", "2510040078", "ECE", "Rajasthan"],
+  ["Sejal Heda", "Y25", "2510030350", "CSE", "Telangana"],
+  ["Riddhi Lahoti", "Y25", "2510040078", "ECE", "Rajasthan"],
   ["Rajveer Jain", "Y25", "2510030235", "CSE", "Rajasthan"],
-  ["Anshul", "Y25", "2510030352", "CSE", "Rajasthan"],
+  ["Anshul Heda", "Y25", "2510030352", "CSE", "Rajasthan"],
   ["Armaan Reza", "Y25", "2510030299", "CSE", "Uttar Pradesh"],
   ["Sayak Dara", "Y25", "2510040014", "ECE", "West Bengal"],
   ["Binamra Maity", "Y25", "2510030328", "CSE", "West Bengal"],
@@ -124,6 +149,12 @@ const raw: Raw[] = [
   ["Piyush Kumar", "Y26", "2610030324", "CSE", "Bihar"],
   ["Lucky Ali", "Y26", "2610030377", "CSE", "Jharkhand"],
   ["Ayush Gupta", "Y26", "2610030343", "CSE", "Madhya Pradesh"],
+  ["Juthika Kar", "Y26", "2610030015", "CSE", "Odisha"],
+  ["Manasvi Chaurasia", "Y26", "2610030123", "CSE", "Madhya Pradesh"],
+  ["Adwait Tripathi", "Y26", "2610030422", "CSE", "Uttar Pradesh"],
+  ["Shashank Singh", "Y26", "2610030358", "CSE", "Uttar Pradesh"],
+  ["Chaitanya Gaur", "Y26", "2610080080", "AI & DS", "Madhya Pradesh"],
+  ["Gaurav Dhanraj", "Y26", "2610030429", "CSE", "Bihar"],
   ["Somyansu Panda", "Y26", "2610030395", "CSE", "Odisha"],
   ["Vedant Sahu", "Y26", "2610030362", "CSE", "Odisha"],
   ["Aryan Yadav", "Y26", "2610030348", "CSE", "Uttar Pradesh"],
@@ -190,7 +221,7 @@ export const pastCouncils: PastCouncil[] = [
     title: "Founding Council",
     description:
       "The inaugural NISC council was formed through nomination and consensus among the founding members during the organization's establishment phase. This council laid the foundation for governance, activities, membership, and future democratic elections.",
-    members: council,
+    members: foundingCouncil,
   },
 ];
 
@@ -261,6 +292,37 @@ export const election2025: ElectionData = {
     "Most participating voters belonged to the Y24 and Y25 batches across multiple departments, reflecting broad representation within the founding membership of NISC.",
   studentFeedback:
     "Members appreciated the transparent election process and encouraged continued fairness, inclusiveness, and active participation in future council elections. Suggestions received during voting will be considered while strengthening future governance and community activities.",
+};
+
+export const election2026: ElectionData = {
+  year: "2026–27",
+  title: "2026 Executive Council General Election",
+  subtitle:
+    "The second democratic election of NISC, featuring a highly competitive race, Candidate Houses, and a hybrid voting system that determined the final leadership.",
+  stats: {
+    totalVotes: 60,
+    highestPresidentialVote: 25,
+    highestVicePresidentialVote: 20,
+  },
+  presidential: {
+    winner: "Paridhi Gupta",
+    votes: 25,
+    otherCandidates: [
+      { name: "Anshul Raj", votes: 20 },
+      { name: "Aryan Yadav", votes: 15 },
+    ],
+  },
+  vicePresidential: {
+    winner: "Anshul Raj",
+    votes: 20,
+    otherCandidates: [{ name: "Aryan Yadav", votes: 15 }],
+  },
+  summary:
+    "The 2026–27 elections were a landmark event for NISC governance. 60 members participated through a combination of the official election portal (48 votes) and verified manual Google Forms (12 votes). While the online portal recorded a historic 17-17 tie between Paridhi Gupta (House ISIS) and Anshul Raj (House ANUBIS), the inclusion of the 12 verified manual votes resolved the tie. Paridhi Gupta secured the Presidency with 25 total votes, and Anshul Raj secured the Vice Presidency with 20 total votes.",
+  participationOverview:
+    "Voter turnout remained strong, with 60 total ballots verified by the NISC Election Commission out of the eligible population. The electorate was highly diverse, including participating voters from Y24, Y25, and Y26 batches across the AI & DS, CSE, ECE, and BCA departments.",
+  studentFeedback:
+    "Members praised the Election Commission's transparency in officially resolving the tie by verifying and combining manual ballots with the portal data. The introduction of Candidate Houses (ISIS, ANUBIS, HORUS) alongside detailed manifestos was widely appreciated for adding a dynamic, organized, and engaging element to the campaign trail.",
 };
 
 export type TimelineItem = {
@@ -436,9 +498,7 @@ export type GalleryItem = {
 export const galleryCategories: GalleryCategory[] = [
   "Official Meetings",
   "Council Formation",
-  "Cultural Events",
   "Elections",
-  "Community Activities",
 ];
 
 export const galleryItems: GalleryItem[] = [
@@ -461,36 +521,24 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    title: "Inaugural Council Assembly",
+    title: "NISC 2025–26 Founding Leadership Announcement",
     category: "Council Formation",
-    date: "17 Feb 2025",
-    gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
+    date: "2025–26",
+    image: "/gallery/founding-leadership-2025-26.png",
+    gradient: "linear-gradient(135deg, oklch(0.85 0.12 65), oklch(0.7 0.19 35))",
+    span: "sm:col-span-2 sm:row-span-2",
   },
   {
     id: 4,
-    title: "2026–27 Leadership Elections",
+    title: "NISC 2026–27 New Leadership Announcement",
     category: "Elections",
-    date: "20 Aug 2026",
-    gradient: "linear-gradient(135deg, oklch(0.86 0.1 90), oklch(0.72 0.16 55))",
-    span: "sm:col-span-2",
-  },
-  {
-    id: 5,
-    title: "Planned Cultural Celebrations",
-    category: "Cultural Events",
-    date: "Upcoming 2026",
-    gradient: "linear-gradient(135deg, oklch(0.84 0.11 150), oklch(0.68 0.15 190))",
-  },
-  {
-    id: 6,
-    title: "Planned Academic Mentorship Drive",
-    category: "Community Activities",
-    date: "Upcoming 2026",
+    date: "2026–27",
+    image: "/gallery/new-leadership-2026-27.png",
     gradient: "linear-gradient(135deg, oklch(0.82 0.11 350), oklch(0.68 0.16 20))",
   },
 ];
 
-export type ActivityStatus = "Conducted" | "Scheduled" | "Upcoming";
+export type ActivityStatus = "Conducted" | "Completed" | "Scheduled" | "Upcoming";
 
 export type Activity = {
   title: string;
@@ -508,9 +556,9 @@ export const activities: Activity[] = [
   },
   {
     title: "NISC 2026–27 Leadership Elections",
-    date: "20 Aug 2026",
-    status: "Scheduled",
-    text: "Active democratic election process to elect the President and Vice President for the 2026–27 council term.",
+    date: "03 - 04 Sep 2026",
+    status: "Completed",
+    text: "Successfully concluded the democratic election process utilizing a hybrid portal and manual voting system to elect the President, Vice President, and administrators for the 2026–27 council term.",
   },
   {
     title: "Hindi Diwas Celebration",

@@ -173,6 +173,27 @@
   --font-accent: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
+.dark {
+  --primary: oklch(0.78 0.17 55);
+  --primary-foreground: oklch(0.16 0.025 258);
+  --secondary: oklch(0.35 0.08 258);
+  --secondary-foreground: oklch(0.96 0.02 90);
+  --saffron: oklch(0.8 0.15 65);
+  --background: oklch(0.16 0.025 258);
+  --foreground: oklch(0.95 0.015 90);
+  --muted-foreground: oklch(0.73 0.035 258);
+  --card: oklch(0.21 0.035 258 / 78%);
+  --card-foreground: oklch(0.95 0.015 90);
+  --border: oklch(0.78 0.05 258 / 22%);
+  --accent: oklch(0.27 0.06 258);
+  --accent-foreground: oklch(0.95 0.015 90);
+  --ring: oklch(0.78 0.17 55);
+  --gradient-brand: linear-gradient(135deg, oklch(0.8 0.16 60), oklch(0.72 0.17 40) 45%, oklch(0.62 0.16 250));
+  --gradient-warm: linear-gradient(120deg, oklch(0.76 0.15 65), oklch(0.68 0.17 35));
+  --shadow-glass: 0 20px 60px -20px oklch(0.02 0.03 258 / 0.6);
+  --shadow-glow: 0 0 0 1px oklch(0.78 0.17 55 / 0.22), 0 24px 60px -22px oklch(0.78 0.17 55 / 0.35);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -207,11 +228,51 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-glass);
 }
 
+.dark .glass {
+  background: color-mix(in oklab, oklch(0.23 0.045 258) 78%, transparent);
+  border-color: oklch(0.78 0.05 258 / 22%);
+}
+
 @utility glass-strong {
   background: color-mix(in oklab, white 82%, transparent);
   backdrop-filter: blur(24px) saturate(170%);
   border: 1px solid color-mix(in oklab, white 80%, transparent);
   box-shadow: var(--shadow-glass);
+}
+
+.dark .glass-strong {
+  background: color-mix(in oklab, oklch(0.25 0.05 258) 88%, transparent);
+  border-color: oklch(0.78 0.05 258 / 28%);
+}
+
+.dark .bg-white {
+  background-color: oklch(0.22 0.04 258);
+}
+
+.dark .bg-white\/50,
+.dark .bg-white\/60,
+.dark .bg-white\/70,
+.dark .bg-white\/80 {
+  background-color: oklch(0.25 0.05 258 / 72%);
+}
+
+.dark .hover\:bg-white:hover,
+.dark .hover\:bg-white\/60:hover,
+.dark .hover\:bg-white\/80:hover {
+  background-color: oklch(0.32 0.06 258 / 78%);
+}
+
+.dark .text-slate-900 {
+  color: oklch(0.95 0.015 90);
+}
+
+.dark .text-slate-500 {
+  color: oklch(0.73 0.035 258);
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200 {
+  border-color: oklch(0.78 0.05 258 / 22%);
 }
 
 @utility gradient-text {
@@ -231,6 +292,13 @@ h1, h2, h3, h4 {
     radial-gradient(55% 45% at 85% 5%, oklch(0.78 0.12 258 / 0.42), transparent 70%),
     radial-gradient(50% 45% at 60% 85%, oklch(0.83 0.12 35 / 0.4), transparent 70%);
   animation: aurora 18s ease-in-out infinite alternate;
+}
+
+.dark .aurora-bg {
+  background:
+    radial-gradient(60% 50% at 15% 10%, oklch(0.42 0.14 55 / 0.28), transparent 70%),
+    radial-gradient(55% 45% at 85% 5%, oklch(0.35 0.12 250 / 0.32), transparent 70%),
+    radial-gradient(50% 45% at 60% 85%, oklch(0.3 0.11 35 / 0.26), transparent 70%);
 }
 
 @keyframes aurora {

@@ -15,6 +15,8 @@ import {
   X,
   MessageCircle,
   Send,
+  Moon,
+  Sun,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -41,7 +43,22 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const [active, setActive] = useState("mission");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("nisc-theme");
+    const enabled = savedTheme === "dark";
+    document.documentElement.classList.toggle("dark", enabled);
+    setDarkMode(enabled);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = !darkMode;
+    document.documentElement.classList.toggle("dark", nextTheme);
+    localStorage.setItem("nisc-theme", nextTheme ? "dark" : "light");
+    setDarkMode(nextTheme);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -128,6 +145,15 @@ export function Navbar() {
 
           {/* Right Column: CTA & Mobile Menu Toggle */}
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              className="glass grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-white/20 dark:hover:bg-white/10"
+            >
+              {darkMode ? <Sun className="size-4 text-amber-300" /> : <Moon className="size-4" />}
+            </button>
             <a
               href="https://forms.gle/muurnrz133tkgLTq7"
               target="_blank"

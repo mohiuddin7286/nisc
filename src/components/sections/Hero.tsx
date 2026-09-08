@@ -12,7 +12,7 @@ export function Hero() {
     { icon: Users, isLive: true, value: members.length, label: "Active Members" },
     { icon: Landmark, isLive: false, value: council.length, label: "Council Members" },
     { icon: GraduationCap, isLive: false, value: departmentsCount, label: "Departments" },
-    { icon: Sparkles, isLive: false, text: "2025–26 Council", label: "2025–26 Council" },
+    { icon: Sparkles, isLive: false, text: "2026–27 Council", label: "2026–27 Council" },
   ];
 
   return (

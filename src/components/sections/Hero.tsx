@@ -81,7 +81,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.7 }}
-            className="text-muted-foreground mx-auto mt-7 max-w-2xl text-base leading-relaxed sm:text-lg"
+            className="font-script text-muted-foreground mx-auto mt-7 max-w-3xl text-3xl leading-tight sm:text-4xl"
           >
             Many states, one campus, one family. We build community, mentorship and culture for students from North India at KLH — and everyone who wants in.
           </motion.p>

@@ -159,6 +159,12 @@ const raw: Raw[] = [
   ["Vedant Sahu", "Y26", "2610030362", "CSE", "Odisha"],
   ["Aryan Yadav", "Y26", "2610030348", "CSE", "Uttar Pradesh"],
   ["Ravi Yadav", "Y26", "2610030388", "CSE", "Uttar Pradesh"],
+  ["Mushrath Ali", "Y26", "2610030380", "CSE", "Odisha"],
+  ["Mohammed Jeeshan", "Y26", "2610030381", "CSE", "Odisha"],
+  ["Jeevika Mehta", "Y26", "2610030115", "CSE", "Uttar Pradesh"],
+  ["Priyanshi Pandey", "Y26", "2610030139", "CSE", "Odisha"],
+  ["Tanya Mishra", "Y26", "2610040030", "ECE", "Uttar Pradesh"],
+  ["Varun Tej", "Y26", "2610030379", "CSE", "Rajasthan"],
 ];
 
 // Deduplicate members primarily by Roll Number, while preserving state normalization and social links

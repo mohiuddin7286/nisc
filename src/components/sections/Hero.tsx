@@ -46,6 +46,8 @@ export function Hero() {
           </div>
         </motion.div>
 
+        <p className="font-script text-primary/80 -mt-2 text-3xl font-semibold sm:text-4xl">More than a club, a family</p>
+
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -107,7 +109,7 @@ export function Hero() {
 
       <div className="pointer-events-none absolute top-28 left-6 hidden max-w-28 text-left lg:block">
         <div className="h-16 w-px bg-primary/70" />
-        <p className="font-accent mt-4 text-[10px] font-bold leading-[1.7] tracking-[0.28em] text-primary uppercase">Students<br />Ideas<br />Community</p>
+        <p className="font-script mt-4 text-2xl font-semibold leading-[1.05] text-primary">Students<br />Ideas<br />Community</p>
       </div>
       <div className="pointer-events-none absolute top-24 right-8 hidden size-44 rounded-full border border-primary/20 lg:block" aria-hidden>
         <div className="absolute inset-3 rounded-full border border-secondary/20" />

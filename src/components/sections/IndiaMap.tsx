@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { SectionHeading } from "@/components/nisc/SectionHeading";
 import { ScrollReveal } from "@/components/nisc/ScrollReveal";
 import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { stateData, members } from "@/data/nisc";
+import { stateData } from "@/data/nisc";
 
 type StatePin = {
   id: string;
@@ -50,18 +50,6 @@ export function IndiaMap() {
 
   return (
     <section id="map" className="relative mx-auto max-w-6xl px-6 py-24">
-      <div className="mb-4 flex justify-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
-          </span>
-          <span>
-            Live Reach: <span className="font-bold"><AnimatedCounter to={members.length} /></span> Active Members across <span className="font-bold"><AnimatedCounter to={stateData.length} /></span> Regions (India & Nepal)
-          </span>
-        </div>
-      </div>
-
       <SectionHeading
         eyebrow="Our Reach"
         title={<>Many states, <span className="gradient-text">one campus</span></>}
@@ -71,21 +59,6 @@ export function IndiaMap() {
       <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
         <ScrollReveal variant="left">
           <div className="graphic-card glass relative overflow-hidden rounded-[2rem] border border-amber-500/20 bg-amber-500/5 p-4 shadow-xl sm:p-6">
-            <div className="relative z-10 mb-4 flex items-center justify-between gap-4 border-b border-white/30 pb-4">
-              <div className="flex items-center gap-2">
-                <span className="grid size-9 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <MapPin className="size-4" />
-                </span>
-                <div>
-                  <p className="font-accent text-xs font-bold uppercase tracking-[0.16em] text-primary">Live network</p>
-                  <p className="text-xs font-semibold text-muted-foreground">India & Nepal footprint</p>
-                </div>
-              </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
-                <span className="size-1.5 rounded-full bg-emerald-500" /> Active
-              </span>
-            </div>
-
             {/* Map Image */}
             <div className="relative mx-auto aspect-[1000/900] w-full max-w-lg select-none">
               <img

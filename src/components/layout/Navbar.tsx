@@ -48,7 +48,8 @@ export function Navbar() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("nisc-theme");
-    const enabled = savedTheme === "dark";
+    const enabled = savedTheme ? savedTheme === "dark" : false;
+    if (!savedTheme) localStorage.setItem("nisc-theme", "light");
     document.documentElement.classList.toggle("dark", enabled);
     setDarkMode(enabled);
   }, []);

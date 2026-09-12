@@ -19,7 +19,7 @@ export function Activities() {
             <ScrollReveal key={a.title} variant="right" delay={i * 0.06}>
               <div className="relative">
                 <span className="gradient-brand absolute top-7 -left-[30px] grid h-4 w-4 place-items-center rounded-full ring-4 ring-white sm:-left-[46px]" />
-                <div className="glass rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]">
+                <div className="graphic-card glass rounded-3xl p-6">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="text-primary font-accent flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase">
                       <CalendarDays className="size-4" /> {a.date}

@@ -32,7 +32,7 @@ const palettes = [
   "linear-gradient(135deg, oklch(0.8 0.12 350), oklch(0.68 0.16 20))",
 ];
 
-export function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg" }) {
+export function Avatar({ name, size = "md", src }: { name: string; size?: "md" | "lg"; src?: string }) {
   const initials = name
     .split(" ")
     .slice(0, 2)
@@ -42,13 +42,13 @@ export function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg"
   return (
     <div
       className={cn(
-        "font-display grid shrink-0 place-items-center rounded-full font-extrabold text-white",
+        "font-display grid shrink-0 place-items-center overflow-hidden rounded-full font-extrabold text-white",
         size === "lg" ? "h-24 w-24 text-3xl" : "h-14 w-14 text-lg",
       )}
       style={{ background: bg }}
       aria-hidden
     >
-      {initials}
+      {src ? <img src={src} alt="" className="h-full w-full object-cover" /> : initials}
     </div>
   );
 }

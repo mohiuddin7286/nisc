@@ -145,9 +145,9 @@ export function Members() {
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
         {filtered.map((m, i) => (
           <ScrollReveal key={m.id} variant="up" delay={Math.min(i, 8) * 0.03}>
-            <div className="glass-strong group relative flex items-center justify-between gap-4 rounded-2xl border border-white/60 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+            <div className="graphic-card glass-transparent group flex items-center justify-between gap-4 rounded-2xl border border-white/60 p-4 shadow-sm">
               <div className="flex min-w-0 flex-1 items-center gap-3.5">
-                <Avatar name={m.name} />
+                <Avatar name={m.name} {...(m.avatar ? { src: m.avatar } : {})} />
                 <div className="min-w-0 flex-1">
                   <h3 className="truncate text-base font-bold text-foreground transition-colors group-hover:text-primary">{m.name}</h3>
                   <p className="font-mono text-xs tracking-wide text-muted-foreground">{m.rollNo}</p>

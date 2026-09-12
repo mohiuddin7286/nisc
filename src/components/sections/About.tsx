@@ -35,7 +35,7 @@ export function About() {
                     </span>
                   </div>
                   <div className={i % 2 ? "sm:pl-10" : "sm:pr-10 sm:text-right"}>
-                    <div className="glass rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]">
+                    <div className="graphic-card glass rounded-3xl p-6">
                       <div className={`flex flex-wrap items-center gap-2 ${i % 2 ? "" : "sm:justify-end"}`}>
                         <span className="font-accent text-primary text-xs font-bold tracking-[0.18em] uppercase">
                           {item.year}

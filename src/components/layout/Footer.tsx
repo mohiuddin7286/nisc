@@ -63,7 +63,7 @@ export function Footer() {
       <div className="gradient-brand h-1 w-full opacity-80" />
 
       {/* Main Glassmorphic Container */}
-      <div className="glass-strong rounded-none border-x-0 border-b-0 bg-background/60 backdrop-blur-2xl">
+      <div className="graphic-card glass-strong rounded-none border-x-0 border-b-0 bg-background/60 backdrop-blur-2xl">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-12">
           {/* Main 4-Column Grid */}
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
@@ -73,7 +73,7 @@ export function Footer() {
                 {/* Brand Identity */}
                 <a href="#top" className="inline-flex items-center gap-3 group">
                   <img
-                    src="/nisc-logo.png"
+                    src="/gallery/nisc-logo.png"
                     alt="NISC Logo"
                     className="h-12 w-12 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-md p-0.5 transition-transform group-hover:scale-105"
                   />

@@ -91,7 +91,7 @@ export function Navbar() {
       >
         <nav
           className={cn(
-            "mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 transition-all duration-300 sm:px-6",
+            "nav-frame mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 transition-all duration-300 sm:px-6",
             scrolled
               ? "backdrop-blur-xl bg-white/20 dark:bg-black/30 border border-white/30 dark:border-white/10 shadow-xl h-14 w-[94%]"
               : "backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 shadow-lg h-16 w-[96%]",
@@ -100,7 +100,7 @@ export function Navbar() {
           {/* Left Column: Brand Logo */}
           <a href="#top" className="flex min-w-0 items-center gap-2.5 group">
             <img
-              src="/nisc-logo.png"
+              src="/gallery/nisc-logo.png"
               alt="NISC Logo"
               className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5 transition-transform group-hover:scale-105"
             />
@@ -185,7 +185,7 @@ export function Navbar() {
             <div className="flex items-center justify-between border-b border-border/40 pb-4">
               <div className="flex items-center gap-2.5">
                 <img
-                  src="/nisc-logo.png"
+                  src="/gallery/nisc-logo.png"
                   alt="NISC Logo"
                   className="h-8 w-8 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
                 />

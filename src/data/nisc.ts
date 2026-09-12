@@ -51,6 +51,7 @@ const foundingCouncil: Council[] = [
 export type Member = {
   id: number;
   name: string;
+  avatar?: string;
   rollNo: string;
   department: string;
   year: string;

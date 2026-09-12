@@ -22,7 +22,7 @@ export function NiscAccordion({
           <div
             key={item.title}
             className={cn(
-              "glass overflow-hidden rounded-2xl transition-shadow duration-300",
+              "graphic-card glass-transparent overflow-hidden rounded-2xl",
               isOpen && "shadow-[var(--shadow-glow)]",
             )}
           >

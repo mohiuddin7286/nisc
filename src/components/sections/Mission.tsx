@@ -29,7 +29,7 @@ export function Mission() {
             className={i === 3 ? "lg:col-start-1 lg:col-end-2" : ""}
           >
             <TiltCard className="h-full">
-              <div className="glass flex h-full flex-col rounded-3xl p-7">
+              <div className="graphic-card glass flex h-full flex-col rounded-3xl p-7">
                 <span className="gradient-brand grid h-14 w-14 place-items-center rounded-2xl text-white shadow-[var(--shadow-glow)]">
                   <c.icon className="size-6" />
                 </span>

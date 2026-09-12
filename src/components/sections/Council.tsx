@@ -55,7 +55,7 @@ export function Council() {
               className={featured ? "sm:col-span-2" : ""}
             >
               <TiltCard className="h-full" max={featured ? 6 : 8}>
-                <article className="glass relative flex h-full flex-col rounded-3xl p-5 transition-all duration-300 hover:shadow-[var(--shadow-glow)]">
+                <article className="graphic-card glass-transparent flex h-full flex-col rounded-3xl p-5">
                   <div className="gradient-brand absolute inset-x-0 top-0 h-1 rounded-t-3xl opacity-70" />
                 <div className="flex items-start justify-between gap-4">
                   <span className="gradient-brand-subtle text-primary font-accent max-w-[85%] rounded-full border border-primary/20 px-2.5 py-0.5 text-xs font-bold">

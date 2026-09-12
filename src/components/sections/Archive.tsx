@@ -50,7 +50,7 @@ export function Archive() {
         <div className="space-y-8">
           {pastCouncils.map((c) => (
             <ScrollReveal key={c.year} variant="up">
-              <div className="glass relative overflow-hidden rounded-3xl p-7 sm:p-10">
+              <div className="graphic-card glass relative rounded-3xl p-7 sm:p-10">
                 <div className="gradient-brand absolute inset-x-0 top-0 h-1.5 opacity-80" />
                 <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-white/20 pb-6">
                   <div>
@@ -75,7 +75,7 @@ export function Archive() {
                     {c.members.map((m) => (
                       <div
                         key={m.id}
-                        className="glass-strong flex items-center gap-3.5 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)]"
+                        className="graphic-card glass-transparent flex items-center gap-3.5 rounded-2xl p-4"
                       >
                         <Avatar name={m.name} size="md" />
                         <div className="min-w-0">
@@ -118,7 +118,7 @@ export function Archive() {
 
           {/* Header section */}
           <ScrollReveal variant="up">
-            <div className="glass relative overflow-hidden rounded-3xl p-8 sm:p-10 text-center">
+            <div className="graphic-card glass relative rounded-3xl p-8 text-center sm:p-10">
               <div className="gradient-brand absolute inset-x-0 top-0 h-1.5 opacity-80" />
               <span className="glass-strong font-accent text-primary inline-flex rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.18em] uppercase mb-3">
                 {election.year} Term
@@ -132,7 +132,7 @@ export function Archive() {
 
               {/* Stat Cards */}
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-3xl mx-auto">
-                <div className="glass-strong rounded-2xl p-5 text-center">
+                <div className="graphic-card glass-transparent rounded-2xl p-5 text-center">
                   <Users className="text-primary mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
                     <AnimatedCounter to={election.stats.totalVotes} />
@@ -141,7 +141,7 @@ export function Archive() {
                     Total Votes Cast
                   </p>
                 </div>
-                <div className="glass-strong rounded-2xl p-5 text-center">
+                <div className="graphic-card glass-transparent rounded-2xl p-5 text-center">
                   <Trophy className="text-amber-500 mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
                     <AnimatedCounter to={election.stats.highestPresidentialVote} />
@@ -150,7 +150,7 @@ export function Archive() {
                     Highest Presidential Vote
                   </p>
                 </div>
-                <div className="glass-strong rounded-2xl p-5 text-center">
+                <div className="graphic-card glass-transparent rounded-2xl p-5 text-center">
                   <Award className="text-indigo-500 mx-auto size-5 mb-2" />
                   <p className="font-display text-3xl font-extrabold tabular-nums">
                     <AnimatedCounter to={election.stats.highestVicePresidentialVote} />
@@ -167,7 +167,7 @@ export function Archive() {
           <div className="grid gap-6 md:grid-cols-2">
             {/* Presidential Election */}
             <ScrollReveal variant="left" delay={0.05}>
-              <div className="glass relative h-full flex flex-col overflow-hidden rounded-3xl p-7">
+              <div className="graphic-card glass relative h-full flex flex-col rounded-3xl p-7">
                 <div className="gradient-brand absolute inset-x-0 top-0 h-1" />
                 <div className="flex items-center justify-between border-b border-white/20 pb-4">
                   <h4 className="font-display text-xl font-bold">Presidential Election</h4>
@@ -177,7 +177,7 @@ export function Archive() {
                 </div>
 
                 {/* Winner Highlight */}
-                <div className="mt-5 glass-strong rounded-2xl p-4 flex items-center justify-between border border-emerald-500/30">
+                <div className="graphic-card glass-transparent mt-5 flex items-center justify-between rounded-2xl border border-emerald-500/30 p-4">
                   <div className="flex items-center gap-3">
                     <Avatar name={election.presidential.winner} size="md" />
                     <div>
@@ -204,7 +204,7 @@ export function Archive() {
                     {election.presidential.otherCandidates.map((c) => (
                       <div
                         key={c.name}
-                        className="glass-strong rounded-xl px-4 py-2.5 flex items-center justify-between"
+                        className="graphic-card glass-transparent flex items-center justify-between rounded-xl px-4 py-2.5"
                       >
                         <span className="text-sm font-medium">{c.name}</span>
                         <span className="text-sm font-bold text-muted-foreground">
@@ -219,7 +219,7 @@ export function Archive() {
 
             {/* Vice Presidential Election */}
             <ScrollReveal variant="right" delay={0.1}>
-              <div className="glass relative h-full flex flex-col overflow-hidden rounded-3xl p-7">
+              <div className="graphic-card glass relative h-full flex flex-col rounded-3xl p-7">
                 <div className="gradient-brand absolute inset-x-0 top-0 h-1" />
                 <div className="flex items-center justify-between border-b border-white/20 pb-4">
                   <h4 className="font-display text-xl font-bold">Vice Presidential Election</h4>
@@ -229,7 +229,7 @@ export function Archive() {
                 </div>
 
                 {/* Winner Highlight */}
-                <div className="mt-5 glass-strong rounded-2xl p-4 flex items-center justify-between border border-emerald-500/30">
+                <div className="graphic-card glass-transparent mt-5 flex items-center justify-between rounded-2xl border border-emerald-500/30 p-4">
                   <div className="flex items-center gap-3">
                     <Avatar name={election.vicePresidential.winner} size="md" />
                     <div>
@@ -256,7 +256,7 @@ export function Archive() {
                     {election.vicePresidential.otherCandidates.map((c) => (
                       <div
                         key={c.name}
-                        className="glass-strong rounded-xl px-4 py-2.5 flex items-center justify-between"
+                        className="graphic-card glass-transparent flex items-center justify-between rounded-xl px-4 py-2.5"
                       >
                         <span className="text-sm font-medium">{c.name}</span>
                         <span className="text-sm font-bold text-muted-foreground">
@@ -273,7 +273,7 @@ export function Archive() {
           {/* Election Summary & Overview Details */}
           <div className="grid gap-6 md:grid-cols-3">
             <ScrollReveal variant="up" delay={0.12} className="md:col-span-3">
-              <div className="glass rounded-3xl p-7 border-l-4 border-l-primary">
+              <div className="graphic-card glass rounded-3xl border-l-4 border-l-primary p-7">
                 <h4 className="font-accent text-xs font-bold uppercase tracking-[0.16em] text-primary mb-2">
                   Election Summary
                 </h4>
@@ -284,7 +284,7 @@ export function Archive() {
             </ScrollReveal>
 
             <ScrollReveal variant="up" delay={0.15} className="md:col-span-2">
-              <div className="glass h-full rounded-3xl p-7">
+              <div className="graphic-card glass h-full rounded-3xl p-7">
                 <div className="flex items-center gap-2 mb-3">
                   <CheckCircle2 className="size-4 text-primary" />
                   <h4 className="font-accent text-xs font-bold uppercase tracking-[0.16em] text-primary">
@@ -298,7 +298,7 @@ export function Archive() {
             </ScrollReveal>
 
             <ScrollReveal variant="up" delay={0.18}>
-              <div className="glass h-full rounded-3xl p-7">
+              <div className="graphic-card glass h-full rounded-3xl p-7">
                 <div className="flex items-center gap-2 mb-3">
                   <MessageSquare className="size-4 text-primary" />
                   <h4 className="font-accent text-xs font-bold uppercase tracking-[0.16em] text-primary">

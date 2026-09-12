@@ -17,8 +17,9 @@ export function Hero() {
   return (
     <section id="top" className="relative flex min-h-[760px] items-center overflow-hidden pt-28 pb-16 lg:min-h-screen">
       <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden>
-        <img src="/gallery/klu.png" alt="" className="h-full w-full object-cover opacity-20 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,250,242,0.98)_0%,rgba(255,250,242,0.84)_42%,rgba(255,250,242,0.35)_100%)]" />
+        <img src="/gallery/klu.png" alt="" className="h-full w-full object-cover opacity-20 mix-blend-multiply dark:opacity-30 dark:mix-blend-screen" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,250,242,0.98)_0%,rgba(255,250,242,0.84)_42%,rgba(255,250,242,0.35)_100%)] dark:hidden" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(10,20,40,0.96)_0%,rgba(15,32,58,0.86)_48%,rgba(15,32,58,0.62)_100%)] dark:block" />
       </div>
       <div
         aria-hidden
@@ -46,7 +47,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <p className="font-script text-primary/80 -mt-2 text-3xl font-semibold sm:text-4xl">More than a club, a family</p>
+        <p className="font-script -mt-2 text-3xl font-semibold text-primary sm:text-4xl">More than a club, a family</p>
 
         <div className="text-center">
           <motion.div
@@ -59,7 +60,7 @@ export function Hero() {
             KL University Hyderabad · Est. August 2024
           </motion.div>
 
-          <h1 className="font-display mx-auto mt-8 max-w-5xl text-[clamp(3.4rem,8vw,7rem)] leading-[0.88] font-extrabold tracking-[-0.06em]">
+          <h1 className="font-display text-foreground mx-auto mt-8 max-w-5xl text-[clamp(3.4rem,8vw,7rem)] leading-[0.88] font-extrabold tracking-[-0.06em]">
             {title.split(" ").map((word, wi) => (
               <span key={wi} className="mr-[0.25em] inline-block whitespace-nowrap">
                 {word.split("").map((c, ci) => (
@@ -81,7 +82,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.7 }}
-            className="font-script text-muted-foreground mx-auto mt-7 max-w-3xl text-3xl leading-tight sm:text-4xl"
+            className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
             Many states, one campus, one family. We build community, mentorship and culture for students from North India at KLH — and everyone who wants in.
           </motion.p>

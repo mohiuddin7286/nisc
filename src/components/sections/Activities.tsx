@@ -1,7 +1,7 @@
 import { CalendarDays, CheckCircle2, Clock } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { activities } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { activities } from "@/data/kutumb-club";
 
 export function Activities() {
   return (
@@ -9,7 +9,7 @@ export function Activities() {
       <SectionHeading
         eyebrow="Activities & Roadmap"
         title={<>Official events & <span className="gradient-text">upcoming calendar</span></>}
-        subtitle="The official milestone meeting conducted by NISC, along with our planned event calendar for the academic term."
+        subtitle="The official milestone meeting conducted by KUTUMB CLUB, along with our planned event calendar for the academic term."
       />
 
       <div className="relative pl-10 sm:pl-16">

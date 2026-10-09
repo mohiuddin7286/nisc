@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { stateData } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { stateData } from "@/data/kutumb-club";
 
 type StatePin = {
   id: string;

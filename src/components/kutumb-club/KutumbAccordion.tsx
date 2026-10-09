@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export type AccordionItemData = { title: string; content: ReactNode };
 
-export function NiscAccordion({
+export function KutumbAccordion({
   items,
   numbered = false,
 }: {

@@ -1,10 +1,10 @@
-# North India Student Cell (NISC) Website
+# KUTUMB CLUB Website
 
-Official website for the North India Student Cell at KL University Hyderabad.
+Official website for the KUTUMB CLUB at KL University Hyderabad.
 
 ## Features
 
-- **Hero & Mission**: Introduction to NISC community and core values.
+- **Hero & Mission**: Introduction to KUTUMB CLUB community and core values.
 - **Interactive Map**: State-wise member distribution across North India.
 - **Council & Members**: Full student directory with search, filter, and sort capabilities.
 - **Activities & Archive**: Event history, gallery, and past celebrations.

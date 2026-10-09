@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Send, BookOpen, MessageCircle, FileText } from "lucide-react";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { MagneticButton } from "@/components/nisc/MagneticButton";
-import { FloatingShapes } from "@/components/nisc/FloatingShapes";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { MagneticButton } from "@/components/kutumb-club/MagneticButton";
+import { FloatingShapes } from "@/components/kutumb-club/FloatingShapes";
 
 export function Join() {
   return (
@@ -26,7 +26,7 @@ export function Join() {
             {/* Rulebook Notice & View Rulebook Button */}
             <div className="mt-8 mx-auto max-w-md glass-strong rounded-2xl p-4 border border-white/20 shadow-md">
               <p className="text-xs text-muted-foreground font-accent font-semibold">
-                Read the NISC Constitution & Rulebook before applying for membership.
+                Read the KUTUMB CLUB Constitution & Rulebook before applying for membership.
               </p>
               <div className="mt-3 flex justify-center">
                 <Link

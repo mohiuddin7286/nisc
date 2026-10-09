@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { X, Image as ImageIcon, Sparkles, Calendar, Tag } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { galleryItems, GalleryItem } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { galleryItems, GalleryItem } from "@/data/kutumb-club";
 
 export function Gallery() {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
@@ -130,7 +130,7 @@ export function Gallery() {
               <div className="pt-2">
                 <h3 className="text-xl font-extrabold">{selectedItem.title}</h3>
                 <p className="text-muted-foreground text-xs mt-1">
-                  Part of the official NISC archive: {selectedItem.category} ({selectedItem.date})
+                  Part of the official KUTUMB CLUB archive: {selectedItem.category} ({selectedItem.date})
                 </p>
               </div>
             </div>

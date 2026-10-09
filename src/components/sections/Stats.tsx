@@ -1,7 +1,7 @@
 import { Users, Landmark, MapPin, GraduationCap } from "lucide-react";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { members, council, stateData, departmentsCount } from "@/data/nisc";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { members, council, stateData, departmentsCount } from "@/data/kutumb-club";
 
 const stats = [
   { icon: Users, value: members.length, suffix: "", label: "Active Members" },

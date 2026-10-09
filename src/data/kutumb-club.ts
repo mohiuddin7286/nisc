@@ -228,7 +228,7 @@ export const pastCouncils: PastCouncil[] = [
     year: "2025–26",
     title: "Founding Council",
     description:
-      "The inaugural NISC council was formed through nomination and consensus among the founding members during the organization's establishment phase. This council laid the foundation for governance, activities, membership, and future democratic elections.",
+      "The inaugural KUTUMB CLUB council was formed through nomination and consensus among the founding members during the organization's establishment phase. This council laid the foundation for governance, activities, membership, and future democratic elections.",
     members: foundingCouncil,
   },
 ];
@@ -266,7 +266,7 @@ export const election2025: ElectionData = {
   year: "2025–26",
   title: "2025–26 Presidential & Vice Presidential Election",
   subtitle:
-    "The first democratic election of NISC established the leadership for the upcoming council through a transparent voting process.",
+    "The first democratic election of KUTUMB CLUB established the leadership for the upcoming council through a transparent voting process.",
   stats: {
     totalVotes: 41,
     highestPresidentialVote: 23,
@@ -295,9 +295,9 @@ export const election2025: ElectionData = {
     ],
   },
   summary:
-    "The 2025–26 elections marked the beginning of NISC's democratic governance. Forty-one eligible members participated in the voting process to elect the President and Vice President. The election reflected strong student engagement and established the framework for future annual leadership transitions.",
+    "The 2025–26 elections marked the beginning of KUTUMB CLUB's democratic governance. Forty-one eligible members participated in the voting process to elect the President and Vice President. The election reflected strong student engagement and established the framework for future annual leadership transitions.",
   participationOverview:
-    "Most participating voters belonged to the Y24 and Y25 batches across multiple departments, reflecting broad representation within the founding membership of NISC.",
+    "Most participating voters belonged to the Y24 and Y25 batches across multiple departments, reflecting broad representation within the founding membership of KUTUMB CLUB.",
   studentFeedback:
     "Members appreciated the transparent election process and encouraged continued fairness, inclusiveness, and active participation in future council elections. Suggestions received during voting will be considered while strengthening future governance and community activities.",
 };
@@ -306,7 +306,7 @@ export const election2026: ElectionData = {
   year: "2026–27",
   title: "2026 Executive Council General Election",
   subtitle:
-    "The second democratic election of NISC, featuring a highly competitive race, Candidate Houses, and a hybrid voting system that determined the final leadership.",
+    "The second democratic election of KUTUMB CLUB, featuring a highly competitive race, Candidate Houses, and a hybrid voting system that determined the final leadership.",
   stats: {
     totalVotes: 60,
     highestPresidentialVote: 25,
@@ -326,9 +326,9 @@ export const election2026: ElectionData = {
     otherCandidates: [{ name: "Aryan Yadav", votes: 15 }],
   },
   summary:
-    "The 2026–27 elections were a landmark event for NISC governance. 60 members participated through a combination of the official election portal (48 votes) and verified manual Google Forms (12 votes). While the online portal recorded a historic 17-17 tie between Paridhi Gupta (House ISIS) and Anshul Raj (House ANUBIS), the inclusion of the 12 verified manual votes resolved the tie. Paridhi Gupta secured the Presidency with 25 total votes, and Anshul Raj secured the Vice Presidency with 20 total votes.",
+    "The 2026–27 elections were a landmark event for KUTUMB CLUB governance. 60 members participated through a combination of the official election portal (48 votes) and verified manual Google Forms (12 votes). While the online portal recorded a historic 17-17 tie between Paridhi Gupta (House ISIS) and Anshul Raj (House ANUBIS), the inclusion of the 12 verified manual votes resolved the tie. Paridhi Gupta secured the Presidency with 25 total votes, and Anshul Raj secured the Vice Presidency with 20 total votes.",
   participationOverview:
-    "Voter turnout remained strong, with 60 total ballots verified by the NISC Election Commission out of the eligible population. The electorate was highly diverse, including participating voters from Y24, Y25, and Y26 batches across the AI & DS, CSE, ECE, and BCA departments.",
+    "Voter turnout remained strong, with 60 total ballots verified by the KUTUMB CLUB Election Commission out of the eligible population. The electorate was highly diverse, including participating voters from Y24, Y25, and Y26 batches across the AI & DS, CSE, ECE, and BCA departments.",
   studentFeedback:
     "Members praised the Election Commission's transparency in officially resolving the tie by verifying and combining manual ballots with the portal data. The introduction of Candidate Houses (ISIS, ANUBIS, HORUS) alongside detailed manifestos was widely appreciated for adding a dynamic, organized, and engaging element to the campaign trail.",
 };
@@ -348,13 +348,13 @@ export const timeline: TimelineItem[] = [
     title: "Founded",
     year: "August 2024",
     tag: "Officially Founded",
-    text: "North India Student Cell (NISC) was initiated by students of the Y24 and Y25 batches to create a support network for North Indian students at KL University Hyderabad.",
+    text: "KUTUMB CLUB was initiated by students of the Y24 and Y25 batches to create a support network for North Indian students at KL University Hyderabad.",
   },
   {
     title: "Official Beginning",
     year: "17 February 2025",
     tag: "First Meeting",
-    text: "The first official meeting of NISC was conducted, laying the foundation for the organization, its vision, objectives, and future governance.",
+    text: "The first official meeting of KUTUMB CLUB was conducted, laying the foundation for the organization, its vision, objectives, and future governance.",
     images: ["/gallery/first-meeting-1.png", "/gallery/first-meeting-2.png"],
   },
   {
@@ -424,22 +424,22 @@ export const candidates2026: Candidate2026[] = [
 
 export const election2026Status = {
   nominationStatus: "CLOSED",
-  nominationNote: "Two nominations were cancelled because they did not satisfy NISC eligibility requirements.",
+  nominationNote: "Two nominations were cancelled because they did not satisfy KUTUMB CLUB eligibility requirements.",
   campaignDeadline: "20 August 2026, 4:00 PM",
   votingRulesAnnouncement: "20 August 2026, 9:00 PM",
   electionInCharges: "To Be Appointed",
   inChargesDescription: "Two members will serve as neutral observers throughout the election process to maintain transparency and fairness in the conduct and activities of candidates.",
   contestNote: "All three candidates are contesting for both President and Vice President.",
   manifestoRequirements: [
-    "Must follow the NISC Rulebook",
+    "Must follow the KUTUMB CLUB Rulebook",
     "Must focus on building a strong and inclusive student community",
     "Must promote academic assistance, guidance, teamwork and mutual support",
-    "Must focus on the overall development of NISC and its members",
+    "Must focus on the overall development of KUTUMB CLUB and its members",
     "Must NOT simply promote Hindi culture",
   ],
   confidentialityNotice: {
     title: "Election Confidentiality",
-    text: "Candidates and members are strictly requested not to discuss or share internal election matters with outsiders or faculty. Any attempt to involve outsiders or faculty in the election process may result in strict action under applicable NISC rules.",
+    text: "Candidates and members are strictly requested not to discuss or share internal election matters with outsiders or faculty. Any attempt to involve outsiders or faculty in the election process may result in strict action under applicable KUTUMB CLUB rules.",
     footer: "Keep it democratic. Keep it fair. Let the members choose their leaders.",
   },
 };
@@ -529,7 +529,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    title: "NISC 2025–26 Founding Leadership Announcement",
+    title: "KUTUMB CLUB 2025–26 Founding Leadership Announcement",
     category: "Council Formation",
     date: "2025–26",
     image: "/gallery/founding-leadership-2025-26.png",
@@ -538,7 +538,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 4,
-    title: "NISC 2026–27 New Leadership Announcement",
+    title: "KUTUMB CLUB 2026–27 New Leadership Announcement",
     category: "Elections",
     date: "2026–27",
     image: "/gallery/new-leadership-2026-27.png",
@@ -557,13 +557,13 @@ export type Activity = {
 
 export const activities: Activity[] = [
   {
-    title: "First Official NISC Meeting",
+    title: "First Official KUTUMB CLUB Meeting",
     date: "17 Feb 2025",
     status: "Conducted",
-    text: "The inaugural official meeting of North India Student Cell conducted at KL University Hyderabad, establishing NISC's vision, objectives, governance, and founding council.",
+    text: "The inaugural official meeting of KUTUMB CLUB conducted at KL University Hyderabad, establishing KUTUMB CLUB's vision, objectives, governance, and founding council.",
   },
   {
-    title: "NISC 2026–27 Leadership Elections",
+    title: "KUTUMB CLUB 2026–27 Leadership Elections",
     date: "03 - 04 Sep 2026",
     status: "Completed",
     text: "Successfully concluded the democratic election process utilizing a hybrid portal and manual voting system to elect the President, Vice President, and administrators for the 2026–27 council term.",
@@ -610,9 +610,9 @@ export const rulebookSections: RulebookSection[] = [
     sectionNumber: 1,
     title: "Introduction & Constitutional Framework",
     summary:
-      "The North India Student Cell (NISC) at KL University Hyderabad is an autonomous, student-led organization established to foster unity, academic mentorship, leadership development, student representation, and cultural engagement. Initiated in August 2024 by founding students of the Y24 and Y25 academic batches and formally convened on 17 February 2025, NISC operates under this ratified Constitution & Rulebook as its supreme governing document.",
+      "The KUTUMB CLUB at KL University Hyderabad is an autonomous, student-led organization established to foster unity, academic mentorship, leadership development, student representation, and cultural engagement. Initiated in August 2024 by founding students of the Y24 and Y25 academic batches and formally convened on 17 February 2025, KUTUMB CLUB operates under this ratified Constitution & Rulebook as its supreme governing document.",
     points: [
-      "Jurisdiction: Governs all official operations, democratic elections, council administration, member conduct, and activities of NISC at KL University Hyderabad.",
+      "Jurisdiction: Governs all official operations, democratic elections, council administration, member conduct, and activities of KUTUMB CLUB at KL University Hyderabad.",
       "Ratification: Formally ratified by the founding General Body during the 2025–26 academic term.",
       "Core Ethos: Committed to democratic fairness, academic growth, student welfare, inclusivity, and cross-cultural respect across the university campus.",
     ],
@@ -621,7 +621,7 @@ export const rulebookSections: RulebookSection[] = [
     id: "objectives",
     sectionNumber: 2,
     title: "Objectives & Mission",
-    summary: "The constitutional objectives and operational mission of North India Student Cell (NISC) are defined as follows:",
+    summary: "The constitutional objectives and operational mission of KUTUMB CLUB are defined as follows:",
     points: [
       "Community & Inclusion: Creating a vibrant, supportive platform for North Indian students and allies to connect, collaborate, and thrive.",
       "Academic Support & Mentorship: Providing structured peer tutoring, DSA sprints, shared study repositories, resume clinics, and senior-junior academic pairing.",
@@ -635,7 +635,7 @@ export const rulebookSections: RulebookSection[] = [
     sectionNumber: 3,
     title: "Membership Framework & Rights Matrix",
     summary:
-      "Membership in NISC is categorized to ensure broad participation while preserving democratic integrity. All members must be enrolled students at KL University Hyderabad in good standing.",
+      "Membership in KUTUMB CLUB is categorized to ensure broad participation while preserving democratic integrity. All members must be enrolled students at KL University Hyderabad in good standing.",
     subsections: [
       {
         title: "1. Primary Membership",
@@ -643,7 +643,7 @@ export const rulebookSections: RulebookSection[] = [
       },
       {
         title: "2. Associate Membership",
-        text: "Open to enrolled students from other regional backgrounds who demonstrate active support for NISC objectives, granted upon review by the Executive Council. Associate Members possess full rights to participate in all activities, hold appointed department or associate roles, and vote in General Body referendums, but may not contest for elected executive offices (President and Vice President).",
+        text: "Open to enrolled students from other regional backgrounds who demonstrate active support for KUTUMB CLUB objectives, granted upon review by the Executive Council. Associate Members possess full rights to participate in all activities, hold appointed department or associate roles, and vote in General Body referendums, but may not contest for elected executive offices (President and Vice President).",
       },
       {
         title: "3. Active Member Status",
@@ -663,11 +663,11 @@ export const rulebookSections: RulebookSection[] = [
     id: "structure",
     sectionNumber: 4,
     title: "Organizational Hierarchy & Structure",
-    summary: "NISC operates through a structured operational hierarchy to ensure transparent leadership and administrative efficiency:",
+    summary: "KUTUMB CLUB operates through a structured operational hierarchy to ensure transparent leadership and administrative efficiency:",
     subsections: [
       {
         title: "Tier A: Elected Executive Leadership (Annual Mandate)",
-        text: "Comprises the President and Vice President, who are elected annually by secret ballot among the General Body. The President serves as Chief Executive Officer, chairing council meetings and representing NISC before university authorities. The Vice President assists the President, oversees event execution, and assumes executive duties in the President's absence. These two positions constitute the mandatory elected core.",
+        text: "Comprises the President and Vice President, who are elected annually by secret ballot among the General Body. The President serves as Chief Executive Officer, chairing council meetings and representing KUTUMB CLUB before university authorities. The Vice President assists the President, oversees event execution, and assumes executive duties in the President's absence. These two positions constitute the mandatory elected core.",
       },
       {
         title: "Tier B: Appointed Administrative & Representative Roles",
@@ -695,7 +695,7 @@ export const rulebookSections: RulebookSection[] = [
       },
       {
         title: "Stage 3 — Campaign & Manifesto Presentation",
-        text: "Verified candidates present their vision and manifesto during the designated campaign window. Manifestos must adhere to NISC rules, focus on inclusive community building, academic support, and overall NISC development.",
+        text: "Verified candidates present their vision and manifesto during the designated campaign window. Manifestos must adhere to KUTUMB CLUB rules, focus on inclusive community building, academic support, and overall KUTUMB CLUB development.",
       },
       {
         title: "Stage 4 — Polling & Secret Ballot",
@@ -740,7 +740,7 @@ export const rulebookSections: RulebookSection[] = [
       "Neutral Observer Standard: Election In-Charges must remain strictly impartial and observe candidate conduct throughout the election.",
       "Prohibited Election Practices: Misinformation, personal attacks, character assassination, harassment, bribery, voter impersonation, duplicate voting, threats, or coercion are strictly prohibited.",
       "Election Confidentiality Clause: Candidates and members are strictly requested not to discuss or share internal election matters with outsiders or faculty. Any attempt to involve outsiders or faculty to influence election outcomes is a major violation.",
-      "Platform Decorum: Misuse of official NISC Telegram, WhatsApp, Instagram, or digital portals for unauthorized campaign spam is forbidden.",
+      "Platform Decorum: Misuse of official KUTUMB CLUB Telegram, WhatsApp, Instagram, or digital portals for unauthorized campaign spam is forbidden.",
       "Disciplinary Process: Violations reported to the Election Committee shall result in formal investigation and penalties ranging from official warnings and campaign restrictions to immediate candidate disqualification or membership suspension.",
     ],
   },
@@ -775,7 +775,7 @@ export const rulebookSections: RulebookSection[] = [
     summary: "Regulations governing official communication channels and group decorum:",
     points: [
       "Official Digital Platforms: Telegram (community chat & peer support), Website (rulebook, election portal, directory), Instagram (public media & updates), Email/Workspace (official administrative notices).",
-      "Decorum Policy: Sharing offensive, discriminatory, commercial, political, or irrelevant spam content is strictly prohibited on all official NISC channels.",
+      "Decorum Policy: Sharing offensive, discriminatory, commercial, political, or irrelevant spam content is strictly prohibited on all official KUTUMB CLUB channels.",
       "Authorized Releases: Official administrative statements must be approved by the President or General Secretary prior to publication.",
     ],
   },
@@ -783,7 +783,7 @@ export const rulebookSections: RulebookSection[] = [
     id: "amendments",
     sectionNumber: 10,
     title: "Constitutional Amendments Framework",
-    summary: "The precise step-by-step mechanism for amending or revising the NISC Rulebook:",
+    summary: "The precise step-by-step mechanism for amending or revising the KUTUMB CLUB Rulebook:",
     points: [
       "1. Proposal Submission: Any Active Primary Member may submit a written amendment proposal signed by at least 5 Active Members to the General Secretary.",
       "2. Council Evaluation: The General Secretary tables the proposal before the Executive Council for formal review within 14 days.",
@@ -800,7 +800,7 @@ export const rulebookSections: RulebookSection[] = [
     title: "Dissolution Protocol",
     summary: "Procedures governing potential organization dissolution:",
     points: [
-      "NISC may be dissolved only through a formal referendum requiring a minimum two-thirds (2/3) majority vote of all registered Active Members.",
+      "KUTUMB CLUB may be dissolved only through a formal referendum requiring a minimum two-thirds (2/3) majority vote of all registered Active Members.",
       "Upon dissolution, all physical records, digital assets, official accounts, and residual resources shall be handed over to the Student Activity Centre (S.A.C.) or university administration.",
     ],
   },
@@ -809,13 +809,13 @@ export const rulebookSections: RulebookSection[] = [
     sectionNumber: 12,
     title: "Constitutional Declaration",
     summary:
-      "This Constitution and Rulebook serves as the supreme guiding constitutional framework for the functioning of North India Student Cell (NISC) at KL University Hyderabad. All members, upon joining, agree to abide by these rules and work collectively toward achieving the cell's objectives in harmony, democratic integrity, and mutual respect.",
+      "This Constitution and Rulebook serves as the supreme guiding constitutional framework for the functioning of KUTUMB CLUB at KL University Hyderabad. All members, upon joining, agree to abide by these rules and work collectively toward achieving the cell's objectives in harmony, democratic integrity, and mutual respect.",
   },
   {
     id: "appendix-a",
     sectionNumber: 13,
     title: "Appendix A — Official Historical Timeline",
-    summary: "Chronological milestones in NISC's organizational history:",
+    summary: "Chronological milestones in KUTUMB CLUB's organizational history:",
     points: [
       "August 2024 — Initiative started by Y24 and Y25 batch students at KL University Hyderabad.",
       "17 February 2025 — First official meeting conducted, establishing vision, governance, and founding council.",
@@ -831,7 +831,7 @@ export const rulebook = rulebookSections.map((s) => ({
 }));
 
 export const faqs = [
-  { q: "Who can join NISC?", a: "Any student enrolled at KL University Hyderabad. You do not need to be from North India — allies and enthusiasts are welcome." },
+  { q: "Who can join KUTUMB CLUB?", a: "Any student enrolled at KL University Hyderabad. You do not need to be from North India — allies and enthusiasts are welcome." },
   { q: "Is there a membership fee?", a: "No. Membership is completely free. Some ticketed events may have a small contribution to cover costs." },
   { q: "How much time does it take?", a: "As much as you want to give. Members typically spend 2–3 hours a month; council roles need more." },
   { q: "Can first-year students hold council positions?", a: "First-years can join as volunteers and contest for junior council roles from their second semester." },

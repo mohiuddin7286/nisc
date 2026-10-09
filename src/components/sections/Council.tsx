@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Instagram, Github, Linkedin } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { TiltCard } from "@/components/nisc/TiltCard";
-import { Avatar } from "@/components/nisc/GlassCard";
-import { council, pastCouncils } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { TiltCard } from "@/components/kutumb-club/TiltCard";
+import { Avatar } from "@/components/kutumb-club/GlassCard";
+import { council, pastCouncils } from "@/data/kutumb-club";
 
 export function Council() {
   const [selectedYear, setSelectedYear] = useState<"2026–27" | "2025–26">("2026–27");
@@ -19,7 +19,7 @@ export function Council() {
         subtitle={
           isCurrentCouncil
             ? "The 2026–27 executive council — students volunteering their time to keep the cell moving."
-            : "The 2025–26 founding council — the members who established NISC's structure and community."
+            : "The 2025–26 founding council — the members who established KUTUMB CLUB's structure and community."
         }
       />
 

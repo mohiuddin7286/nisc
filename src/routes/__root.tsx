@@ -73,13 +73,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NISC — North India Student Cell" },
+      { title: "KUTUMB CLUB" },
       {
         name: "description",
         content:
-          "North India Student Cell, KL University Hyderabad — community, mentorship and culture.",
+          "KUTUMB CLUB, KL University Hyderabad — community, mentorship and culture.",
       },
-      { property: "og:site_name", content: "North India Student Cell" },
+      { property: "og:site_name", content: "KUTUMB CLUB" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -94,9 +94,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap",
       },
-      { rel: "icon", href: "/gallery/nisc-logo.png", type: "image/png" },
+      { rel: "icon", href: "/gallery/kutumb-club-logo.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/gallery/nisc-logo.png" },
+      { rel: "apple-touch-icon", href: "/gallery/kutumb-club-logo.png" },
     ],
   }),
 

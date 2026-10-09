@@ -15,24 +15,24 @@ import {
   CheckCircle2,
   ListOrdered,
 } from "lucide-react";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { MagneticButton } from "@/components/nisc/MagneticButton";
-import { rulebookSections, RulebookSection } from "@/data/nisc";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { MagneticButton } from "@/components/kutumb-club/MagneticButton";
+import { rulebookSections, RulebookSection } from "@/data/kutumb-club";
 
 export const Route = createFileRoute("/rulebook")({
   head: () => ({
     meta: [
-      { title: "NISC Constitution & Rulebook | KL University Hyderabad" },
+      { title: "KUTUMB CLUB Constitution & Rulebook | KL University Hyderabad" },
       {
         name: "description",
         content:
-          "Official Constitution and Rulebook of the North India Student Cell (NISC), KL University Hyderabad.",
+          "Official Constitution and Rulebook of the KUTUMB CLUB, KL University Hyderabad.",
       },
-      { property: "og:title", content: "NISC Constitution & Rulebook | KL University Hyderabad" },
+      { property: "og:title", content: "KUTUMB CLUB Constitution & Rulebook | KL University Hyderabad" },
       {
         property: "og:description",
         content:
-          "Official Constitution and Rulebook of the North India Student Cell (NISC), KL University Hyderabad.",
+          "Official Constitution and Rulebook of the KUTUMB CLUB, KL University Hyderabad.",
       },
     ],
   }),
@@ -103,13 +103,13 @@ function RulebookPage() {
             Constitution & <span className="gradient-text">Rulebook</span>
           </h1>
           <p className="font-accent mt-3 text-center text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-            North India Student Cell (NISC) · KL University Hyderabad
+            KUTUMB CLUB · KL University Hyderabad
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.14}>
           <p className="text-muted-foreground mx-auto mt-5 max-w-2xl text-center text-base sm:text-lg leading-relaxed">
-            The guiding constitutional framework, organizational structure, election procedures, and code of conduct governing NISC.
+            The guiding constitutional framework, organizational structure, election procedures, and code of conduct governing KUTUMB CLUB.
           </p>
         </ScrollReveal>
 
@@ -277,7 +277,7 @@ function RulebookPage() {
                   hash="join"
                   className="text-xs font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1"
                 >
-                  Join NISC <ArrowUpRight className="size-3" />
+                  Join KUTUMB CLUB <ArrowUpRight className="size-3" />
                 </Link>
               </div>
             </div>
@@ -291,7 +291,7 @@ function RulebookPage() {
                   Official Publication
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold mt-1">
-                  Constitution & Rulebook of the North India Student Cell (NISC)
+                  Constitution & Rulebook of the KUTUMB CLUB
                 </h2>
                 <p className="text-muted-foreground text-sm mt-1">
                   KL University Hyderabad Campus · Ratified 2025–26
@@ -372,7 +372,7 @@ function RulebookPage() {
                     End of Constitution Document
                   </p>
                   <p className="text-[11px] text-muted-foreground mt-1">
-                    North India Student Cell (NISC) · KL University Hyderabad
+                    KUTUMB CLUB · KL University Hyderabad
                   </p>
                 </div>
               </div>

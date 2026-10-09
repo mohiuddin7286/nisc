@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Spotlight } from "@/components/nisc/Spotlight";
-import { CustomCursor } from "@/components/nisc/CustomCursor";
+import { Spotlight } from "@/components/kutumb-club/Spotlight";
+import { CustomCursor } from "@/components/kutumb-club/CustomCursor";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Mission } from "@/components/sections/Mission";
@@ -18,9 +18,9 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Join } from "@/components/sections/Join";
 import { FAQ } from "@/components/sections/FAQ";
 
-const TITLE = "NISC — North India Student Cell | KL University Hyderabad";
+const TITLE = "KUTUMB CLUB | KL University Hyderabad";
 const DESC =
-  "The North India Student Cell at KL University Hyderabad: community, mentorship and culture for students from 11 northern states. Meet the council, members and events.";
+  "The KUTUMB CLUB at KL University Hyderabad: community, mentorship and culture for students from 11 northern states. Meet the council, members and events.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -41,8 +41,8 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "North India Student Cell",
-          alternateName: "NISC",
+          name: "KUTUMB CLUB",
+          alternateName: "KUTUMB CLUB",
           description: DESC,
           parentOrganization: { "@type": "CollegeOrUniversity", name: "KL University Hyderabad" },
         }),

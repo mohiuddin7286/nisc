@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { NiscAccordion } from "@/components/nisc/NiscAccordion";
-import { rulebook } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { KutumbAccordion } from "@/components/kutumb-club/KutumbAccordion";
+import { rulebook } from "@/data/kutumb-club";
 
 export function Rulebook() {
   return (
@@ -14,7 +14,7 @@ export function Rulebook() {
         subtitle="Official constitutional clauses and Appendix A covering membership rights, hierarchy, 7-stage elections, conduct, and amendments."
       />
       <ScrollReveal>
-        <NiscAccordion
+        <KutumbAccordion
           numbered
           items={rulebook.map((r) => ({ title: r.title, content: r.text }))}
         />

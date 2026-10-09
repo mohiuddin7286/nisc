@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Flag, Eye, TrendingUp, Rocket, CheckCircle2, Camera, X } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { timeline } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { timeline } from "@/data/kutumb-club";
 
 const icons = [Flag, Eye, TrendingUp, Rocket];
 
@@ -14,7 +14,7 @@ export function About() {
       <SectionHeading
         eyebrow="Official History"
         title={<>From foundation to a <span className="gradient-text">thriving cell</span></>}
-        subtitle="The official timeline of North India Student Cell at KL University Hyderabad, founded by students of the Y24 and Y25 batches."
+        subtitle="The official timeline of KUTUMB CLUB at KL University Hyderabad, founded by students of the Y24 and Y25 batches."
       />
 
       <div className="relative">
@@ -156,7 +156,7 @@ export function About() {
                 First Official Meeting — 17 February 2025
               </p>
               <p className="text-muted-foreground text-xs mt-0.5">
-                NISC Foundation meeting with founding members & University leadership at KL University Hyderabad.
+                KUTUMB CLUB Foundation meeting with founding members & University leadership at KL University Hyderabad.
               </p>
             </div>
           </div>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Archive as ArchiveIcon, Vote, Trophy, Users, Award, MessageSquare, CheckCircle2 } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { Avatar } from "@/components/nisc/GlassCard";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { pastCouncils, election2025, election2026 } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { Avatar } from "@/components/kutumb-club/GlassCard";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { pastCouncils, election2025, election2026 } from "@/data/kutumb-club";
 import { cn } from "@/lib/utils";
 
 type Tab = "councils" | "results";

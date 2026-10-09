@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { Search, Instagram, Github, Linkedin, X, ArrowUpDown, Users, ChevronDown, ArrowUpRight } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { Avatar } from "@/components/nisc/GlassCard";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { members, type Member } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { Avatar } from "@/components/kutumb-club/GlassCard";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { members, type Member } from "@/data/kutumb-club";
 import { cn } from "@/lib/utils";
 
 const uniq = (arr: string[]) => Array.from(new Set(arr)).filter((x) => x && x !== "—").sort();

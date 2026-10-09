@@ -1,7 +1,7 @@
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { NiscAccordion } from "@/components/nisc/NiscAccordion";
-import { faqs } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { KutumbAccordion } from "@/components/kutumb-club/KutumbAccordion";
+import { faqs } from "@/data/kutumb-club";
 
 export function FAQ() {
   return (
@@ -9,10 +9,10 @@ export function FAQ() {
       <SectionHeading
         eyebrow="FAQ"
         title={<>Questions, <span className="gradient-text">answered</span></>}
-        subtitle="Everything people usually ask before joining NISC."
+        subtitle="Everything people usually ask before joining KUTUMB CLUB."
       />
       <ScrollReveal>
-        <NiscAccordion items={faqs.map((f) => ({ title: f.q, content: f.a }))} />
+        <KutumbAccordion items={faqs.map((f) => ({ title: f.q, content: f.a }))} />
       </ScrollReveal>
     </section>
   );

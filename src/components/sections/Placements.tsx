@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
 import { Search, Briefcase, Building2, MapPin, Linkedin, Github, GraduationCap, Sparkles, Trophy, Award } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { TiltCard } from "@/components/nisc/TiltCard";
-import { Avatar } from "@/components/nisc/GlassCard";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { placedSeniors, type PlacedSenior } from "@/data/nisc";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { TiltCard } from "@/components/kutumb-club/TiltCard";
+import { Avatar } from "@/components/kutumb-club/GlassCard";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { placedSeniors, type PlacedSenior } from "@/data/kutumb-club";
 import { cn } from "@/lib/utils";
 
 const uniq = (arr: string[]) => Array.from(new Set(arr)).filter(Boolean).sort();
@@ -67,7 +67,7 @@ export function Placements() {
             Our Placed <span className="gradient-text">Seniors</span>
           </>
         }
-        subtitle="Celebrating the success of NISC seniors who secured prestigious offers across top tech companies, MNCs, and industry leaders."
+        subtitle="Celebrating the success of KUTUMB CLUB seniors who secured prestigious offers across top tech companies, MNCs, and industry leaders."
       />
 
       {/* Top Highlights Banner */}
@@ -297,7 +297,7 @@ export function Placements() {
             Are you a placed senior or got an offer?
           </h3>
           <p className="text-muted-foreground relative mx-auto mt-2 max-w-xl text-sm leading-relaxed sm:text-base">
-            Share your placement journey and help guide junior students at KL University Hyderabad. Get featured on the official NISC Placements Wall.
+            Share your placement journey and help guide junior students at KL University Hyderabad. Get featured on the official KUTUMB CLUB Placements Wall.
           </p>
           <div className="relative mt-6 flex flex-wrap items-center justify-center gap-4">
             <a

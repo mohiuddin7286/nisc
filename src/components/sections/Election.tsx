@@ -1,7 +1,7 @@
 import { BookOpen, FileSignature, CheckCircle2, Megaphone, Vote, Trophy, ShieldCheck, UserCheck, Clock, AlertTriangle, Sparkles, CheckCircle } from "lucide-react";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { MagneticButton } from "@/components/nisc/MagneticButton";
-import { candidates2026, election2026Status, electionSteps } from "@/data/nisc";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { MagneticButton } from "@/components/kutumb-club/MagneticButton";
+import { candidates2026, election2026Status, electionSteps } from "@/data/kutumb-club";
 import { cn } from "@/lib/utils";
 
 const stepIcons = [FileSignature, CheckCircle2, Megaphone, Vote, Trophy];
@@ -325,7 +325,7 @@ export function Election() {
 
           <div className="mt-12 flex justify-center">
             <MagneticButton href="#rulebook">
-              Read the NISC Rulebook <BookOpen className="size-4" />
+              Read the KUTUMB CLUB Rulebook <BookOpen className="size-4" />
             </MagneticButton>
           </div>
 

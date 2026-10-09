@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const footerNavigation = {
   explore: [
-    { label: "About NISC", href: "#about" },
+    { label: "About KUTUMB CLUB", href: "#about" },
     { label: "Mission & Vision", href: "#mission" },
     { label: "Geographical Reach", href: "#map" },
     { label: "Photo & Event Gallery", href: "#gallery" },
@@ -18,7 +18,7 @@ const footerNavigation = {
   governance: [
     { label: "Official Rulebook", href: "/rulebook" },
     { label: "FAQ & Support", href: "#faq" },
-    { label: "Join NISC", href: "https://forms.gle/muurnrz133tkgLTq7", external: true, badge: "Open" },
+    { label: "Join KUTUMB CLUB", href: "https://forms.gle/muurnrz133tkgLTq7", external: true, badge: "Open" },
   ],
 };
 
@@ -73,13 +73,13 @@ export function Footer() {
                 {/* Brand Identity */}
                 <a href="#top" className="inline-flex items-center gap-3 group">
                   <img
-                    src="/gallery/nisc-logo.png"
-                    alt="NISC Logo"
+                    src="/gallery/kutumb-club-logo.png"
+                    alt="KUTUMB CLUB Logo"
                     className="h-12 w-12 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-md p-0.5 transition-transform group-hover:scale-105"
                   />
                   <div className="min-w-0">
                     <h2 className="font-display text-xl font-black tracking-tight group-hover:text-primary transition-colors">
-                      North India Student's Club
+                      KUTUMB CLUB
                     </h2>
                     <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                       KL University Hyderabad
@@ -215,9 +215,9 @@ export function Footer() {
           <div className="mt-14 border-t border-border/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright & Tech Team Attribution */}
             <p className="text-xs font-medium text-muted-foreground text-center md:text-left leading-relaxed">
-              © {currentYear} North India Student's Club, KL University Hyderabad. Built with{" "}
+              © {currentYear} KUTUMB CLUB, KL University Hyderabad. Built with{" "}
               <Heart className="inline-block size-3.5 text-rose-500 fill-rose-500 animate-pulse mx-0.5" /> by the{" "}
-              <span className="font-semibold text-foreground">NISC Tech Team</span>.
+              <span className="font-semibold text-foreground">KUTUMB CLUB Tech Team</span>.
             </p>
 
             {/* Back to Top Pill Button */}

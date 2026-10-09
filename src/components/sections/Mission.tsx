@@ -1,7 +1,7 @@
 import { Users, GraduationCap, Music, HeartHandshake, Network } from "lucide-react";
-import { SectionHeading } from "@/components/nisc/SectionHeading";
-import { ScrollReveal } from "@/components/nisc/ScrollReveal";
-import { TiltCard } from "@/components/nisc/TiltCard";
+import { SectionHeading } from "@/components/kutumb-club/SectionHeading";
+import { ScrollReveal } from "@/components/kutumb-club/ScrollReveal";
+import { TiltCard } from "@/components/kutumb-club/TiltCard";
 
 const cards = [
   { icon: Users, title: "Community", text: "A place to land on day one — familiar faces, shared food and a group chat that never sleeps." },
@@ -17,7 +17,7 @@ export function Mission() {
       <SectionHeading
         eyebrow="Mission & Objectives"
         title={<>Five things we <span className="gradient-text">promise</span></>}
-        subtitle="Everything NISC does rolls up into these five commitments to our members."
+        subtitle="Everything KUTUMB CLUB does rolls up into these five commitments to our members."
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

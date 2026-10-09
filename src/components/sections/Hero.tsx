@@ -1,10 +1,10 @@
 import { ArrowDown, GraduationCap, Landmark, Sparkles, Users } from "lucide-react";
 import { motion } from "motion/react";
-import { MagneticButton } from "@/components/nisc/MagneticButton";
-import { AnimatedCounter } from "@/components/nisc/AnimatedCounter";
-import { members, council, departmentsCount } from "@/data/nisc";
+import { MagneticButton } from "@/components/kutumb-club/MagneticButton";
+import { AnimatedCounter } from "@/components/kutumb-club/AnimatedCounter";
+import { members, council, departmentsCount } from "@/data/kutumb-club";
 
-const title = "North India Student Cell";
+const title = "KUTUMB CLUB";
 
 export function Hero() {
   const badges = [
@@ -42,7 +42,7 @@ export function Hero() {
           <div className="relative grid size-40 place-items-center rounded-[2.5rem] border border-white/80 bg-white/55 p-3 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:size-48">
             <div className="absolute -inset-5 rounded-[3rem] border border-primary/20" />
             <div className="absolute -inset-10 rounded-[3.5rem] border border-secondary/15" />
-            <img src="/gallery/nisc-logo.png" alt="NISC logo" className="relative size-full rounded-[2rem] object-cover" />
+            <img src="/gallery/kutumb-club-logo.png" alt="KUTUMB CLUB logo" className="relative size-full rounded-[2rem] object-cover" />
             <span className="absolute -right-12 bottom-3 hidden font-accent text-[10px] font-bold tracking-[0.28em] text-primary uppercase sm:block">KLH Aziznagar</span>
           </div>
         </motion.div>
@@ -93,7 +93,7 @@ export function Hero() {
             transition={{ delay: 1.1, duration: 0.6 }}
             className="mt-9 flex flex-wrap items-center justify-center gap-4"
           >
-            <MagneticButton href="#join">Join NISC <Sparkles className="size-4" /></MagneticButton>
+            <MagneticButton href="#join">Join KUTUMB CLUB <Sparkles className="size-4" /></MagneticButton>
             <MagneticButton href="#about" variant="ghost">Explore <ArrowDown className="size-4" /></MagneticButton>
           </motion.div>
 

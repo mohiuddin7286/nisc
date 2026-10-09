@@ -47,9 +47,9 @@ export function Navbar() {
   const [active, setActive] = useState("mission");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("nisc-theme");
+    const savedTheme = localStorage.getItem("kutumb-club-theme");
     const enabled = savedTheme ? savedTheme === "dark" : false;
-    if (!savedTheme) localStorage.setItem("nisc-theme", "light");
+    if (!savedTheme) localStorage.setItem("kutumb-club-theme", "light");
     document.documentElement.classList.toggle("dark", enabled);
     setDarkMode(enabled);
   }, []);
@@ -57,7 +57,7 @@ export function Navbar() {
   const toggleTheme = () => {
     const nextTheme = !darkMode;
     document.documentElement.classList.toggle("dark", nextTheme);
-    localStorage.setItem("nisc-theme", nextTheme ? "dark" : "light");
+    localStorage.setItem("kutumb-club-theme", nextTheme ? "dark" : "light");
     setDarkMode(nextTheme);
   };
 
@@ -101,11 +101,11 @@ export function Navbar() {
           {/* Left Column: Brand Logo */}
           <a href="#top" className="flex min-w-0 items-center gap-2.5 group">
             <img
-              src="/gallery/nisc-logo.png"
-              alt="NISC Logo"
+              src="/gallery/kutumb-club-logo.png"
+              alt="KUTUMB CLUB Logo"
               className="h-9 w-9 shrink-0 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5 transition-transform group-hover:scale-105"
             />
-            <span className="font-display truncate text-base font-extrabold tracking-tight">NISC</span>
+            <span className="font-display truncate text-base font-extrabold tracking-tight">KUTUMB CLUB</span>
           </a>
 
           {/* Center Column: Icon Navigation Grid */}
@@ -161,7 +161,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="gradient-brand font-accent hidden rounded-full px-5 py-2 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all sm:inline-flex"
             >
-              Join NISC
+              Join KUTUMB CLUB
             </a>
             <button
               className="glass grid h-10 w-10 place-items-center rounded-full lg:hidden hover:bg-white/20 transition-colors"
@@ -186,8 +186,8 @@ export function Navbar() {
             <div className="flex items-center justify-between border-b border-border/40 pb-4">
               <div className="flex items-center gap-2.5">
                 <img
-                  src="/gallery/nisc-logo.png"
-                  alt="NISC Logo"
+                  src="/gallery/kutumb-club-logo.png"
+                  alt="KUTUMB CLUB Logo"
                   className="h-8 w-8 rounded-full border border-white/60 bg-white object-cover shadow-sm p-0.5"
                 />
                 <span className="font-display text-lg font-extrabold">Navigation</span>
@@ -262,7 +262,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="gradient-brand font-accent ml-auto rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md"
               >
-                Join NISC
+                Join KUTUMB CLUB
               </a>
             </div>
           </motion.div>
